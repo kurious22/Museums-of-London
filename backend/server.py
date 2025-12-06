@@ -394,7 +394,7 @@ LONDON_MUSEUMS = [
         "address": "224-238 Kensington High Street, London W8 6AG",
         "latitude": 51.4995,
         "longitude": -0.1989,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Design_Museum%2C_Kensington%2C_London_%2833291717405%29.jpg/800px-Design_Museum%2C_Kensington%2C_London_%2833291717405%29.jpg",
+        "image_url": "https://images.unsplash.com/photo-1562789657-8ef4bc4f7b42?w=800&q=80",
         "category": "Art & Design",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
