@@ -10,7 +10,6 @@ import {
   Dimensions,
   Platform,
   RefreshControl,
-  ImageBackground,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
@@ -69,8 +68,12 @@ export default function HomeScreen() {
     router.push('/explore');
   };
 
+  const navigateToTours = () => {
+    router.push('/tours');
+  };
+
   return (
-    <View style={[styles.container, { paddingTop: insets.top }]}>
+    <View style={styles.container}>
       <StatusBar style="light" />
       
       <ScrollView
@@ -80,56 +83,117 @@ export default function HomeScreen() {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor="#E63946" />
         }
       >
-        {/* Hero Section with London Skyline */}
-        <View style={styles.heroSection}>
-          <ImageBackground
-            source={{ uri: 'https://images.unsplash.com/photo-1503494975800-45129df82138?w=800' }}
-            style={styles.heroImage}
-            imageStyle={{ opacity: 0.7 }}
-          >
-            <View style={styles.heroOverlay}>
-              <View style={styles.heroContent}>
-                <Text style={styles.welcomeText}>Welcome to</Text>
-                <Text style={styles.appTitle}>Museums of</Text>
-                <Text style={styles.appTitleHighlight}>London</Text>
-                <Text style={styles.heroSubtitle}>
-                  Discover world-class art, history, and culture
-                </Text>
+        {/* Colorful Hero Section with London Theme */}
+        <LinearGradient
+          colors={['#1A1A2E', '#16213E', '#0F3460', '#E94560']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={[styles.heroSection, { paddingTop: insets.top + 20 }]}
+        >
+          {/* London Skyline Silhouette */}
+          <View style={styles.skylineContainer}>
+            <View style={styles.skylineBuildings}>
+              {/* Big Ben */}
+              <View style={styles.bigBen}>
+                <View style={styles.bigBenTower} />
+                <View style={styles.bigBenTop} />
+                <View style={styles.bigBenSpire} />
               </View>
-              
-              <TouchableOpacity
-                style={styles.exploreButton}
-                onPress={navigateToExplore}
-              >
-                <Text style={styles.exploreButtonText}>Explore All Museums</Text>
-                <Ionicons name="arrow-forward" size={20} color="#fff" />
-              </TouchableOpacity>
+              {/* Building 1 */}
+              <View style={[styles.building, { height: 60, width: 30 }]} />
+              {/* London Eye */}
+              <View style={styles.londonEye}>
+                <View style={styles.londonEyeWheel} />
+                <View style={styles.londonEyeBase} />
+              </View>
+              {/* Tower Bridge */}
+              <View style={styles.towerBridge}>
+                <View style={styles.bridgeTower} />
+                <View style={styles.bridgeSpan} />
+                <View style={styles.bridgeTower} />
+              </View>
+              {/* Building 2 */}
+              <View style={[styles.building, { height: 80, width: 25 }]} />
+              {/* The Shard */}
+              <View style={styles.shard} />
+              {/* Building 3 */}
+              <View style={[styles.building, { height: 50, width: 35 }]} />
             </View>
-          </ImageBackground>
-        </View>
+          </View>
 
-        {/* Quick Stats */}
+          <View style={styles.heroContent}>
+            <Text style={styles.welcomeText}>WELCOME TO</Text>
+            <Text style={styles.appTitle}>Museums of</Text>
+            <View style={styles.londonBadge}>
+              <Text style={styles.londonText}>LONDON</Text>
+            </View>
+            <Text style={styles.heroSubtitle}>
+              Discover world-class art, history, and culture
+            </Text>
+          </View>
+          
+          <View style={styles.heroButtons}>
+            <TouchableOpacity
+              style={styles.exploreButton}
+              onPress={navigateToExplore}
+            >
+              <Ionicons name="compass" size={20} color="#fff" />
+              <Text style={styles.exploreButtonText}>Explore Museums</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity
+              style={styles.tourButton}
+              onPress={navigateToTours}
+            >
+              <Ionicons name="map" size={20} color="#E63946" />
+              <Text style={styles.tourButtonText}>Walking Tours</Text>
+            </TouchableOpacity>
+          </View>
+        </LinearGradient>
+
+        {/* Colorful Quick Stats */}
         <View style={styles.statsContainer}>
-          <View style={styles.statItem}>
+          <LinearGradient
+            colors={['#E63946', '#F1A208']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={styles.statCard}
+          >
+            <Ionicons name="business" size={28} color="#fff" />
             <Text style={styles.statNumber}>20+</Text>
             <Text style={styles.statLabel}>Museums</Text>
-          </View>
-          <View style={styles.statDivider} />
-          <View style={styles.statItem}>
+          </LinearGradient>
+          
+          <LinearGradient
+            colors={['#2A9D8F', '#38B000']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={styles.statCard}
+          >
+            <Ionicons name="ticket" size={28} color="#fff" />
             <Text style={styles.statNumber}>FREE</Text>
-            <Text style={styles.statLabel}>Most Entry</Text>
-          </View>
-          <View style={styles.statDivider} />
-          <View style={styles.statItem}>
-            <Text style={styles.statNumber}>A-Z</Text>
-            <Text style={styles.statLabel}>Categories</Text>
-          </View>
+            <Text style={styles.statLabel}>Entry</Text>
+          </LinearGradient>
+          
+          <LinearGradient
+            colors={['#457B9D', '#1D3557']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={styles.statCard}
+          >
+            <Ionicons name="footsteps" size={28} color="#fff" />
+            <Text style={styles.statNumber}>5</Text>
+            <Text style={styles.statLabel}>Tours</Text>
+          </LinearGradient>
         </View>
 
         {/* Featured Museums Section */}
         <View style={styles.sectionContainer}>
           <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>Featured Museums</Text>
+            <View style={styles.sectionTitleContainer}>
+              <Ionicons name="star" size={22} color="#F1A208" />
+              <Text style={styles.sectionTitle}>Featured Museums</Text>
+            </View>
             <TouchableOpacity onPress={navigateToExplore}>
               <Text style={styles.seeAllText}>See All</Text>
             </TouchableOpacity>
@@ -145,7 +209,7 @@ export default function HomeScreen() {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={styles.featuredScroll}
             >
-              {featuredMuseums.map((museum) => (
+              {featuredMuseums.map((museum, index) => (
                 <TouchableOpacity
                   key={museum.id}
                   style={styles.featuredCard}
@@ -156,7 +220,10 @@ export default function HomeScreen() {
                     source={{ uri: museum.image_url }}
                     style={styles.featuredImage}
                   />
-                  <View style={styles.featuredOverlay}>
+                  <LinearGradient
+                    colors={['transparent', 'rgba(0,0,0,0.8)']}
+                    style={styles.featuredOverlay}
+                  >
                     <View style={styles.featuredBadge}>
                       <Text style={styles.badgeText}>
                         {museum.free_entry ? 'FREE' : 'PAID'}
@@ -174,51 +241,92 @@ export default function HomeScreen() {
                         <Text style={styles.ratingText}>{museum.rating}</Text>
                       </View>
                     </View>
-                  </View>
+                  </LinearGradient>
                 </TouchableOpacity>
               ))}
             </ScrollView>
           )}
         </View>
 
-        {/* Categories Section */}
+        {/* Colorful Categories Section */}
         <View style={styles.sectionContainer}>
-          <Text style={styles.sectionTitle}>Explore by Category</Text>
+          <View style={styles.sectionTitleContainer}>
+            <Ionicons name="grid" size={22} color="#457B9D" />
+            <Text style={styles.sectionTitle}>Explore by Category</Text>
+          </View>
           <View style={styles.categoriesGrid}>
             {[
-              { name: 'Art', icon: 'color-palette', color: '#E63946' },
-              { name: 'History', icon: 'time', color: '#457B9D' },
-              { name: 'Science', icon: 'flask', color: '#2A9D8F' },
-              { name: 'Culture', icon: 'globe', color: '#E9C46A' },
+              { name: 'Art', icon: 'color-palette', colors: ['#E63946', '#FF6B6B'] },
+              { name: 'History', icon: 'time', colors: ['#457B9D', '#6BA3BE'] },
+              { name: 'Science', icon: 'flask', colors: ['#2A9D8F', '#52C9B9'] },
+              { name: 'Culture', icon: 'globe', colors: ['#E9C46A', '#F4D35E'] },
             ].map((category) => (
               <TouchableOpacity
                 key={category.name}
-                style={[styles.categoryCard, { borderColor: category.color }]}
                 onPress={() => router.push(`/explore?category=${category.name}`)}
+                activeOpacity={0.8}
               >
-                <View style={[styles.categoryIcon, { backgroundColor: category.color + '20' }]}>
-                  <Ionicons name={category.icon as any} size={28} color={category.color} />
-                </View>
-                <Text style={styles.categoryName}>{category.name}</Text>
+                <LinearGradient
+                  colors={category.colors}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 1 }}
+                  style={styles.categoryCard}
+                >
+                  <View style={styles.categoryIcon}>
+                    <Ionicons name={category.icon as any} size={32} color="#fff" />
+                  </View>
+                  <Text style={styles.categoryName}>{category.name}</Text>
+                </LinearGradient>
               </TouchableOpacity>
             ))}
           </View>
         </View>
 
-        {/* Quick Tips */}
+        {/* Walking Tours Promo */}
+        <View style={styles.sectionContainer}>
+          <TouchableOpacity onPress={navigateToTours} activeOpacity={0.9}>
+            <LinearGradient
+              colors={['#9B59B6', '#3498DB', '#1ABC9C']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={styles.tourPromo}
+            >
+              <View style={styles.tourPromoContent}>
+                <Ionicons name="walk" size={40} color="#fff" />
+                <View style={styles.tourPromoText}>
+                  <Text style={styles.tourPromoTitle}>Walking Tours</Text>
+                  <Text style={styles.tourPromoSubtitle}>
+                    Explore multiple museums in one day with our curated routes!
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.tourPromoArrow}>
+                <Ionicons name="arrow-forward-circle" size={32} color="#fff" />
+              </View>
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
+
+        {/* Fun Tips Section */}
         <View style={styles.tipsContainer}>
-          <Text style={styles.tipsTitle}>Visitor Tips</Text>
-          <View style={styles.tipItem}>
-            <Ionicons name="ticket-outline" size={20} color="#E63946" />
-            <Text style={styles.tipText}>Most major museums offer free entry</Text>
+          <View style={styles.sectionTitleContainer}>
+            <Ionicons name="bulb" size={22} color="#F1A208" />
+            <Text style={styles.sectionTitle}>Visitor Tips</Text>
           </View>
-          <View style={styles.tipItem}>
-            <Ionicons name="time-outline" size={20} color="#E63946" />
-            <Text style={styles.tipText}>Visit early morning to avoid crowds</Text>
-          </View>
-          <View style={styles.tipItem}>
-            <Ionicons name="train-outline" size={20} color="#E63946" />
-            <Text style={styles.tipText}>All museums are accessible by tube</Text>
+          <View style={styles.tipsList}>
+            {[
+              { icon: 'ticket-outline', text: 'Most major museums offer free entry', color: '#2A9D8F' },
+              { icon: 'time-outline', text: 'Visit early morning to avoid crowds', color: '#E63946' },
+              { icon: 'train-outline', text: 'All museums are accessible by tube', color: '#457B9D' },
+              { icon: 'camera-outline', text: 'Photography usually allowed (no flash)', color: '#9B59B6' },
+            ].map((tip, index) => (
+              <View key={index} style={styles.tipItem}>
+                <View style={[styles.tipIconContainer, { backgroundColor: tip.color + '20' }]}>
+                  <Ionicons name={tip.icon as any} size={20} color={tip.color} />
+                </View>
+                <Text style={styles.tipText}>{tip.text}</Text>
+              </View>
+            ))}
           </View>
         </View>
 
@@ -237,91 +345,192 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   heroSection: {
-    height: 380,
+    paddingHorizontal: 20,
+    paddingBottom: 30,
+    minHeight: 380,
+  },
+  skylineContainer: {
+    position: 'absolute',
+    bottom: 80,
+    left: 0,
+    right: 0,
+    height: 120,
+    opacity: 0.3,
+  },
+  skylineBuildings: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'space-around',
+    height: '100%',
+    paddingHorizontal: 10,
+  },
+  building: {
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4,
+  },
+  bigBen: {
+    alignItems: 'center',
+  },
+  bigBenTower: {
+    width: 20,
+    height: 70,
+    backgroundColor: '#fff',
+  },
+  bigBenTop: {
+    width: 26,
+    height: 15,
+    backgroundColor: '#fff',
+    marginTop: -2,
+  },
+  bigBenSpire: {
+    width: 0,
+    height: 0,
+    borderLeftWidth: 8,
+    borderRightWidth: 8,
+    borderBottomWidth: 20,
+    borderLeftColor: 'transparent',
+    borderRightColor: 'transparent',
+    borderBottomColor: '#fff',
+    transform: [{ rotate: '180deg' }],
+  },
+  londonEye: {
+    alignItems: 'center',
+  },
+  londonEyeWheel: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    borderWidth: 3,
+    borderColor: '#fff',
+  },
+  londonEyeBase: {
+    width: 4,
+    height: 25,
+    backgroundColor: '#fff',
+    marginTop: -2,
+  },
+  towerBridge: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+  },
+  bridgeTower: {
+    width: 15,
+    height: 60,
+    backgroundColor: '#fff',
+  },
+  bridgeSpan: {
+    width: 30,
+    height: 20,
+    backgroundColor: '#fff',
     marginBottom: 20,
   },
-  heroImage: {
-    flex: 1,
-    width: '100%',
-  },
-  heroOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(15, 15, 35, 0.75)',
-    justifyContent: 'flex-end',
-    padding: 20,
-    paddingBottom: 30,
+  shard: {
+    width: 0,
+    height: 0,
+    borderLeftWidth: 12,
+    borderRightWidth: 12,
+    borderBottomWidth: 90,
+    borderLeftColor: 'transparent',
+    borderRightColor: 'transparent',
+    borderBottomColor: '#fff',
   },
   heroContent: {
+    marginTop: 20,
     marginBottom: 24,
   },
   welcomeText: {
-    fontSize: 16,
-    color: '#A8A8A8',
-    letterSpacing: 2,
-    textTransform: 'uppercase',
+    fontSize: 14,
+    color: 'rgba(255,255,255,0.7)',
+    letterSpacing: 4,
+    fontWeight: '600',
   },
   appTitle: {
-    fontSize: 42,
+    fontSize: 38,
     fontWeight: '300',
     color: '#FFFFFF',
     marginTop: 8,
   },
-  appTitleHighlight: {
-    fontSize: 48,
+  londonBadge: {
+    backgroundColor: '#E63946',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 8,
+    alignSelf: 'flex-start',
+    marginTop: 8,
+  },
+  londonText: {
+    fontSize: 32,
     fontWeight: 'bold',
-    color: '#E63946',
+    color: '#fff',
+    letterSpacing: 2,
   },
   heroSubtitle: {
     fontSize: 16,
-    color: '#CCCCCC',
-    marginTop: 12,
+    color: 'rgba(255,255,255,0.8)',
+    marginTop: 16,
     lineHeight: 24,
   },
+  heroButtons: {
+    flexDirection: 'row',
+    gap: 12,
+  },
   exploreButton: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#E63946',
-    paddingVertical: 16,
-    paddingHorizontal: 28,
-    borderRadius: 30,
-    gap: 10,
+    paddingVertical: 14,
+    borderRadius: 25,
+    gap: 8,
   },
   exploreButtonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 15,
+    fontWeight: '600',
+  },
+  tourButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    paddingVertical: 14,
+    borderRadius: 25,
+    gap: 8,
+  },
+  tourButtonText: {
+    color: '#E63946',
+    fontSize: 15,
     fontWeight: '600',
   },
   statsContainer: {
     flexDirection: 'row',
-    backgroundColor: '#1A1A2E',
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
+    marginTop: -15,
     marginBottom: 24,
-    borderRadius: 16,
-    padding: 20,
-    alignItems: 'center',
-    justifyContent: 'space-around',
+    gap: 10,
   },
-  statItem: {
+  statCard: {
+    flex: 1,
     alignItems: 'center',
+    padding: 16,
+    borderRadius: 16,
   },
   statNumber: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
-    color: '#E63946',
+    color: '#fff',
+    marginTop: 6,
   },
   statLabel: {
-    fontSize: 12,
-    color: '#A8A8A8',
-    marginTop: 4,
-  },
-  statDivider: {
-    width: 1,
-    height: 40,
-    backgroundColor: '#333',
+    fontSize: 11,
+    color: 'rgba(255,255,255,0.8)',
+    marginTop: 2,
   },
   sectionContainer: {
-    marginBottom: 28,
+    marginBottom: 24,
     paddingHorizontal: 20,
   },
   sectionHeader: {
@@ -330,8 +539,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 16,
   },
+  sectionTitleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    marginBottom: 16,
+  },
   sectionTitle: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#FFFFFF',
   },
@@ -363,7 +578,6 @@ const styles = StyleSheet.create({
   },
   featuredOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.4)',
     padding: 16,
     justifyContent: 'space-between',
   },
@@ -406,46 +620,77 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 12,
-    marginTop: 16,
   },
   categoryCard: {
     width: (width - 52) / 2,
-    backgroundColor: '#1A1A2E',
     borderRadius: 16,
     padding: 20,
     alignItems: 'center',
-    borderWidth: 1,
   },
   categoryIcon: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: 'rgba(255,255,255,0.2)',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 12,
   },
   categoryName: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '600',
     color: '#fff',
+  },
+  tourPromo: {
+    borderRadius: 20,
+    padding: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  tourPromoContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    gap: 16,
+  },
+  tourPromoText: {
+    flex: 1,
+  },
+  tourPromoTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  tourPromoSubtitle: {
+    fontSize: 13,
+    color: 'rgba(255,255,255,0.9)',
+    marginTop: 4,
+    lineHeight: 18,
+  },
+  tourPromoArrow: {
+    marginLeft: 8,
   },
   tipsContainer: {
     marginHorizontal: 20,
     backgroundColor: '#1A1A2E',
-    borderRadius: 16,
+    borderRadius: 20,
     padding: 20,
   },
-  tipsTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 16,
+  tipsList: {
+    gap: 12,
   },
   tipItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 12,
-    marginBottom: 12,
+    gap: 14,
+  },
+  tipIconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   tipText: {
     fontSize: 14,
