@@ -712,6 +712,229 @@ async def check_favorite(museum_id: str):
     existing = await db.favorites.find_one({"museum_id": museum_id})
     return {"is_favorite": existing is not None}
 
+# Walking Tours - Pre-defined tours
+WALKING_TOURS = [
+    {
+        "id": "south-kensington",
+        "name": "South Kensington Museum Mile",
+        "description": "Explore three world-class museums in one of London's most elegant areas. Perfect for a full day of culture.",
+        "duration": "Full day (6-8 hours)",
+        "distance": "1.5 km walking",
+        "museum_ids": ["2", "3", "4"],  # Natural History, V&A, Science
+        "color": "#E63946"
+    },
+    {
+        "id": "art-lovers",
+        "name": "Art Lovers Trail",
+        "description": "From classical masterpieces to modern art, this tour covers London's finest art collections.",
+        "duration": "Full day (6-8 hours)",
+        "distance": "4 km walking",
+        "museum_ids": ["6", "10", "5", "14"],  # National Gallery, NPG, Tate Modern, Tate Britain
+        "color": "#457B9D"
+    },
+    {
+        "id": "central-london",
+        "name": "Central London Highlights",
+        "description": "Hit the major museums in central London, all within walking distance of each other.",
+        "duration": "Full day (5-7 hours)",
+        "distance": "3 km walking",
+        "museum_ids": ["1", "11", "17"],  # British Museum, Soane, Transport
+        "color": "#2A9D8F"
+    },
+    {
+        "id": "history-buffs",
+        "name": "History & Heritage Tour",
+        "description": "Journey through London's rich history from ancient times to WWII.",
+        "duration": "Full day (6-8 hours)",
+        "distance": "5 km walking",
+        "museum_ids": ["7", "9", "18", "8"],  # Tower, Museum of London, War Rooms, IWM
+        "color": "#E9C46A"
+    },
+    {
+        "id": "hidden-gems",
+        "name": "Hidden Gems Tour",
+        "description": "Discover London's lesser-known but equally fascinating museums.",
+        "duration": "Half day (4-5 hours)",
+        "distance": "2 km walking",
+        "museum_ids": ["11", "13", "20"],  # Soane, Wallace, Wellcome
+        "color": "#9B59B6"
+    }
+]
+
+@api_router.get("/tours")
+async def get_walking_tours():
+    """Get all pre-defined walking tours"""
+    tours_with_museums = []
+    for tour in WALKING_TOURS:
+        tour_data = tour.copy()
+        tour_data["museums"] = [
+            Museum(**m) for m in LONDON_MUSEUMS if m["id"] in tour["museum_ids"]
+        ]
+        tours_with_museums.append(tour_data)
+    return tours_with_museums
+
+@api_router.get("/tours/{tour_id}")
+async def get_tour(tour_id: str):
+    """Get a specific tour with museum details"""
+    tour = next((t for t in WALKING_TOURS if t["id"] == tour_id), None)
+    if not tour:
+        raise HTTPException(status_code=404, detail="Tour not found")
+    
+    tour_data = tour.copy()
+    tour_data["museums"] = [
+        Museum(**m) for m in LONDON_MUSEUMS if m["id"] in tour["museum_ids"]
+    ]
+    return tour_data
+
+# Custom tour creation
+class CustomTourCreate(BaseModel):
+    name: str
+    museum_ids: List[str]
+
+class CustomTour(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    museum_ids: List[str]
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+
+@api_router.post("/tours/custom")
+async def create_custom_tour(tour: CustomTourCreate):
+    """Create a custom walking tour"""
+    # Validate all museum IDs exist
+    all_museum_ids = [m["id"] for m in LONDON_MUSEUMS]
+    for mid in tour.museum_ids:
+        if mid not in all_museum_ids:
+            raise HTTPException(status_code=400, detail=f"Museum ID {mid} not found")
+    
+    custom_tour = CustomTour(name=tour.name, museum_ids=tour.museum_ids)
+    await db.custom_tours.insert_one(custom_tour.dict())
+    
+    return {
+        "id": custom_tour.id,
+        "name": custom_tour.name,
+        "museum_ids": custom_tour.museum_ids,
+        "museums": [Museum(**m) for m in LONDON_MUSEUMS if m["id"] in tour.museum_ids]
+    }
+
+@api_router.get("/tours/custom/list")
+async def get_custom_tours():
+    """Get all custom tours"""
+    tours = await db.custom_tours.find().to_list(100)
+    result = []
+    for tour in tours:
+        tour_data = {
+            "id": tour["id"],
+            "name": tour["name"],
+            "museum_ids": tour["museum_ids"],
+            "museums": [Museum(**m) for m in LONDON_MUSEUMS if m["id"] in tour["museum_ids"]]
+        }
+        result.append(tour_data)
+    return result
+
+@api_router.delete("/tours/custom/{tour_id}")
+async def delete_custom_tour(tour_id: str):
+    """Delete a custom tour"""
+    result = await db.custom_tours.delete_one({"id": tour_id})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Custom tour not found")
+    return {"message": "Custom tour deleted"}
+
+# Admin endpoints for managing museums
+class AdminAuth(BaseModel):
+    pin: str
+
+@api_router.post("/admin/verify")
+async def verify_admin(auth: AdminAuth):
+    """Verify admin PIN"""
+    if auth.pin == ADMIN_PIN:
+        return {"success": True, "message": "Admin access granted"}
+    raise HTTPException(status_code=401, detail="Invalid PIN")
+
+class MuseumCreateAdmin(BaseModel):
+    name: str
+    description: str
+    short_description: str
+    address: str
+    latitude: float
+    longitude: float
+    image_url: str
+    category: str
+    free_entry: bool
+    opening_hours: str
+    website: Optional[str] = None
+    phone: Optional[str] = None
+    transport: List[dict] = []
+    nearby_eateries: List[dict] = []
+    featured: bool = False
+    rating: float = 4.5
+
+@api_router.post("/admin/museums")
+async def add_museum(museum: MuseumCreateAdmin, pin: str):
+    """Add a new museum (admin only)"""
+    if pin != ADMIN_PIN:
+        raise HTTPException(status_code=401, detail="Invalid admin PIN")
+    
+    # Generate new ID
+    existing_ids = [int(m["id"]) for m in LONDON_MUSEUMS if m["id"].isdigit()]
+    new_id = str(max(existing_ids) + 1) if existing_ids else "21"
+    
+    new_museum = {
+        "id": new_id,
+        **museum.dict(),
+        "created_at": datetime.utcnow().isoformat()
+    }
+    
+    # Store in database
+    await db.museums.insert_one(new_museum)
+    
+    # Add to in-memory list
+    LONDON_MUSEUMS.append(new_museum)
+    
+    return {"message": "Museum added successfully", "id": new_id, "museum": Museum(**new_museum)}
+
+@api_router.put("/admin/museums/{museum_id}")
+async def update_museum(museum_id: str, museum: MuseumCreateAdmin, pin: str):
+    """Update an existing museum (admin only)"""
+    if pin != ADMIN_PIN:
+        raise HTTPException(status_code=401, detail="Invalid admin PIN")
+    
+    # Find museum index
+    museum_index = next((i for i, m in enumerate(LONDON_MUSEUMS) if m["id"] == museum_id), None)
+    if museum_index is None:
+        raise HTTPException(status_code=404, detail="Museum not found")
+    
+    updated_museum = {
+        "id": museum_id,
+        **museum.dict()
+    }
+    
+    # Update in database
+    await db.museums.update_one({"id": museum_id}, {"$set": updated_museum}, upsert=True)
+    
+    # Update in-memory list
+    LONDON_MUSEUMS[museum_index] = updated_museum
+    
+    return {"message": "Museum updated successfully", "museum": Museum(**updated_museum)}
+
+@api_router.delete("/admin/museums/{museum_id}")
+async def delete_museum(museum_id: str, pin: str):
+    """Delete a museum (admin only)"""
+    if pin != ADMIN_PIN:
+        raise HTTPException(status_code=401, detail="Invalid admin PIN")
+    
+    # Find museum
+    museum_index = next((i for i, m in enumerate(LONDON_MUSEUMS) if m["id"] == museum_id), None)
+    if museum_index is None:
+        raise HTTPException(status_code=404, detail="Museum not found")
+    
+    # Delete from database
+    await db.museums.delete_one({"id": museum_id})
+    
+    # Remove from in-memory list
+    LONDON_MUSEUMS.pop(museum_index)
+    
+    return {"message": "Museum deleted successfully"}
+
 # Include the router in the main app
 app.include_router(api_router)
 
