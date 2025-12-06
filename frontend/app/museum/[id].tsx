@@ -548,6 +548,12 @@ const styles = StyleSheet.create({
     color: '#fff',
     marginBottom: 12,
   },
+  sectionSubtitle: {
+    fontSize: 13,
+    color: '#2A9D8F',
+    marginBottom: 12,
+    marginTop: -8,
+  },
   description: {
     fontSize: 15,
     color: '#CCCCCC',
