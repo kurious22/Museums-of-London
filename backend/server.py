@@ -633,7 +633,7 @@ LONDON_MUSEUMS = [
         "address": "15-20 Phoenix Place, London WC1X 0DA",
         "latitude": 51.5278,
         "longitude": -0.1099,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/The_Postal_Museum%2C_London.jpg/800px-The_Postal_Museum%2C_London.jpg",
+        "image_url": "https://images.unsplash.com/photo-1577396916170-75e8f46b0bfb?w=800&q=80",
         "category": "History & Transport",
         "free_entry": False,
         "opening_hours": "Wed-Sun 10:00-17:00",
