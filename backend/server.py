@@ -180,7 +180,7 @@ LONDON_MUSEUMS = [
         "address": "Exhibition Road, South Kensington, London SW7 2DD",
         "latitude": 51.4978,
         "longitude": -0.1745,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Science_Museum%2C_London.jpg/800px-Science_Museum%2C_London.jpg",
+        "image_url": "https://images.unsplash.com/photo-1554009975-d74653b879f1?w=800&q=80",
         "category": "Science & Technology",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
