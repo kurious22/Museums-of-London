@@ -125,22 +125,30 @@ export default function ExploreScreen() {
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Explore Museums</Text>
-        <Text style={styles.headerSubtitle}>{museums.length} museums to discover</Text>
+        <Text style={styles.headerSubtitle}>
+          {searching ? 'Searching...' : `${museums.length} museums to discover`}
+        </Text>
       </View>
 
       {/* Search Bar */}
       <View style={styles.searchContainer}>
         <View style={styles.searchBar}>
-          <Ionicons name="search" size={20} color="#A8A8A8" />
+          {searching ? (
+            <ActivityIndicator size="small" color="#E63946" />
+          ) : (
+            <Ionicons name="search" size={20} color="#A8A8A8" />
+          )}
           <TextInput
             style={styles.searchInput}
-            placeholder="Search museums..."
+            placeholder="Search any London museum..."
             placeholderTextColor="#666"
             value={searchQuery}
-            onChangeText={setSearchQuery}
+            onChangeText={handleSearchChange}
+            autoCorrect={false}
+            autoCapitalize="none"
           />
           {searchQuery.length > 0 && (
-            <TouchableOpacity onPress={() => setSearchQuery('')}>
+            <TouchableOpacity onPress={clearSearch}>
               <Ionicons name="close-circle" size={20} color="#A8A8A8" />
             </TouchableOpacity>
           )}
