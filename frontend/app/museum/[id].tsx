@@ -34,6 +34,8 @@ interface NearbyEatery {
   distance: string;
   price_range: string;
   address?: string;
+  latitude?: number;
+  longitude?: number;
 }
 
 interface Museum {
