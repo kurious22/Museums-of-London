@@ -107,51 +107,63 @@ user_problem_statement: "Build Museums Of London mobile app with museums, photos
 backend:
   - task: "GET /api/museums endpoint - list all museums with filtering"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented endpoint to get all museums with optional category, free_only, and search filters"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: All filtering works perfectly. Retrieved 20 museums total, category filter (9 art museums), free_only filter (16 free museums), search functionality (4 museums for 'British'), combined filters work correctly. Case-insensitive search confirmed."
 
   - task: "GET /api/museums/featured endpoint - featured museums"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented endpoint to get featured museums for home page"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: Featured museums endpoint working perfectly. Retrieved 6 featured museums, all correctly marked as featured=true."
 
   - task: "GET /api/museums/{id} endpoint - museum details"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented endpoint to get individual museum by ID with transport and eateries"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: Museum details endpoint working perfectly. Transport links (3 options with type, name, distance) and nearby eateries (3 options with name, type, price_range) data structure is complete and accurate. 404 handling for invalid IDs works correctly."
 
   - task: "Favorites endpoints - add, remove, list, check"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented favorites with MongoDB storage - POST, DELETE, GET /api/favorites"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: All favorites endpoints working perfectly. POST /api/favorites/{id} adds correctly, DELETE removes correctly, GET /api/favorites lists all, GET /api/favorites/check/{id} returns proper status. MongoDB connection confirmed working. Error handling for invalid museum IDs works (404 responses)."
 
 frontend:
   - task: "Home screen with London skyline and featured museums"
