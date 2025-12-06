@@ -236,7 +236,7 @@ export default function AdminScreen() {
             )}
           </TouchableOpacity>
 
-          <Text style={styles.hintText}>Default PIN: 1234</Text>
+          <Text style={styles.hintText}>Contact admin for access credentials</Text>
         </View>
       </View>
     );
