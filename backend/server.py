@@ -500,7 +500,7 @@ LONDON_MUSEUMS = [
         "address": "100 London Road, Forest Hill, London SE23 3PQ",
         "latitude": 51.4413,
         "longitude": -0.0600,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Horniman_Museum.jpg/800px-Horniman_Museum.jpg",
+        "image_url": "https://images.unsplash.com/photo-1580757468214-c73f7062a5cb?w=800&q=80",
         "category": "Natural History & Culture",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:30",
