@@ -131,6 +131,32 @@ export default function MuseumDetailScreen() {
     });
   };
 
+  const openEateryDirections = (eatery: NearbyEatery) => {
+    if (!eatery.latitude || !eatery.longitude) {
+      // If no coordinates, just show an alert or do nothing
+      return;
+    }
+
+    const scheme = Platform.select({
+      ios: 'maps:',
+      android: 'geo:',
+    });
+
+    const url = Platform.select({
+      ios: `${scheme}?daddr=${eatery.latitude},${eatery.longitude}&dirflg=w`,
+      android: `${scheme}${eatery.latitude},${eatery.longitude}?q=${eatery.latitude},${eatery.longitude}(${encodeURIComponent(
+        eatery.name
+      )})`,
+      default: `https://www.google.com/maps/dir/?api=1&destination=${eatery.latitude},${eatery.longitude}&travelmode=walking`,
+    });
+
+    Linking.openURL(url).catch(() => {
+      Linking.openURL(
+        `https://www.google.com/maps/dir/?api=1&destination=${eatery.latitude},${eatery.longitude}&travelmode=walking`
+      );
+    });
+  };
+
   const openWebsite = () => {
     if (museum?.website) {
       Linking.openURL(museum.website);
