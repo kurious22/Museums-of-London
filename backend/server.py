@@ -233,7 +233,7 @@ LONDON_MUSEUMS = [
         "address": "Trafalgar Square, London WC2N 5DN",
         "latitude": 51.5089,
         "longitude": -0.1283,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/National_Gallery_%28London%29.jpg/800px-National_Gallery_%28London%29.jpg",
+        "image_url": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80",
         "category": "Art",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00, Fri until 21:00",
