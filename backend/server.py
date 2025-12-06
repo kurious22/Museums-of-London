@@ -341,7 +341,7 @@ LONDON_MUSEUMS = [
         "address": "St Martin's Place, London WC2H 0HE",
         "latitude": 51.5094,
         "longitude": -0.1281,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/2019_National_Portrait_Gallery%2C_London.jpg/800px-2019_National_Portrait_Gallery%2C_London.jpg",
+        "image_url": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800&q=80",
         "category": "Art",
         "free_entry": True,
         "opening_hours": "Daily 10:30-18:00, Fri until 21:00",
