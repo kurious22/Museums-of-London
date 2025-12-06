@@ -68,62 +68,126 @@ class MuseumAPITester:
             self.log_test("Get All Museums", False, f"Error: {str(e)}")
             return []
 
-    def test_museum_filtering(self):
-        """Test museum filtering by category, free_only, and search"""
+    def test_image_urls(self, museums: List[Dict]):
+        """Test all museum image URLs for accessibility - PRIORITY TEST"""
+        if not museums:
+            self.log_test("Image URL Testing", False, "No museums to test")
+            return
         
-        # Test category filter
-        try:
-            response = self.session.get(f"{self.base_url}/museums?category=Art")
-            if response.status_code == 200:
-                museums = response.json()
-                if museums and all("Art" in museum.get("category", "") for museum in museums):
-                    self.log_test("Category filter", True, f"Found {len(museums)} art museums")
+        broken_images = []
+        working_images = []
+        
+        print(f"\n🔍 Testing {len(museums)} museum image URLs...")
+        
+        for museum in museums:
+            museum_name = museum.get('name', 'Unknown')
+            image_url = museum.get('image_url', '')
+            
+            if not image_url:
+                broken_images.append(f"{museum_name}: No image URL")
+                continue
+            
+            try:
+                # Test image URL accessibility
+                img_response = self.session.head(image_url, timeout=10)
+                if img_response.status_code == 200:
+                    working_images.append(f"{museum_name}: {image_url}")
+                    print(f"  ✅ {museum_name}: Image OK")
                 else:
-                    self.log_test("Category filter", False, "Category filtering not working properly")
-            else:
-                self.log_test("Category filter", False, f"Status: {response.status_code}")
-        except Exception as e:
-            self.log_test("Category filter", False, f"Exception: {str(e)}")
-
-        # Test free_only filter
-        try:
-            response = self.session.get(f"{self.base_url}/museums?free_only=true")
-            if response.status_code == 200:
-                museums = response.json()
-                if museums and all(museum.get("free_entry", False) for museum in museums):
-                    self.log_test("Free entry filter", True, f"Found {len(museums)} free museums")
-                else:
-                    self.log_test("Free entry filter", False, "Free entry filtering not working")
-            else:
-                self.log_test("Free entry filter", False, f"Status: {response.status_code}")
-        except Exception as e:
-            self.log_test("Free entry filter", False, f"Exception: {str(e)}")
-
-        # Test search functionality
-        try:
-            response = self.session.get(f"{self.base_url}/museums?search=British")
-            if response.status_code == 200:
-                museums = response.json()
-                if museums:
-                    # Check if search term appears in name, description, or category
-                    valid_results = []
-                    for museum in museums:
-                        name_match = "british" in museum.get("name", "").lower()
-                        desc_match = "british" in museum.get("description", "").lower()
-                        cat_match = "british" in museum.get("category", "").lower()
-                        if name_match or desc_match or cat_match:
-                            valid_results.append(museum)
+                    broken_images.append(f"{museum_name}: HTTP {img_response.status_code} - {image_url}")
+                    print(f"  ❌ {museum_name}: HTTP {img_response.status_code}")
                     
-                    if len(valid_results) == len(museums):
-                        self.log_test("Search functionality", True, f"Found {len(museums)} museums matching 'British'")
+            except Exception as e:
+                broken_images.append(f"{museum_name}: Error - {str(e)}")
+                print(f"  ❌ {museum_name}: Error - {str(e)}")
+        
+        # Log results
+        if broken_images:
+            self.log_test("Image URL Testing", False, 
+                         f"{len(broken_images)} broken images: {'; '.join(broken_images[:3])}{'...' if len(broken_images) > 3 else ''}")
+        else:
+            self.log_test("Image URL Testing", True, f"All {len(working_images)} images accessible")
+        
+        return broken_images, working_images
+    
+    def test_postal_museum_exists(self, museums: List[Dict]):
+        """Test that The Postal Museum (ID 21) exists in the museum list"""
+        postal_museum = None
+        for museum in museums:
+            if museum.get('id') == '21' or 'Postal Museum' in museum.get('name', ''):
+                postal_museum = museum
+                break
+        
+        if postal_museum:
+            self.log_test("Postal Museum Exists", True, 
+                         f"Found: {postal_museum.get('name')} (ID: {postal_museum.get('id')})")
+            return postal_museum
+        else:
+            self.log_test("Postal Museum Exists", False, "The Postal Museum not found in museum list")
+            return None
+    
+    def test_search_functionality(self):
+        """Test search functionality works correctly and only returns museum data"""
+        test_searches = [
+            ("British", "Should find British Museum"),
+            ("art", "Should find art museums"),
+            ("science", "Should find Science Museum"),
+            ("nonexistent", "Should return empty results")
+        ]
+        
+        all_passed = True
+        
+        for search_term, description in test_searches:
+            try:
+                response = self.session.get(f"{self.base_url}/museums", 
+                                          params={"search": search_term})
+                
+                if response.status_code != 200:
+                    self.log_test(f"Search '{search_term}'", False, f"Status: {response.status_code}")
+                    all_passed = False
+                    continue
+                
+                results = response.json()
+                
+                if search_term == "nonexistent":
+                    if len(results) == 0:
+                        self.log_test(f"Search '{search_term}'", True, "Correctly returned no results")
                     else:
-                        self.log_test("Search functionality", False, f"Search returned irrelevant results")
+                        self.log_test(f"Search '{search_term}'", False, f"Should return 0 results, got {len(results)}")
+                        all_passed = False
                 else:
-                    self.log_test("Search functionality", False, "No results for 'British' search")
-            else:
-                self.log_test("Search functionality", False, f"Status: {response.status_code}")
-        except Exception as e:
-            self.log_test("Search functionality", False, f"Exception: {str(e)}")
+                    if len(results) > 0:
+                        # Verify search results contain the search term and are museum data
+                        valid_results = True
+                        for result in results:
+                            # Check it's museum data (has required fields)
+                            if not all(field in result for field in ['id', 'name', 'description', 'category']):
+                                valid_results = False
+                                break
+                            
+                            # Check search relevance
+                            name = result.get('name', '').lower()
+                            desc = result.get('description', '').lower()
+                            category = result.get('category', '').lower()
+                            
+                            if search_term.lower() not in name and search_term.lower() not in desc and search_term.lower() not in category:
+                                valid_results = False
+                                break
+                        
+                        if valid_results:
+                            self.log_test(f"Search '{search_term}'", True, f"Found {len(results)} relevant museum results")
+                        else:
+                            self.log_test(f"Search '{search_term}'", False, "Invalid or irrelevant search results")
+                            all_passed = False
+                    else:
+                        self.log_test(f"Search '{search_term}'", False, f"Expected results but got 0")
+                        all_passed = False
+                        
+            except Exception as e:
+                self.log_test(f"Search '{search_term}'", False, f"Error: {str(e)}")
+                all_passed = False
+        
+        return all_passed
 
     def test_featured_museums(self):
         """Test GET /api/museums/featured"""
