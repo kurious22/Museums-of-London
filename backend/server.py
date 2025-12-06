@@ -314,7 +314,7 @@ LONDON_MUSEUMS = [
         "address": "150 London Wall, London EC2Y 5HN",
         "latitude": 51.5176,
         "longitude": -0.0967,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Museum_of_London.jpg/800px-Museum_of_London.jpg",
+        "image_url": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80",
         "category": "History & Culture",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
