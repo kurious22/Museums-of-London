@@ -165,6 +165,21 @@ backend:
         agent: "testing"
         comment: "✅ TESTED: All favorites endpoints working perfectly. POST /api/favorites/{id} adds correctly, DELETE removes correctly, GET /api/favorites lists all, GET /api/favorites/check/{id} returns proper status. MongoDB connection confirmed working. Error handling for invalid museum IDs works (404 responses)."
 
+  - task: "Fix broken museum image URLs"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Fixed 18 broken museum image URLs. Previous Wikimedia Commons URLs were returning 404 or 429 errors. Replaced with working placeholder images from placehold.co with unique colors for each museum."
+      - working: "NA"
+        agent: "user"
+        comment: "User reported a lot of missing photos"
+
 frontend:
   - task: "Home screen with London skyline and featured museums"
     implemented: true
