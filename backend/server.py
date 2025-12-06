@@ -580,7 +580,7 @@ LONDON_MUSEUMS = [
         "address": "136 Kingsland Road, London E2 8EA",
         "latitude": 51.5318,
         "longitude": -0.0765,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Geffrye_Museum.jpg/800px-Geffrye_Museum.jpg",
+        "image_url": "https://images.unsplash.com/photo-1548340284-2e5f4e8b1c1e?w=800&q=80",
         "category": "History & Culture",
         "free_entry": True,
         "opening_hours": "Tue-Sun 10:00-17:00",
