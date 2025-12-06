@@ -14,7 +14,7 @@ import {
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useRouter, useLocalSearchParams } from 'expo-router';
+import { useRouter, useLocalSearchParams, useFocusEffect } from 'expo-router';
 
 const BACKEND_URL = process.env.EXPO_PUBLIC_BACKEND_URL || '';
 
@@ -37,16 +37,20 @@ export default function ExploreScreen() {
 
   const [museums, setMuseums] = useState<Museum[]>([]);
   const [loading, setLoading] = useState(true);
+  const [searching, setSearching] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(initialCategory || null);
   const [freeOnly, setFreeOnly] = useState(false);
   const [categories, setCategories] = useState<string[]>([]);
+  const [searchTimeout, setSearchTimeout] = useState<NodeJS.Timeout | null>(null);
 
-  const fetchMuseums = async () => {
+  const fetchMuseums = async (query?: string) => {
     try {
+      setSearching(true);
       let url = `${BACKEND_URL}/api/museums?`;
-      if (searchQuery) url += `search=${encodeURIComponent(searchQuery)}&`;
+      const searchTerm = query !== undefined ? query : searchQuery;
+      if (searchTerm) url += `search=${encodeURIComponent(searchTerm)}&`;
       if (selectedCategory) url += `category=${encodeURIComponent(selectedCategory)}&`;
       if (freeOnly) url += `free_only=true&`;
 
@@ -58,6 +62,7 @@ export default function ExploreScreen() {
     } finally {
       setLoading(false);
       setRefreshing(false);
+      setSearching(false);
     }
   };
 
@@ -71,13 +76,33 @@ export default function ExploreScreen() {
     }
   };
 
-  useEffect(() => {
-    fetchCategories();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      fetchCategories();
+      fetchMuseums();
+    }, [])
+  );
 
   useEffect(() => {
     fetchMuseums();
-  }, [searchQuery, selectedCategory, freeOnly]);
+  }, [selectedCategory, freeOnly]);
+
+  // Debounced search
+  const handleSearchChange = (text: string) => {
+    setSearchQuery(text);
+    
+    // Clear previous timeout
+    if (searchTimeout) {
+      clearTimeout(searchTimeout);
+    }
+    
+    // Set new timeout for debounced search
+    const timeout = setTimeout(() => {
+      fetchMuseums(text);
+    }, 300);
+    
+    setSearchTimeout(timeout);
+  };
 
   const onRefresh = useCallback(() => {
     setRefreshing(true);
@@ -86,6 +111,11 @@ export default function ExploreScreen() {
 
   const navigateToMuseum = (id: string) => {
     router.push(`/museum/${id}`);
+  };
+
+  const clearSearch = () => {
+    setSearchQuery('');
+    fetchMuseums('');
   };
 
   return (
