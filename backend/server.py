@@ -260,7 +260,7 @@ LONDON_MUSEUMS = [
         "address": "St Katharine's & Wapping, London EC3N 4AB",
         "latitude": 51.5081,
         "longitude": -0.0759,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tower_of_London_from_the_Shard_%288515883950%29.jpg/1280px-Tower_of_London_from_the_Shard_%288515883950%29.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Tower_of_London%2C_April_2006.jpg/1280px-Tower_of_London%2C_April_2006.jpg",
         "category": "History & Heritage",
         "free_entry": False,
         "opening_hours": "Tue-Sat 09:00-17:00, Sun-Mon 10:00-17:00",
