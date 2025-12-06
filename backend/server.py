@@ -420,7 +420,7 @@ LONDON_MUSEUMS = [
         "address": "Hertford House, Manchester Square, London W1U 3BN",
         "latitude": 51.5177,
         "longitude": -0.1530,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Wallace_Collection.jpg/800px-Wallace_Collection.jpg",
+        "image_url": "https://images.unsplash.com/photo-1577083165633-14ebcdb0f658?w=800&q=80",
         "category": "Art",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:00",
