@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """
-Backend API Tests for Museums Of London
-Tests all museum endpoints including filtering, favorites, and data integrity
+Backend API Testing for Museums of London App
+Focus: Testing image URLs, museum data, and search functionality
+Priority: Fix broken museum image URLs task
 """
 
 import requests
 import json
 import sys
-from typing import Dict, List, Any
+from typing import List, Dict, Any
+import time
 
 # Backend URL from environment
 BACKEND_URL = "https://london-museums-app.preview.emergentagent.com/api"
@@ -16,24 +18,21 @@ class MuseumAPITester:
     def __init__(self):
         self.base_url = BACKEND_URL
         self.session = requests.Session()
+        self.session.timeout = 30
         self.test_results = []
         
-    def log_test(self, test_name: str, success: bool, message: str = "", data: Any = None):
-        """Log test results"""
-        result = {
-            "test": test_name,
-            "success": success,
-            "message": message,
-            "data": data
-        }
-        self.test_results.append(result)
-        status = "✅ PASS" if success else "❌ FAIL"
-        print(f"{status}: {test_name}")
+    def log_test(self, test_name: str, passed: bool, message: str = ""):
+        """Log test result"""
+        status = "✅ PASS" if passed else "❌ FAIL"
+        result = f"{status}: {test_name}"
         if message:
-            print(f"   {message}")
-        if not success and data:
-            print(f"   Response: {data}")
-        print()
+            result += f" - {message}"
+        print(result)
+        self.test_results.append({
+            "test": test_name,
+            "passed": passed,
+            "message": message
+        })
 
     def test_root_endpoint(self):
         """Test the root API endpoint"""
