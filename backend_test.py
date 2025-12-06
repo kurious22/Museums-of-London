@@ -10,7 +10,7 @@ import sys
 from typing import Dict, List, Any
 
 # Backend URL from environment
-BACKEND_URL = "https://museum-guide.preview.emergentagent.com/api"
+BACKEND_URL = "https://london-museums-app.preview.emergentagent.com/api"
 
 class MuseumAPITester:
     def __init__(self):
