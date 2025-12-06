@@ -624,6 +624,33 @@ LONDON_MUSEUMS = [
         ],
         "featured": False,
         "rating": 4.5
+    },
+    {
+        "id": "21",
+        "name": "The Postal Museum",
+        "description": "The Postal Museum tells the story of 500 years of British postal history, from the first stamp to the present day. The highlight is Mail Rail, a unique underground railway ride through the original tunnels that once transported millions of letters beneath London's streets. Interactive galleries explore communication, technology, and the social history of the postal service.",
+        "short_description": "Discover 500 years of postal history and ride the Mail Rail underground",
+        "address": "15-20 Phoenix Place, London WC1X 0DA",
+        "latitude": 51.5278,
+        "longitude": -0.1099,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/The_Postal_Museum%2C_London.jpg/800px-The_Postal_Museum%2C_London.jpg",
+        "category": "History & Transport",
+        "free_entry": False,
+        "opening_hours": "Wed-Sun 10:00-17:00",
+        "website": "https://www.postalmuseum.org",
+        "phone": "+44 20 7239 2570",
+        "transport": [
+            {"type": "tube", "name": "Farringdon", "line": "Circle, Hammersmith & City, Metropolitan, Elizabeth", "distance": "5 min walk"},
+            {"type": "tube", "name": "Chancery Lane", "line": "Central", "distance": "7 min walk"},
+            {"type": "bus", "name": "Mount Pleasant", "routes": ["19", "38", "55", "243"], "distance": "2 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "The Postal Museum Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "£", "address": "The Postal Museum", "latitude": 51.5278, "longitude": -0.1099},
+            {"name": "The Betsey Trotwood", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "56 Farringdon Rd", "latitude": 51.5245, "longitude": -0.1090},
+            {"name": "Exmouth Market Food Stalls", "type": "Market", "cuisine": "International", "distance": "5 min walk", "price_range": "£", "address": "Exmouth Market", "latitude": 51.5265, "longitude": -0.1120}
+        ],
+        "featured": False,
+        "rating": 4.6
     }
 ]
 
