@@ -287,7 +287,7 @@ LONDON_MUSEUMS = [
         "address": "Lambeth Road, London SE1 6HZ",
         "latitude": 51.4958,
         "longitude": -0.1086,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Imperial_War_Museum%2C_London_2014.jpg/800px-Imperial_War_Museum%2C_London_2014.jpg",
+        "image_url": "https://images.unsplash.com/photo-1598387993295-11aa0adb3d23?w=800&q=80",
         "category": "History & Military",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
