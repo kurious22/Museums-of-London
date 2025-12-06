@@ -90,7 +90,7 @@ export default function HomeScreen() {
           end={{ x: 1, y: 1 }}
           style={[styles.heroSection, { paddingTop: insets.top + 20 }]}
         >
-          {/* London Skyline Silhouette */}
+          {/* Large London Skyline Silhouette */}
           <View style={styles.skylineContainer}>
             <View style={styles.skylineBuildings}>
               {/* Big Ben */}
@@ -100,7 +100,7 @@ export default function HomeScreen() {
                 <View style={styles.bigBenSpire} />
               </View>
               {/* Building 1 */}
-              <View style={[styles.building, { height: 60, width: 30 }]} />
+              <View style={[styles.building, { height: 90, width: 40 }]} />
               {/* London Eye */}
               <View style={styles.londonEye}>
                 <View style={styles.londonEyeWheel} />
@@ -113,11 +113,42 @@ export default function HomeScreen() {
                 <View style={styles.bridgeTower} />
               </View>
               {/* Building 2 */}
-              <View style={[styles.building, { height: 80, width: 25 }]} />
+              <View style={[styles.building, { height: 110, width: 35 }]} />
               {/* The Shard */}
               <View style={styles.shard} />
+              {/* St Paul's Dome */}
+              <View style={styles.stPauls}>
+                <View style={styles.stPaulsDome} />
+                <View style={styles.stPaulsBase} />
+              </View>
               {/* Building 3 */}
-              <View style={[styles.building, { height: 50, width: 35 }]} />
+              <View style={[styles.building, { height: 70, width: 45 }]} />
+            </View>
+          </View>
+
+          {/* Colorful Silhouette Figures */}
+          <View style={styles.figuresContainer}>
+            {/* Female Figure - Pink/Purple */}
+            <View style={styles.femaleFigure}>
+              <View style={styles.femaleHead} />
+              <View style={styles.femaleBody}>
+                <View style={styles.femaleTorso} />
+                <View style={styles.femaleSkirt} />
+              </View>
+              <View style={styles.femaleLegs}>
+                <View style={styles.femaleLeg} />
+                <View style={styles.femaleLeg} />
+              </View>
+            </View>
+            
+            {/* Male Figure - Blue/Teal */}
+            <View style={styles.maleFigure}>
+              <View style={styles.maleHead} />
+              <View style={styles.maleBody} />
+              <View style={styles.maleLegs}>
+                <View style={styles.maleLeg} />
+                <View style={styles.maleLeg} />
+              </View>
             </View>
           </View>
 
