@@ -353,8 +353,14 @@ export default function MuseumDetailScreen() {
             <Ionicons name="restaurant-outline" size={22} color="#E63946" />
             <Text style={styles.sectionTitle}>Places to Eat</Text>
           </View>
+          <Text style={styles.sectionSubtitle}>All within 1/4 mile (5 min walk)</Text>
           {museum.nearby_eateries.map((e, index) => (
-            <View key={index} style={styles.eateryItem}>
+            <TouchableOpacity 
+              key={index} 
+              style={styles.eateryItem}
+              onPress={() => openEateryDirections(e)}
+              activeOpacity={0.8}
+            >
               <View style={styles.eateryIcon}>
                 <Ionicons name={getEateryIcon(e.type) as any} size={24} color="#fff" />
               </View>
@@ -368,7 +374,12 @@ export default function MuseumDetailScreen() {
                   <Text style={styles.eateryPrice}>{e.price_range}</Text>
                 </View>
               </View>
-            </View>
+              {e.latitude && e.longitude && (
+                <View style={styles.eateryDirections}>
+                  <Ionicons name="navigate" size={20} color="#2A9D8F" />
+                </View>
+              )}
+            </TouchableOpacity>
           ))}
         </View>
 
