@@ -206,7 +206,7 @@ LONDON_MUSEUMS = [
         "address": "Bankside, London SE1 9TG",
         "latitude": 51.5076,
         "longitude": -0.0994,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Tate_Modern_-_Bankside_Power_Station.jpg/800px-Tate_Modern_-_Bankside_Power_Station.jpg",
+        "image_url": "https://images.unsplash.com/photo-1572364942727-a0c3c8c43c99?w=800&q=80",
         "category": "Modern Art",
         "free_entry": True,
         "opening_hours": "Sun-Thu 10:00-18:00, Fri-Sat until 22:00",
