@@ -553,7 +553,7 @@ LONDON_MUSEUMS = [
         "address": "Clive Steps, King Charles Street, London SW1A 2AQ",
         "latitude": 51.5021,
         "longitude": -0.1290,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Churchill_War_Rooms.jpg/600px-Churchill_War_Rooms.jpg",
+        "image_url": "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&q=80",
         "category": "History & Military",
         "free_entry": False,
         "opening_hours": "Daily 09:30-18:00",
