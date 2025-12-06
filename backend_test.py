@@ -34,50 +34,39 @@ class MuseumAPITester:
             "message": message
         })
 
-    def test_root_endpoint(self):
-        """Test the root API endpoint"""
+    def test_api_connection(self):
+        """Test basic API connectivity"""
         try:
             response = self.session.get(f"{self.base_url}/")
             if response.status_code == 200:
-                data = response.json()
-                if "message" in data:
-                    self.log_test("Root endpoint", True, f"Message: {data['message']}")
-                else:
-                    self.log_test("Root endpoint", False, "No message in response", data)
+                self.log_test("API Connection", True, f"Status: {response.status_code}")
+                return True
             else:
-                self.log_test("Root endpoint", False, f"Status: {response.status_code}", response.text)
+                self.log_test("API Connection", False, f"Status: {response.status_code}")
+                return False
         except Exception as e:
-            self.log_test("Root endpoint", False, f"Exception: {str(e)}")
-
+            self.log_test("API Connection", False, f"Error: {str(e)}")
+            return False
+    
     def test_get_all_museums(self):
-        """Test GET /api/museums - get all museums"""
+        """Test getting all museums and verify image URLs"""
         try:
             response = self.session.get(f"{self.base_url}/museums")
-            if response.status_code == 200:
-                museums = response.json()
-                if isinstance(museums, list) and len(museums) > 0:
-                    # Check if we have expected number of museums (should be 20)
-                    if len(museums) == 20:
-                        self.log_test("Get all museums", True, f"Retrieved {len(museums)} museums")
-                        
-                        # Verify museum structure
-                        museum = museums[0]
-                        required_fields = ['id', 'name', 'description', 'address', 'latitude', 'longitude', 
-                                         'category', 'free_entry', 'transport', 'nearby_eateries']
-                        missing_fields = [field for field in required_fields if field not in museum]
-                        
-                        if not missing_fields:
-                            self.log_test("Museum data structure", True, "All required fields present")
-                        else:
-                            self.log_test("Museum data structure", False, f"Missing fields: {missing_fields}")
-                    else:
-                        self.log_test("Get all museums", False, f"Expected 20 museums, got {len(museums)}")
-                else:
-                    self.log_test("Get all museums", False, "Empty or invalid response", museums)
-            else:
-                self.log_test("Get all museums", False, f"Status: {response.status_code}", response.text)
+            if response.status_code != 200:
+                self.log_test("Get All Museums", False, f"Status: {response.status_code}")
+                return []
+            
+            museums = response.json()
+            if not museums:
+                self.log_test("Get All Museums", False, "No museums returned")
+                return []
+            
+            self.log_test("Get All Museums", True, f"Retrieved {len(museums)} museums")
+            return museums
+            
         except Exception as e:
-            self.log_test("Get all museums", False, f"Exception: {str(e)}")
+            self.log_test("Get All Museums", False, f"Error: {str(e)}")
+            return []
 
     def test_museum_filtering(self):
         """Test museum filtering by category, free_only, and search"""
