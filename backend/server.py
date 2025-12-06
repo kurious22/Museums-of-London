@@ -526,7 +526,7 @@ LONDON_MUSEUMS = [
         "address": "Covent Garden Piazza, London WC2E 7BB",
         "latitude": 51.5117,
         "longitude": -0.1217,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/London_Transport_Museum%2C_Covent_Garden.jpg/800px-London_Transport_Museum%2C_Covent_Garden.jpg",
+        "image_url": "https://images.unsplash.com/photo-1519974719765-e6559eac2575?w=800&q=80",
         "category": "Transport & History",
         "free_entry": False,
         "opening_hours": "Daily 10:00-18:00",
