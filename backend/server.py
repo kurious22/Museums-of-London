@@ -91,7 +91,7 @@ class Favorite(BaseModel):
     museum_id: str
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
-# Pre-populated museum data for London
+# Pre-populated museum data for London - with front entrance photos and nearby eateries within 1/4 mile
 LONDON_MUSEUMS = [
     {
         "id": "1",
@@ -101,7 +101,7 @@ LONDON_MUSEUMS = [
         "address": "Great Russell Street, London WC1B 3DG",
         "latitude": 51.5194,
         "longitude": -0.1269,
-        "image_url": "https://images.unsplash.com/photo-1590792024908-f579e0e81c4e?w=800",
+        "image_url": "https://images.unsplash.com/photo-1580086319619-3ed498161c77?w=800",
         "category": "History & Culture",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:00, Fri until 20:30",
@@ -109,13 +109,13 @@ LONDON_MUSEUMS = [
         "phone": "+44 20 7323 8299",
         "transport": [
             {"type": "tube", "name": "Holborn", "line": "Central, Piccadilly", "distance": "5 min walk"},
-            {"type": "tube", "name": "Tottenham Court Road", "line": "Central, Northern", "distance": "7 min walk"},
+            {"type": "tube", "name": "Tottenham Court Road", "line": "Central, Northern", "distance": "5 min walk"},
             {"type": "bus", "name": "Great Russell Street", "routes": ["1", "8", "19", "25", "38"], "distance": "1 min walk"}
         ],
         "nearby_eateries": [
-            {"name": "The Museum Tavern", "type": "Pub", "cuisine": "British", "distance": "1 min walk", "price_range": "££", "address": "49 Great Russell St"},
-            {"name": "Cafe in the Great Court", "type": "Cafe", "cuisine": "International", "distance": "Inside museum", "price_range": "££", "address": "British Museum"},
-            {"name": "Honey & Co", "type": "Restaurant", "cuisine": "Middle Eastern", "distance": "5 min walk", "price_range": "£££", "address": "25a Warren St"}
+            {"name": "The Museum Tavern", "type": "Pub", "cuisine": "British", "distance": "1 min walk", "price_range": "££", "address": "49 Great Russell St", "latitude": 51.5188, "longitude": -0.1265},
+            {"name": "Cafe in the Great Court", "type": "Cafe", "cuisine": "International", "distance": "Inside museum", "price_range": "££", "address": "British Museum", "latitude": 51.5194, "longitude": -0.1269},
+            {"name": "Plum + Spilt Milk", "type": "Restaurant", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Great Northern Hotel", "latitude": 51.5180, "longitude": -0.1240}
         ],
         "featured": True,
         "rating": 4.8
@@ -128,7 +128,7 @@ LONDON_MUSEUMS = [
         "address": "Cromwell Road, South Kensington, London SW7 5BD",
         "latitude": 51.4967,
         "longitude": -0.1764,
-        "image_url": "https://images.unsplash.com/photo-1574176104669-c3db2e09be50?w=800",
+        "image_url": "https://images.unsplash.com/photo-1592659762303-90081d34b277?w=800",
         "category": "Science & Nature",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:50",
@@ -139,9 +139,9 @@ LONDON_MUSEUMS = [
             {"type": "bus", "name": "Cromwell Road", "routes": ["14", "49", "70", "74", "345", "414", "C1"], "distance": "2 min walk"}
         ],
         "nearby_eateries": [
-            {"name": "The Central Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Natural History Museum"},
-            {"name": "Comptoir Libanais", "type": "Restaurant", "cuisine": "Lebanese", "distance": "3 min walk", "price_range": "££", "address": "1 Exhibition Rd"},
-            {"name": "Byron", "type": "Restaurant", "cuisine": "Burgers", "distance": "5 min walk", "price_range": "££", "address": "27 Old Brompton Rd"}
+            {"name": "The Central Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Natural History Museum", "latitude": 51.4967, "longitude": -0.1764},
+            {"name": "Comptoir Libanais", "type": "Restaurant", "cuisine": "Lebanese", "distance": "3 min walk", "price_range": "££", "address": "1 Exhibition Rd", "latitude": 51.4955, "longitude": -0.1740},
+            {"name": "Muriel's Kitchen", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "36 Old Brompton Rd", "latitude": 51.4942, "longitude": -0.1755}
         ],
         "featured": True,
         "rating": 4.7
@@ -154,10 +154,478 @@ LONDON_MUSEUMS = [
         "address": "Cromwell Road, London SW7 2RL",
         "latitude": 51.4966,
         "longitude": -0.1722,
-        "image_url": "https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=800",
+        "image_url": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800",
         "category": "Art & Design",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:45, Fri until 22:00",
+        "website": "https://www.vam.ac.uk",
+        "phone": "+44 20 7942 2000",
+        "transport": [
+            {"type": "tube", "name": "South Kensington", "line": "Circle, District, Piccadilly", "distance": "5 min walk"},
+            {"type": "bus", "name": "Cromwell Road", "routes": ["14", "49", "70", "74", "345", "414", "C1"], "distance": "2 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "V&A Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "V&A Museum", "latitude": 51.4966, "longitude": -0.1722},
+            {"name": "Fernandez & Wells", "type": "Cafe", "cuisine": "European", "distance": "4 min walk", "price_range": "££", "address": "8 Exhibition Rd", "latitude": 51.4950, "longitude": -0.1742},
+            {"name": "Daquise", "type": "Restaurant", "cuisine": "Polish", "distance": "3 min walk", "price_range": "££", "address": "20 Thurloe St", "latitude": 51.4948, "longitude": -0.1735}
+        ],
+        "featured": True,
+        "rating": 4.7
+    },
+    {
+        "id": "4",
+        "name": "Science Museum",
+        "description": "The Science Museum is a major museum showcasing the development of science and technology. With over 15,000 objects on display, including the first jet engine, Stephenson's Rocket, and the Apollo 10 command module, the museum brings science to life through interactive galleries and IMAX shows.",
+        "short_description": "Interactive science and technology museum for all ages",
+        "address": "Exhibition Road, South Kensington, London SW7 2DD",
+        "latitude": 51.4978,
+        "longitude": -0.1745,
+        "image_url": "https://images.unsplash.com/photo-1576872381149-7847515ce5d8?w=800",
+        "category": "Science & Technology",
+        "free_entry": True,
+        "opening_hours": "Daily 10:00-18:00",
+        "website": "https://www.sciencemuseum.org.uk",
+        "phone": "+44 20 7942 4000",
+        "transport": [
+            {"type": "tube", "name": "South Kensington", "line": "Circle, District, Piccadilly", "distance": "5 min walk"},
+            {"type": "bus", "name": "Exhibition Road", "routes": ["14", "49", "70", "74", "345", "414", "C1"], "distance": "3 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Deep Blue Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Science Museum", "latitude": 51.4978, "longitude": -0.1745},
+            {"name": "Cacciari's", "type": "Restaurant", "cuisine": "Italian", "distance": "4 min walk", "price_range": "££", "address": "18 Exhibition Rd", "latitude": 51.4960, "longitude": -0.1740},
+            {"name": "The Anglesea Arms", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "15 Selwood Terrace", "latitude": 51.4920, "longitude": -0.1755}
+        ],
+        "featured": True,
+        "rating": 4.6
+    },
+    {
+        "id": "5",
+        "name": "Tate Modern",
+        "description": "Housed in the former Bankside Power Station, Tate Modern is one of the world's largest museums of modern and contemporary art. The collection includes works by Picasso, Dalí, Warhol, and many contemporary artists. The Turbine Hall hosts spectacular large-scale installations.",
+        "short_description": "Britain's national gallery of international modern art",
+        "address": "Bankside, London SE1 9TG",
+        "latitude": 51.5076,
+        "longitude": -0.0994,
+        "image_url": "https://images.unsplash.com/photo-1565799566882-a1ed3b4fc990?w=800",
+        "category": "Modern Art",
+        "free_entry": True,
+        "opening_hours": "Sun-Thu 10:00-18:00, Fri-Sat until 22:00",
+        "website": "https://www.tate.org.uk/visit/tate-modern",
+        "phone": "+44 20 7887 8888",
+        "transport": [
+            {"type": "tube", "name": "Southwark", "line": "Jubilee", "distance": "5 min walk"},
+            {"type": "tube", "name": "Blackfriars", "line": "Circle, District", "distance": "5 min walk"},
+            {"type": "bus", "name": "Southwark Street", "routes": ["45", "63", "100", "381"], "distance": "3 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Tate Modern Restaurant", "type": "Restaurant", "cuisine": "British", "distance": "Inside museum", "price_range": "£££", "address": "Tate Modern, Level 6", "latitude": 51.5076, "longitude": -0.0994},
+            {"name": "The Anchor Bankside", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "34 Park St", "latitude": 51.5082, "longitude": -0.0932},
+            {"name": "Swan at The Globe", "type": "Restaurant", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "21 New Globe Walk", "latitude": 51.5078, "longitude": -0.0970}
+        ],
+        "featured": True,
+        "rating": 4.5
+    },
+    {
+        "id": "6",
+        "name": "National Gallery",
+        "description": "The National Gallery houses one of the greatest collections of Western European paintings from the 13th to 19th centuries. Masterpieces include works by Leonardo da Vinci, Van Gogh, Monet, Rembrandt, and Turner. Located in the heart of Trafalgar Square, it's one of London's most visited attractions.",
+        "short_description": "World-renowned collection of Western European paintings",
+        "address": "Trafalgar Square, London WC2N 5DN",
+        "latitude": 51.5089,
+        "longitude": -0.1283,
+        "image_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=800",
+        "category": "Art",
+        "free_entry": True,
+        "opening_hours": "Daily 10:00-18:00, Fri until 21:00",
+        "website": "https://www.nationalgallery.org.uk",
+        "phone": "+44 20 7747 2885",
+        "transport": [
+            {"type": "tube", "name": "Charing Cross", "line": "Bakerloo, Northern", "distance": "2 min walk"},
+            {"type": "tube", "name": "Leicester Square", "line": "Northern, Piccadilly", "distance": "4 min walk"},
+            {"type": "bus", "name": "Trafalgar Square", "routes": ["3", "6", "9", "11", "13", "15", "23", "24", "87", "91"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "National Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside gallery", "price_range": "££", "address": "National Gallery", "latitude": 51.5089, "longitude": -0.1283},
+            {"name": "Cafe in the Crypt", "type": "Cafe", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "St Martin-in-the-Fields", "latitude": 51.5091, "longitude": -0.1263},
+            {"name": "The Chandos", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "29 St Martin's Lane", "latitude": 51.5105, "longitude": -0.1270}
+        ],
+        "featured": True,
+        "rating": 4.8
+    },
+    {
+        "id": "7",
+        "name": "Tower of London",
+        "description": "A historic castle and World Heritage Site, the Tower of London has served as royal residence, prison, and fortress for over 900 years. Home to the Crown Jewels, the Yeoman Warders (Beefeaters), and the famous ravens. Explore the medieval palace, armour collection, and learn about the tower's dark history.",
+        "short_description": "Historic royal palace with Crown Jewels and 900 years of history",
+        "address": "St Katharine's & Wapping, London EC3N 4AB",
+        "latitude": 51.5081,
+        "longitude": -0.0759,
+        "image_url": "https://images.unsplash.com/photo-1553710043-ae8e38fcf1bc?w=800",
+        "category": "History & Heritage",
+        "free_entry": False,
+        "opening_hours": "Tue-Sat 09:00-17:00, Sun-Mon 10:00-17:00",
+        "website": "https://www.hrp.org.uk/tower-of-london",
+        "phone": "+44 20 3166 6000",
+        "transport": [
+            {"type": "tube", "name": "Tower Hill", "line": "Circle, District", "distance": "2 min walk"},
+            {"type": "train", "name": "Fenchurch Street", "line": "National Rail", "distance": "5 min walk"},
+            {"type": "bus", "name": "Tower of London", "routes": ["15", "42", "78", "100", "RV1"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "The New Armouries Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside tower", "price_range": "££", "address": "Tower of London", "latitude": 51.5081, "longitude": -0.0759},
+            {"name": "Perkin Reveller", "type": "Restaurant", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "The Wharf", "latitude": 51.5075, "longitude": -0.0770},
+            {"name": "All Bar One", "type": "Bar", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Tower Hill", "latitude": 51.5095, "longitude": -0.0760}
+        ],
+        "featured": False,
+        "rating": 4.6
+    },
+    {
+        "id": "8",
+        "name": "Imperial War Museum",
+        "description": "The Imperial War Museum explores the causes and consequences of modern conflict, from World War I to present day. The museum features a suspended Spitfire, V-2 rocket, and powerful Holocaust Exhibition. Interactive displays and personal stories bring history to life.",
+        "short_description": "Powerful museum exploring conflict from WWI to today",
+        "address": "Lambeth Road, London SE1 6HZ",
+        "latitude": 51.4958,
+        "longitude": -0.1086,
+        "image_url": "https://images.unsplash.com/photo-1569930784237-ea65a2f40a83?w=800",
+        "category": "History & Military",
+        "free_entry": True,
+        "opening_hours": "Daily 10:00-18:00",
+        "website": "https://www.iwm.org.uk/visits/iwm-london",
+        "phone": "+44 20 7416 5000",
+        "transport": [
+            {"type": "tube", "name": "Lambeth North", "line": "Bakerloo", "distance": "5 min walk"},
+            {"type": "tube", "name": "Elephant & Castle", "line": "Bakerloo, Northern", "distance": "5 min walk"},
+            {"type": "bus", "name": "Lambeth Road", "routes": ["12", "53", "148", "171", "344"], "distance": "2 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "IWM Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Imperial War Museum", "latitude": 51.4958, "longitude": -0.1086},
+            {"name": "The Old Vic Tunnels Cafe", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "£", "address": "Lambeth Rd", "latitude": 51.4985, "longitude": -0.1095},
+            {"name": "Kennington Tandoori", "type": "Restaurant", "cuisine": "Indian", "distance": "5 min walk", "price_range": "££", "address": "313 Kennington Rd", "latitude": 51.4930, "longitude": -0.1100}
+        ],
+        "featured": False,
+        "rating": 4.5
+    },
+    {
+        "id": "9",
+        "name": "Museum of London",
+        "description": "Discover the story of London and its people from prehistoric times to the present day. The museum features the Lord Mayor's State Coach, Victorian streets, and the story of the Great Fire. Temporary exhibitions explore contemporary London life.",
+        "short_description": "Explore London's fascinating story from prehistory to today",
+        "address": "150 London Wall, London EC2Y 5HN",
+        "latitude": 51.5176,
+        "longitude": -0.0967,
+        "image_url": "https://images.unsplash.com/photo-1560674457-cffdb7ab4f8d?w=800",
+        "category": "History & Culture",
+        "free_entry": True,
+        "opening_hours": "Daily 10:00-18:00",
+        "website": "https://www.museumoflondon.org.uk",
+        "phone": "+44 20 7001 9844",
+        "transport": [
+            {"type": "tube", "name": "Barbican", "line": "Circle, Hammersmith & City, Metropolitan", "distance": "4 min walk"},
+            {"type": "tube", "name": "St Paul's", "line": "Central", "distance": "5 min walk"},
+            {"type": "bus", "name": "London Wall", "routes": ["4", "8", "25", "56", "100", "172", "521"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Museum Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Museum of London", "latitude": 51.5176, "longitude": -0.0967},
+            {"name": "The Jugged Hare", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "49 Chiswell St", "latitude": 51.5195, "longitude": -0.0920},
+            {"name": "Pret A Manger", "type": "Cafe", "cuisine": "Sandwiches", "distance": "3 min walk", "price_range": "£", "address": "1 Ropemaker St", "latitude": 51.5190, "longitude": -0.0945}
+        ],
+        "featured": False,
+        "rating": 4.4
+    },
+    {
+        "id": "10",
+        "name": "National Portrait Gallery",
+        "description": "The National Portrait Gallery houses the world's largest collection of portraits, featuring famous British faces from Tudor monarchs to contemporary celebrities. Recent renovations have transformed the gallery with new spaces and improved displays.",
+        "short_description": "World's largest collection of portraits of famous Britons",
+        "address": "St Martin's Place, London WC2H 0HE",
+        "latitude": 51.5094,
+        "longitude": -0.1281,
+        "image_url": "https://images.unsplash.com/photo-1594658769898-b1b5e9f6d8cc?w=800",
+        "category": "Art",
+        "free_entry": True,
+        "opening_hours": "Daily 10:30-18:00, Fri until 21:00",
+        "website": "https://www.npg.org.uk",
+        "phone": "+44 20 7306 0055",
+        "transport": [
+            {"type": "tube", "name": "Leicester Square", "line": "Northern, Piccadilly", "distance": "2 min walk"},
+            {"type": "tube", "name": "Charing Cross", "line": "Bakerloo, Northern", "distance": "3 min walk"},
+            {"type": "bus", "name": "Trafalgar Square", "routes": ["24", "29", "176"], "distance": "2 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Portrait Restaurant", "type": "Restaurant", "cuisine": "British", "distance": "Inside gallery", "price_range": "£££", "address": "National Portrait Gallery", "latitude": 51.5094, "longitude": -0.1281},
+            {"name": "Gordon's Wine Bar", "type": "Wine Bar", "cuisine": "European", "distance": "4 min walk", "price_range": "££", "address": "47 Villiers St", "latitude": 51.5078, "longitude": -0.1240},
+            {"name": "The Chandos", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "£", "address": "29 St Martin's Lane", "latitude": 51.5105, "longitude": -0.1270}
+        ],
+        "featured": False,
+        "rating": 4.5
+    },
+    {
+        "id": "11",
+        "name": "Sir John Soane's Museum",
+        "description": "One of London's hidden gems, this unique museum is the former home of architect Sir John Soane, preserved exactly as he left it. Packed with antiquities, paintings, and architectural curiosities including the sarcophagus of Seti I and works by Hogarth.",
+        "short_description": "Quirky museum in the former home of architect Sir John Soane",
+        "address": "13 Lincoln's Inn Fields, London WC2A 3BP",
+        "latitude": 51.5170,
+        "longitude": -0.1177,
+        "image_url": "https://images.unsplash.com/photo-1576872381149-7847515ce5d8?w=800",
+        "category": "Art & Architecture",
+        "free_entry": True,
+        "opening_hours": "Wed-Sun 10:00-17:00",
+        "website": "https://www.soane.org",
+        "phone": "+44 20 7405 2107",
+        "transport": [
+            {"type": "tube", "name": "Holborn", "line": "Central, Piccadilly", "distance": "5 min walk"},
+            {"type": "bus", "name": "Kingsway", "routes": ["1", "59", "68", "91", "168", "171", "188"], "distance": "3 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "The Seven Stars", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "53-54 Carey St", "latitude": 51.5155, "longitude": -0.1150},
+            {"name": "Terroirs", "type": "Wine Bar", "cuisine": "French", "distance": "4 min walk", "price_range": "££", "address": "5 William IV St", "latitude": 51.5112, "longitude": -0.1265},
+            {"name": "Flat Iron", "type": "Restaurant", "cuisine": "Steak", "distance": "5 min walk", "price_range": "££", "address": "17-18 Henrietta St", "latitude": 51.5115, "longitude": -0.1233}
+        ],
+        "featured": False,
+        "rating": 4.6
+    },
+    {
+        "id": "12",
+        "name": "Design Museum",
+        "description": "The Design Museum is dedicated to contemporary design in all its forms. Located in a stunning former Commonwealth Institute building, the museum showcases innovation in fashion, architecture, graphics, digital, and product design through changing exhibitions.",
+        "short_description": "Contemporary design museum in stunning Kensington building",
+        "address": "224-238 Kensington High Street, London W8 6AG",
+        "latitude": 51.4995,
+        "longitude": -0.1989,
+        "image_url": "https://images.unsplash.com/photo-1569930784237-ea65a2f40a83?w=800",
+        "category": "Art & Design",
+        "free_entry": True,
+        "opening_hours": "Daily 10:00-18:00",
+        "website": "https://designmuseum.org",
+        "phone": "+44 20 3862 5900",
+        "transport": [
+            {"type": "tube", "name": "High Street Kensington", "line": "Circle, District", "distance": "5 min walk"},
+            {"type": "bus", "name": "Kensington High Street", "routes": ["9", "10", "27", "28", "49", "328", "C1"], "distance": "2 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Parabola", "type": "Restaurant", "cuisine": "Mediterranean", "distance": "Inside museum", "price_range": "£££", "address": "Design Museum", "latitude": 51.4995, "longitude": -0.1989},
+            {"name": "Honest Burgers", "type": "Restaurant", "cuisine": "Burgers", "distance": "4 min walk", "price_range": "££", "address": "194 Kensington High St", "latitude": 51.5005, "longitude": -0.1942},
+            {"name": "Wagamama", "type": "Restaurant", "cuisine": "Japanese", "distance": "5 min walk", "price_range": "££", "address": "26 Kensington High St", "latitude": 51.5010, "longitude": -0.1920}
+        ],
+        "featured": False,
+        "rating": 4.4
+    },
+    {
+        "id": "13",
+        "name": "Wallace Collection",
+        "description": "A hidden treasure in a beautiful Georgian townhouse, the Wallace Collection contains one of the finest collections of arms and armour, French 18th-century paintings, porcelain, and furniture in the world. The stunning Great Gallery features works by Titian, Rembrandt, and Velázquez.",
+        "short_description": "Exquisite collection of fine and decorative arts",
+        "address": "Hertford House, Manchester Square, London W1U 3BN",
+        "latitude": 51.5177,
+        "longitude": -0.1530,
+        "image_url": "https://images.unsplash.com/photo-1594658769898-b1b5e9f6d8cc?w=800",
+        "category": "Art",
+        "free_entry": True,
+        "opening_hours": "Daily 10:00-17:00",
+        "website": "https://www.wallacecollection.org",
+        "phone": "+44 20 7563 9500",
+        "transport": [
+            {"type": "tube", "name": "Bond Street", "line": "Central, Jubilee", "distance": "5 min walk"},
+            {"type": "tube", "name": "Baker Street", "line": "Bakerloo, Circle, Hammersmith & City, Jubilee, Metropolitan", "distance": "5 min walk"},
+            {"type": "bus", "name": "Wigmore Street", "routes": ["2", "13", "30", "74", "82", "113", "274"], "distance": "3 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Wallace Restaurant", "type": "Restaurant", "cuisine": "French", "distance": "Inside museum", "price_range": "£££", "address": "Wallace Collection", "latitude": 51.5177, "longitude": -0.1530},
+            {"name": "Paul", "type": "Cafe", "cuisine": "French", "distance": "4 min walk", "price_range": "££", "address": "115 Marylebone High St", "latitude": 51.5200, "longitude": -0.1520},
+            {"name": "The Grazing Goat", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "6 New Quebec St", "latitude": 51.5175, "longitude": -0.1600}
+        ],
+        "featured": False,
+        "rating": 4.7
+    },
+    {
+        "id": "14",
+        "name": "Tate Britain",
+        "description": "Tate Britain is the world's largest collection of British art from 1500 to the present day. The gallery houses masterpieces by Turner, Constable, the Pre-Raphaelites, and contemporary British artists. The Turner Bequest alone contains over 300 oil paintings.",
+        "short_description": "World's greatest collection of British art",
+        "address": "Millbank, London SW1P 4RG",
+        "latitude": 51.4910,
+        "longitude": -0.1277,
+        "image_url": "https://images.unsplash.com/photo-1555514979-4db88a7c5bbe?w=800",
+        "category": "Art",
+        "free_entry": True,
+        "opening_hours": "Daily 10:00-18:00",
+        "website": "https://www.tate.org.uk/visit/tate-britain",
+        "phone": "+44 20 7887 8888",
+        "transport": [
+            {"type": "tube", "name": "Pimlico", "line": "Victoria", "distance": "5 min walk"},
+            {"type": "bus", "name": "Millbank", "routes": ["2", "36", "87", "88", "185", "C10"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Tate Britain Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside gallery", "price_range": "££", "address": "Tate Britain", "latitude": 51.4910, "longitude": -0.1277},
+            {"name": "Regency Cafe", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "£", "address": "17-19 Regency St", "latitude": 51.4928, "longitude": -0.1325},
+            {"name": "Page Street Cafe", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "Page St", "latitude": 51.4922, "longitude": -0.1290}
+        ],
+        "featured": False,
+        "rating": 4.5
+    },
+    {
+        "id": "15",
+        "name": "Royal Academy of Arts",
+        "description": "Britain's first art school, the Royal Academy hosts major exhibitions throughout the year and the famous Summer Exhibition. The recently expanded galleries showcase the RA's permanent collection and temporary shows featuring world-renowned artists.",
+        "short_description": "Historic institution with major art exhibitions",
+        "address": "Burlington House, Piccadilly, London W1J 0BD",
+        "latitude": 51.5093,
+        "longitude": -0.1395,
+        "image_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=800",
+        "category": "Art",
+        "free_entry": False,
+        "opening_hours": "Sat-Thu 10:00-18:00, Fri until 21:00",
+        "website": "https://www.royalacademy.org.uk",
+        "phone": "+44 20 7300 8000",
+        "transport": [
+            {"type": "tube", "name": "Piccadilly Circus", "line": "Bakerloo, Piccadilly", "distance": "3 min walk"},
+            {"type": "tube", "name": "Green Park", "line": "Jubilee, Piccadilly, Victoria", "distance": "4 min walk"},
+            {"type": "bus", "name": "Piccadilly", "routes": ["9", "14", "19", "22", "38"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "RA Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Royal Academy", "latitude": 51.5093, "longitude": -0.1395},
+            {"name": "Fortnum's Tea Salon", "type": "Cafe", "cuisine": "British", "distance": "2 min walk", "price_range": "£££", "address": "181 Piccadilly", "latitude": 51.5085, "longitude": -0.1385},
+            {"name": "Brasserie Zedel", "type": "Restaurant", "cuisine": "French", "distance": "4 min walk", "price_range": "££", "address": "20 Sherwood St", "latitude": 51.5102, "longitude": -0.1355}
+        ],
+        "featured": False,
+        "rating": 4.5
+    },
+    {
+        "id": "16",
+        "name": "Horniman Museum",
+        "description": "The Horniman Museum in Forest Hill offers a unique blend of natural history, anthropology, and music. Famous for its overstuffed walrus and extensive musical instrument collection, the museum also features beautiful gardens with stunning views of London.",
+        "short_description": "Quirky museum of natural history, world cultures, and music",
+        "address": "100 London Road, Forest Hill, London SE23 3PQ",
+        "latitude": 51.4413,
+        "longitude": -0.0600,
+        "image_url": "https://images.unsplash.com/photo-1560674457-cffdb7ab4f8d?w=800",
+        "category": "Natural History & Culture",
+        "free_entry": True,
+        "opening_hours": "Daily 10:00-17:30",
+        "website": "https://www.horniman.ac.uk",
+        "phone": "+44 20 8699 1872",
+        "transport": [
+            {"type": "train", "name": "Forest Hill", "line": "London Overground", "distance": "5 min walk"},
+            {"type": "bus", "name": "Horniman Museum", "routes": ["176", "185", "197", "356", "P4"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Horniman Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "£", "address": "Horniman Museum", "latitude": 51.4413, "longitude": -0.0600},
+            {"name": "The Hill Station", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "5 Dartmouth Rd", "latitude": 51.4420, "longitude": -0.0580},
+            {"name": "Brown & Green", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "20 London Rd", "latitude": 51.4400, "longitude": -0.0585}
+        ],
+        "featured": False,
+        "rating": 4.6
+    },
+    {
+        "id": "17",
+        "name": "London Transport Museum",
+        "description": "Explore the history of London's transport from horse-drawn buses to the Elizabeth line. Interactive exhibits let you drive a tube train simulator, and the collection includes vintage buses, trams, and tube trains. Perfect for families.",
+        "short_description": "Interactive museum of London's iconic transport history",
+        "address": "Covent Garden Piazza, London WC2E 7BB",
+        "latitude": 51.5117,
+        "longitude": -0.1217,
+        "image_url": "https://images.unsplash.com/photo-1555992457-b8fefdd09069?w=800",
+        "category": "Transport & History",
+        "free_entry": False,
+        "opening_hours": "Daily 10:00-18:00",
+        "website": "https://www.ltmuseum.co.uk",
+        "phone": "+44 20 7379 6344",
+        "transport": [
+            {"type": "tube", "name": "Covent Garden", "line": "Piccadilly", "distance": "2 min walk"},
+            {"type": "tube", "name": "Leicester Square", "line": "Northern, Piccadilly", "distance": "4 min walk"},
+            {"type": "bus", "name": "Aldwych", "routes": ["6", "9", "11", "13", "15", "23", "87", "91"], "distance": "3 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Upper Deck Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "£", "address": "London Transport Museum", "latitude": 51.5117, "longitude": -0.1217},
+            {"name": "Flat Iron", "type": "Restaurant", "cuisine": "Steak", "distance": "2 min walk", "price_range": "££", "address": "17 Henrietta St", "latitude": 51.5115, "longitude": -0.1233},
+            {"name": "Shake Shack", "type": "Restaurant", "cuisine": "American", "distance": "3 min walk", "price_range": "££", "address": "24 Market Building", "latitude": 51.5120, "longitude": -0.1230}
+        ],
+        "featured": False,
+        "rating": 4.4
+    },
+    {
+        "id": "18",
+        "name": "Churchill War Rooms",
+        "description": "Step back in time to the secret underground headquarters where Winston Churchill and his war cabinet directed WWII. The original rooms remain exactly as they were in 1945, with maps, telephones, and the famous Map Room frozen in time.",
+        "short_description": "Churchill's secret WWII underground headquarters",
+        "address": "Clive Steps, King Charles Street, London SW1A 2AQ",
+        "latitude": 51.5021,
+        "longitude": -0.1290,
+        "image_url": "https://images.unsplash.com/photo-1569930784237-ea65a2f40a83?w=800",
+        "category": "History & Military",
+        "free_entry": False,
+        "opening_hours": "Daily 09:30-18:00",
+        "website": "https://www.iwm.org.uk/visits/churchill-war-rooms",
+        "phone": "+44 20 7416 5000",
+        "transport": [
+            {"type": "tube", "name": "Westminster", "line": "Circle, District, Jubilee", "distance": "4 min walk"},
+            {"type": "tube", "name": "St James's Park", "line": "Circle, District", "distance": "5 min walk"},
+            {"type": "bus", "name": "Parliament Street", "routes": ["3", "11", "12", "24", "87", "88", "159"], "distance": "2 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Switch House Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Churchill War Rooms", "latitude": 51.5021, "longitude": -0.1290},
+            {"name": "The Red Lion", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "48 Parliament St", "latitude": 51.5015, "longitude": -0.1260},
+            {"name": "Westminster Arms", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "9 Storey's Gate", "latitude": 51.5000, "longitude": -0.1290}
+        ],
+        "featured": False,
+        "rating": 4.7
+    },
+    {
+        "id": "19",
+        "name": "Museum of the Home",
+        "description": "Explore 400 years of British home life through a series of period rooms from 1600 to the present day. The museum showcases how living spaces, furniture, and domestic life have evolved through the centuries.",
+        "short_description": "Discover 400 years of British home life and interiors",
+        "address": "136 Kingsland Road, London E2 8EA",
+        "latitude": 51.5318,
+        "longitude": -0.0765,
+        "image_url": "https://images.unsplash.com/photo-1560674457-cffdb7ab4f8d?w=800",
+        "category": "History & Culture",
+        "free_entry": True,
+        "opening_hours": "Tue-Sun 10:00-17:00",
+        "website": "https://www.museumofthehome.org.uk",
+        "phone": "+44 20 7739 9893",
+        "transport": [
+            {"type": "tube", "name": "Hoxton", "line": "London Overground", "distance": "5 min walk"},
+            {"type": "bus", "name": "Kingsland Road", "routes": ["67", "149", "242", "243"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Museum Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "£", "address": "Museum of the Home", "latitude": 51.5318, "longitude": -0.0765},
+            {"name": "Song Que", "type": "Restaurant", "cuisine": "Vietnamese", "distance": "2 min walk", "price_range": "£", "address": "134 Kingsland Rd", "latitude": 51.5320, "longitude": -0.0760},
+            {"name": "The Owl & Pussycat", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "34 Redchurch St", "latitude": 51.5240, "longitude": -0.0750}
+        ],
+        "featured": False,
+        "rating": 4.3
+    },
+    {
+        "id": "20",
+        "name": "Wellcome Collection",
+        "description": "A free museum exploring health, life, and our place in the world. Combining medicine, science, art, and life, the Wellcome Collection features thought-provoking exhibitions that challenge our understanding of what it means to be human.",
+        "short_description": "Free museum exploring health, medicine, and human experience",
+        "address": "183 Euston Road, London NW1 2BE",
+        "latitude": 51.5258,
+        "longitude": -0.1338,
+        "image_url": "https://images.unsplash.com/photo-1576872381149-7847515ce5d8?w=800",
+        "category": "Science & Medicine",
+        "free_entry": True,
+        "opening_hours": "Tue-Sun 10:00-18:00, Thu until 21:00",
+        "website": "https://wellcomecollection.org",
+        "phone": "+44 20 7611 2222",
+        "transport": [
+            {"type": "tube", "name": "Euston", "line": "Northern, Victoria", "distance": "3 min walk"},
+            {"type": "tube", "name": "Euston Square", "line": "Circle, Hammersmith & City, Metropolitan", "distance": "4 min walk"},
+            {"type": "bus", "name": "Euston Road", "routes": ["10", "18", "30", "73", "205", "390"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Wellcome Kitchen", "type": "Restaurant", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Wellcome Collection", "latitude": 51.5258, "longitude": -0.1338},
+            {"name": "Caravan", "type": "Restaurant", "cuisine": "International", "distance": "4 min walk", "price_range": "££", "address": "1 Granary Square", "latitude": 51.5355, "longitude": -0.1260},
+            {"name": "The Euston Tap", "type": "Pub", "cuisine": "Craft Beer", "distance": "3 min walk", "price_range": "££", "address": "190 Euston Rd", "latitude": 51.5275, "longitude": -0.1320}
+        ],
+        "featured": False,
+        "rating": 4.5
+    }
+]
         "website": "https://www.vam.ac.uk",
         "phone": "+44 20 7942 2000",
         "transport": [
