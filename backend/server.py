@@ -45,6 +45,8 @@ class NearbyEatery(BaseModel):
     distance: str
     price_range: str  # £, ££, £££
     address: Optional[str] = None
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
 
 class Museum(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
