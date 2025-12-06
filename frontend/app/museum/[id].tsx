@@ -650,6 +650,14 @@ const styles = StyleSheet.create({
     color: '#2A9D8F',
     fontWeight: '600',
   },
+  eateryDirections: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: 'rgba(42, 157, 143, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   bottomCTA: {
     position: 'absolute',
     bottom: 0,
