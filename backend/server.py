@@ -154,7 +154,7 @@ LONDON_MUSEUMS = [
         "address": "Cromwell Road, London SW7 2RL",
         "latitude": 51.4966,
         "longitude": -0.1722,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Victoria_and_Albert_Museum_Entrance%2C_London_-_April_2007.jpg/800px-Victoria_and_Albert_Museum_Entrance%2C_London_-_April_2007.jpg",
+        "image_url": "https://images.unsplash.com/photo-1585662897874-5c9666caa5c5?w=800&q=80",
         "category": "Art & Design",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:45, Fri until 22:00",
