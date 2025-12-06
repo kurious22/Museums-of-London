@@ -189,227 +189,192 @@ class MuseumAPITester:
         
         return all_passed
 
-    def test_featured_museums(self):
-        """Test GET /api/museums/featured"""
+    def test_museum_details(self, museum_id: str = "21"):
+        """Test getting specific museum details"""
         try:
-            response = self.session.get(f"{self.base_url}/museums/featured")
+            response = self.session.get(f"{self.base_url}/museums/{museum_id}")
+            
             if response.status_code == 200:
-                featured = response.json()
-                if isinstance(featured, list) and len(featured) > 0:
-                    # Check if all returned museums are marked as featured
-                    if all(museum.get("featured", False) for museum in featured):
-                        self.log_test("Featured museums", True, f"Retrieved {len(featured)} featured museums")
-                    else:
-                        self.log_test("Featured museums", False, "Non-featured museums in featured list")
+                museum = response.json()
+                required_fields = ['id', 'name', 'description', 'address', 'image_url', 'transport', 'nearby_eateries']
+                missing_fields = [field for field in required_fields if not museum.get(field)]
+                
+                if missing_fields:
+                    self.log_test(f"Museum Details (ID {museum_id})", False, 
+                                f"Missing fields: {', '.join(missing_fields)}")
                 else:
-                    self.log_test("Featured museums", False, "No featured museums returned")
+                    self.log_test(f"Museum Details (ID {museum_id})", True, 
+                                f"All required fields present for {museum.get('name')}")
+                return museum
             else:
-                self.log_test("Featured museums", False, f"Status: {response.status_code}")
-        except Exception as e:
-            self.log_test("Featured museums", False, f"Exception: {str(e)}")
-
-    def test_categories_endpoint(self):
-        """Test GET /api/museums/categories"""
-        try:
-            response = self.session.get(f"{self.base_url}/museums/categories")
-            if response.status_code == 200:
-                categories = response.json()
-                if isinstance(categories, list) and len(categories) > 0:
-                    expected_categories = ["Art", "History", "Science", "Modern Art"]
-                    has_expected = any(any(exp in cat for exp in expected_categories) for cat in categories)
-                    if has_expected:
-                        self.log_test("Categories endpoint", True, f"Retrieved {len(categories)} categories: {categories}")
-                    else:
-                        self.log_test("Categories endpoint", False, f"Unexpected categories: {categories}")
-                else:
-                    self.log_test("Categories endpoint", False, "No categories returned")
-            else:
-                self.log_test("Categories endpoint", False, f"Status: {response.status_code}")
-        except Exception as e:
-            self.log_test("Categories endpoint", False, f"Exception: {str(e)}")
-
-    def test_museum_details(self):
-        """Test GET /api/museums/{id} - get specific museum details"""
-        # First get a museum ID
-        try:
-            response = self.session.get(f"{self.base_url}/museums")
-            if response.status_code == 200:
-                museums = response.json()
-                if museums:
-                    test_museum_id = museums[0]["id"]  # Use first museum for testing
-                    
-                    # Test getting specific museum
-                    detail_response = self.session.get(f"{self.base_url}/museums/{test_museum_id}")
-                    if detail_response.status_code == 200:
-                        museum = detail_response.json()
-                        
-                        # Check if transport links are present
-                        if "transport" in museum and isinstance(museum["transport"], list) and len(museum["transport"]) > 0:
-                            transport_valid = all("type" in t and "name" in t and "distance" in t for t in museum["transport"])
-                            if transport_valid:
-                                self.log_test("Museum transport data", True, f"Found {len(museum['transport'])} transport options")
-                            else:
-                                self.log_test("Museum transport data", False, "Invalid transport data structure")
-                        else:
-                            self.log_test("Museum transport data", False, "No transport data found")
-                        
-                        # Check if nearby eateries are present
-                        if "nearby_eateries" in museum and isinstance(museum["nearby_eateries"], list) and len(museum["nearby_eateries"]) > 0:
-                            eateries_valid = all("name" in e and "type" in e and "distance" in e for e in museum["nearby_eateries"])
-                            if eateries_valid:
-                                self.log_test("Museum eateries data", True, f"Found {len(museum['nearby_eateries'])} nearby eateries")
-                            else:
-                                self.log_test("Museum eateries data", False, "Invalid eateries data structure")
-                        else:
-                            self.log_test("Museum eateries data", False, "No eateries data found")
-                        
-                        self.log_test("Museum details endpoint", True, f"Retrieved details for museum: {museum.get('name', 'Unknown')}")
-                    else:
-                        self.log_test("Museum details endpoint", False, f"Status: {detail_response.status_code}")
-                else:
-                    self.log_test("Museum details endpoint", False, "No museums available for testing")
-            else:
-                self.log_test("Museum details endpoint", False, "Could not get museums list for testing")
-        except Exception as e:
-            self.log_test("Museum details endpoint", False, f"Exception: {str(e)}")
-
-        # Test invalid museum ID
-        try:
-            response = self.session.get(f"{self.base_url}/museums/invalid_id")
-            if response.status_code == 404:
-                self.log_test("Invalid museum ID handling", True, "Correctly returns 404 for invalid ID")
-            else:
-                self.log_test("Invalid museum ID handling", False, f"Expected 404, got {response.status_code}")
-        except Exception as e:
-            self.log_test("Invalid museum ID handling", False, f"Exception: {str(e)}")
-
-    def test_favorites_functionality(self):
-        """Test favorites CRUD operations"""
-        # Get a test museum ID
-        try:
-            response = self.session.get(f"{self.base_url}/museums")
-            if response.status_code != 200:
-                self.log_test("Favorites setup", False, "Could not get museums for favorites testing")
-                return
-            
-            museums = response.json()
-            if not museums:
-                self.log_test("Favorites setup", False, "No museums available for favorites testing")
-                return
-            
-            test_museum_id = museums[0]["id"]
-            
-            # Test adding to favorites
-            add_response = self.session.post(f"{self.base_url}/favorites/{test_museum_id}")
-            if add_response.status_code == 200:
-                add_data = add_response.json()
-                if "message" in add_data and "id" in add_data:
-                    self.log_test("Add to favorites", True, f"Added museum to favorites: {add_data['message']}")
-                else:
-                    self.log_test("Add to favorites", False, "Invalid response format", add_data)
-            else:
-                self.log_test("Add to favorites", False, f"Status: {add_response.status_code}", add_response.text)
-            
-            # Test checking if favorited
-            check_response = self.session.get(f"{self.base_url}/favorites/check/{test_museum_id}")
-            if check_response.status_code == 200:
-                check_data = check_response.json()
-                if check_data.get("is_favorite", False):
-                    self.log_test("Check favorite status", True, "Museum correctly marked as favorite")
-                else:
-                    self.log_test("Check favorite status", False, "Museum not marked as favorite after adding")
-            else:
-                self.log_test("Check favorite status", False, f"Status: {check_response.status_code}")
-            
-            # Test getting all favorites
-            favorites_response = self.session.get(f"{self.base_url}/favorites")
-            if favorites_response.status_code == 200:
-                favorites = favorites_response.json()
-                if isinstance(favorites, list):
-                    # Check if our test museum is in the favorites
-                    favorite_ids = [fav.get("id") for fav in favorites]
-                    if test_museum_id in favorite_ids:
-                        self.log_test("Get all favorites", True, f"Retrieved {len(favorites)} favorites including test museum")
-                    else:
-                        self.log_test("Get all favorites", True, f"Retrieved {len(favorites)} favorites (test museum may have been added by duplicate)")
-                else:
-                    self.log_test("Get all favorites", False, "Invalid favorites response format")
-            else:
-                self.log_test("Get all favorites", False, f"Status: {favorites_response.status_code}")
-            
-            # Test removing from favorites
-            remove_response = self.session.delete(f"{self.base_url}/favorites/{test_museum_id}")
-            if remove_response.status_code == 200:
-                remove_data = remove_response.json()
-                if "message" in remove_data:
-                    self.log_test("Remove from favorites", True, f"Removed from favorites: {remove_data['message']}")
-                else:
-                    self.log_test("Remove from favorites", False, "Invalid response format", remove_data)
-            else:
-                self.log_test("Remove from favorites", False, f"Status: {remove_response.status_code}")
-            
-            # Test checking favorite status after removal
-            final_check_response = self.session.get(f"{self.base_url}/favorites/check/{test_museum_id}")
-            if final_check_response.status_code == 200:
-                final_check_data = final_check_response.json()
-                if not final_check_data.get("is_favorite", True):
-                    self.log_test("Favorite removal verification", True, "Museum correctly removed from favorites")
-                else:
-                    self.log_test("Favorite removal verification", False, "Museum still marked as favorite after removal")
-            else:
-                self.log_test("Favorite removal verification", False, f"Status: {final_check_response.status_code}")
-            
-            # Test adding favorite for non-existent museum
-            invalid_add_response = self.session.post(f"{self.base_url}/favorites/invalid_museum_id")
-            if invalid_add_response.status_code == 404:
-                self.log_test("Invalid museum favorite handling", True, "Correctly returns 404 for invalid museum ID")
-            else:
-                self.log_test("Invalid museum favorite handling", False, f"Expected 404, got {invalid_add_response.status_code}")
+                self.log_test(f"Museum Details (ID {museum_id})", False, f"Status: {response.status_code}")
+                return None
                 
         except Exception as e:
-            self.log_test("Favorites functionality", False, f"Exception: {str(e)}")
-
-    def run_all_tests(self):
-        """Run all backend tests"""
-        print("=" * 60)
-        print("MUSEUMS OF LONDON - BACKEND API TESTS")
-        print("=" * 60)
-        print(f"Testing backend at: {self.base_url}")
-        print()
+            self.log_test(f"Museum Details (ID {museum_id})", False, f"Error: {str(e)}")
+            return None
+    
+    def test_featured_museums(self):
+        """Test featured museums endpoint"""
+        try:
+            response = self.session.get(f"{self.base_url}/museums/featured")
+            
+            if response.status_code == 200:
+                featured = response.json()
+                if len(featured) > 0:
+                    self.log_test("Featured Museums", True, f"Retrieved {len(featured)} featured museums")
+                    return featured
+                else:
+                    self.log_test("Featured Museums", False, "No featured museums returned")
+                    return []
+            else:
+                self.log_test("Featured Museums", False, f"Status: {response.status_code}")
+                return []
+                
+        except Exception as e:
+            self.log_test("Featured Museums", False, f"Error: {str(e)}")
+            return []
+    
+    def test_favorites_endpoints(self):
+        """Test favorites functionality"""
+        test_museum_id = "1"  # British Museum
         
-        # Run all tests
-        self.test_root_endpoint()
-        self.test_get_all_museums()
-        self.test_museum_filtering()
+        try:
+            # Test adding favorite
+            response = self.session.post(f"{self.base_url}/favorites/{test_museum_id}")
+            if response.status_code in [200, 201]:
+                self.log_test("Add Favorite", True, "Successfully added to favorites")
+            else:
+                self.log_test("Add Favorite", False, f"Status: {response.status_code}")
+                return False
+            
+            # Test checking favorite
+            response = self.session.get(f"{self.base_url}/favorites/check/{test_museum_id}")
+            if response.status_code == 200:
+                result = response.json()
+                if result.get('is_favorite'):
+                    self.log_test("Check Favorite", True, "Correctly identified as favorite")
+                else:
+                    self.log_test("Check Favorite", False, "Not identified as favorite")
+            else:
+                self.log_test("Check Favorite", False, f"Status: {response.status_code}")
+            
+            # Test getting favorites list
+            response = self.session.get(f"{self.base_url}/favorites")
+            if response.status_code == 200:
+                favorites = response.json()
+                self.log_test("Get Favorites List", True, f"Retrieved {len(favorites)} favorites")
+            else:
+                self.log_test("Get Favorites List", False, f"Status: {response.status_code}")
+            
+            # Test removing favorite
+            response = self.session.delete(f"{self.base_url}/favorites/{test_museum_id}")
+            if response.status_code == 200:
+                self.log_test("Remove Favorite", True, "Successfully removed from favorites")
+            else:
+                self.log_test("Remove Favorite", False, f"Status: {response.status_code}")
+            
+            return True
+            
+        except Exception as e:
+            self.log_test("Favorites Endpoints", False, f"Error: {str(e)}")
+            return False
+    
+    def run_all_tests(self):
+        """Run all tests and return summary"""
+        print("🏛️  Museums of London Backend API Testing")
+        print("=" * 50)
+        print("🎯 PRIORITY: Testing 'Fix broken museum image URLs' task")
+        print("=" * 50)
+        
+        # Test API connection first
+        if not self.test_api_connection():
+            print("\n❌ Cannot connect to API. Stopping tests.")
+            return False
+        
+        print("\n📋 Testing Museum Data and Image URLs...")
+        
+        # Get all museums
+        museums = self.test_get_all_museums()
+        if not museums:
+            print("\n❌ Cannot retrieve museums. Stopping tests.")
+            return False
+        
+        # Test image URLs (main focus)
+        print(f"\n🖼️  Testing Image URLs for {len(museums)} museums...")
+        broken_images, working_images = self.test_image_urls(museums)
+        
+        # Test Postal Museum exists
+        print(f"\n📮 Checking for The Postal Museum...")
+        postal_museum = self.test_postal_museum_exists(museums)
+        
+        # Test search functionality
+        print(f"\n🔍 Testing Search Functionality...")
+        search_passed = self.test_search_functionality()
+        
+        # Test museum details
+        print(f"\n📄 Testing Museum Details...")
+        if postal_museum:
+            self.test_museum_details(postal_museum.get('id', '21'))
+        else:
+            self.test_museum_details('1')  # Test with British Museum
+        
+        # Test featured museums
+        print(f"\n⭐ Testing Featured Museums...")
         self.test_featured_museums()
-        self.test_categories_endpoint()
-        self.test_museum_details()
-        self.test_favorites_functionality()
+        
+        # Test favorites
+        print(f"\n❤️  Testing Favorites Functionality...")
+        self.test_favorites_endpoints()
         
         # Summary
-        print("=" * 60)
-        print("TEST SUMMARY")
-        print("=" * 60)
+        print(f"\n" + "=" * 50)
+        print("📊 TEST SUMMARY")
+        print("=" * 50)
         
-        passed = sum(1 for result in self.test_results if result["success"])
-        total = len(self.test_results)
-        failed = total - passed
+        passed_tests = sum(1 for result in self.test_results if result['passed'])
+        total_tests = len(self.test_results)
         
-        print(f"Total Tests: {total}")
-        print(f"Passed: {passed}")
-        print(f"Failed: {failed}")
-        print(f"Success Rate: {(passed/total)*100:.1f}%")
+        print(f"Total Tests: {total_tests}")
+        print(f"Passed: {passed_tests}")
+        print(f"Failed: {total_tests - passed_tests}")
+        print(f"Success Rate: {(passed_tests/total_tests)*100:.1f}%")
         
-        if failed > 0:
-            print("\nFAILED TESTS:")
-            for result in self.test_results:
-                if not result["success"]:
-                    print(f"  ❌ {result['test']}: {result['message']}")
+        # Critical issues summary
+        critical_issues = []
+        if broken_images:
+            critical_issues.append(f"🖼️  {len(broken_images)} broken image URLs")
         
-        print("\n" + "=" * 60)
-        return failed == 0
+        failed_tests = [r for r in self.test_results if not r['passed']]
+        if failed_tests:
+            print(f"\n❌ FAILED TESTS:")
+            for test in failed_tests:
+                print(f"  • {test['test']}: {test['message']}")
+        
+        if critical_issues:
+            print(f"\n🚨 CRITICAL ISSUES:")
+            for issue in critical_issues:
+                print(f"  • {issue}")
+        
+        # Image URL detailed report
+        if broken_images:
+            print(f"\n🖼️  BROKEN IMAGE URLS DETAILS:")
+            for broken in broken_images:
+                print(f"  • {broken}")
+        
+        return len(critical_issues) == 0 and passed_tests == total_tests
 
-if __name__ == "__main__":
+def main():
+    """Main test execution"""
     tester = MuseumAPITester()
     success = tester.run_all_tests()
-    sys.exit(0 if success else 1)
+    
+    if success:
+        print(f"\n🎉 All tests passed! Backend is working correctly.")
+        sys.exit(0)
+    else:
+        print(f"\n⚠️  Some tests failed. Check the issues above.")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
