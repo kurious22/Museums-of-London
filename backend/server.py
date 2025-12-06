@@ -128,7 +128,7 @@ LONDON_MUSEUMS = [
         "address": "Cromwell Road, South Kensington, London SW7 5BD",
         "latitude": 51.4967,
         "longitude": -0.1764,
-        "image_url": "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800",
+        "image_url": "https://images.unsplash.com/photo-1572953109213-3be62398eb95?w=800",
         "category": "Science & Nature",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:50",
