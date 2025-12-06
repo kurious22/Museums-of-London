@@ -606,7 +606,7 @@ LONDON_MUSEUMS = [
         "address": "183 Euston Road, London NW1 2BE",
         "latitude": 51.5258,
         "longitude": -0.1338,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Wellcome_Collection.jpg/600px-Wellcome_Collection.jpg",
+        "image_url": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
         "category": "Science & Medicine",
         "free_entry": True,
         "opening_hours": "Tue-Sun 10:00-18:00, Thu until 21:00",
