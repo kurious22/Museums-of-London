@@ -741,8 +741,11 @@ const styles = StyleSheet.create({
     color: '#fff',
     letterSpacing: 2,
   },
-  londonGlobe: {
+  towerBridgeIcon: {
     marginLeft: 12,
+  },
+  londonGlobe: {
+    marginLeft: 8,
   },
   welcomeText: {
     fontSize: 14,
