@@ -1184,10 +1184,19 @@ const styles = StyleSheet.create({
   currencyInputContainer: {
     marginBottom: 12,
   },
+  currencyLabelRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
   currencyLabel: {
     fontSize: 14,
     color: '#CCCCCC',
-    marginBottom: 8,
+  },
+  currencyScrollHint: {
+    fontSize: 12,
+    color: '#E63946',
+    fontStyle: 'italic',
   },
   currencyInput: {
     backgroundColor: '#0F0F23',
