@@ -479,7 +479,7 @@ const styles = StyleSheet.create({
   },
   heroButtons: {
     flexDirection: 'row',
-    gap: 12,
+    gap: 10,
   },
   exploreButton: {
     flex: 1,
@@ -487,13 +487,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#E63946',
-    paddingVertical: 14,
-    borderRadius: 25,
-    gap: 8,
+    paddingVertical: 10,
+    borderRadius: 20,
+    gap: 6,
   },
   exploreButtonText: {
     color: '#fff',
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: '600',
   },
   tourButton: {
@@ -502,13 +502,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff',
-    paddingVertical: 14,
-    borderRadius: 25,
-    gap: 8,
+    paddingVertical: 10,
+    borderRadius: 20,
+    gap: 6,
   },
   tourButtonText: {
     color: '#E63946',
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: '600',
   },
   statsContainer: {
