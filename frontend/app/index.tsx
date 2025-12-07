@@ -193,16 +193,16 @@ export default function HomeScreen() {
           </TouchableOpacity>
 
           <View style={styles.heroContent}>
-            <Text style={styles.welcomeText}>WELCOME TO</Text>
-            <Text style={styles.museumsOfText}>Museums of</Text>
+            <Text style={styles.welcomeText}>{i18n.t('welcome')}</Text>
+            <Text style={styles.museumsOfText}>{i18n.t('museumsOf')}</Text>
             <View style={styles.londonRow}>
               <View style={styles.londonBadge}>
-                <Text style={styles.londonText}>LONDON</Text>
+                <Text style={styles.londonText}>{i18n.t('london')}</Text>
               </View>
               <Ionicons name="globe-outline" size={28} color="#fff" style={styles.londonGlobe} />
             </View>
             <Text style={styles.heroSubtitle}>
-              Discover world-class art, history, and culture
+              {i18n.t('subtitle')}
             </Text>
           </View>
 
