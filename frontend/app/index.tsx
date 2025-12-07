@@ -595,6 +595,18 @@ const styles = StyleSheet.create({
   londonGlobe: {
     marginLeft: 12,
   },
+  welcomeText: {
+    fontSize: 14,
+    color: 'rgba(255,255,255,0.7)',
+    letterSpacing: 4,
+    fontWeight: '600',
+  },
+  museumsOfText: {
+    fontSize: 24,
+    fontWeight: '400',
+    color: '#FFFFFF',
+    marginTop: 8,
+  },
   heroSubtitle: {
     fontSize: 16,
     color: 'rgba(255,255,255,0.8)',
