@@ -431,13 +431,11 @@ const styles = StyleSheet.create({
   // London Skyline Image
   skylineImage: {
     position: 'absolute',
-    top: 0,
-    right: 0,
+    top: 10,
+    right: -10,
     width: 320,
     height: 140,
     opacity: 0.8,
-    marginTop: 10,
-    marginRight: 0,
   },
   londonRow: {
     flexDirection: 'row',
