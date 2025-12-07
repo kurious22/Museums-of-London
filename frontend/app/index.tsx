@@ -166,32 +166,23 @@ export default function HomeScreen() {
             </Text>
           </View>
           
-          {/* Tube Map Button - First */}
-          <TouchableOpacity
-            style={styles.tubeMapButton}
-            onPress={openTubeMap}
-            activeOpacity={0.8}
-          >
-            <Ionicons name="subway" size={18} color="#fff" />
-            <Text style={styles.tubeMapButtonText}>London Underground</Text>
-          </TouchableOpacity>
-
-          {/* Other Two Buttons Below */}
+          {/* Hero Buttons */}
           <View style={styles.heroButtons}>
+            <TouchableOpacity
+              style={styles.tubeMapButton}
+              onPress={openTubeMap}
+              activeOpacity={0.8}
+            >
+              <Ionicons name="subway" size={18} color="#fff" />
+              <Text style={styles.tubeMapButtonText}>London Underground</Text>
+            </TouchableOpacity>
+            
             <TouchableOpacity
               style={styles.exploreButton}
               onPress={navigateToExplore}
             >
               <Ionicons name="compass" size={18} color="#fff" />
               <Text style={styles.exploreButtonText}>Explore Museums</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity
-              style={styles.tourButton}
-              onPress={navigateToTours}
-            >
-              <Ionicons name="map" size={18} color="#E63946" />
-              <Text style={styles.tourButtonText}>Walking Tours</Text>
             </TouchableOpacity>
           </View>
         </LinearGradient>
