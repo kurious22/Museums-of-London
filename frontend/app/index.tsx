@@ -124,6 +124,18 @@ export default function HomeScreen() {
           end={{ x: 1, y: 1 }}
           style={[styles.heroSection, { paddingTop: insets.top + 20 }]}
         >
+          {/* Small London Skyline Top Right */}
+          <View style={styles.smallSkyline}>
+            <View style={styles.smallBigBen}>
+              <View style={styles.smallBigBenTower} />
+              <View style={styles.smallBigBenSpire} />
+            </View>
+            <View style={[styles.smallBuilding, { height: 30 }]} />
+            <View style={styles.smallShard} />
+            <View style={[styles.smallBuilding, { height: 25 }]} />
+            <View style={styles.smallLondonEye} />
+          </View>
+
           <View style={styles.heroContent}>
             <Text style={styles.welcomeText}>WELCOME TO</Text>
             <Text style={styles.appTitle}>Museums of</Text>
