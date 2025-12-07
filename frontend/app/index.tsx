@@ -937,6 +937,68 @@ const styles = StyleSheet.create({
     color: '#666',
     marginTop: 8,
   },
+  // Tips Section Styles
+  tipsContainer: {
+    marginHorizontal: 20,
+    marginVertical: 20,
+    backgroundColor: '#1A1A2E',
+    borderRadius: 20,
+    overflow: 'hidden',
+  },
+  tipsHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 20,
+  },
+  tipsHeaderLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    flex: 1,
+  },
+  tipsTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
+    flex: 1,
+  },
+  tipsContent: {
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+  },
+  tipItem: {
+    flexDirection: 'row',
+    marginBottom: 16,
+    gap: 12,
+  },
+  tipNumber: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: '#E63946',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tipNumberText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  tipTextContainer: {
+    flex: 1,
+  },
+  tipTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#F1A208',
+    marginBottom: 4,
+  },
+  tipDescription: {
+    fontSize: 14,
+    color: '#CCCCCC',
+    lineHeight: 20,
+  },
   // Image Modal Styles
   imageModalContainer: {
     flex: 1,
