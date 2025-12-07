@@ -1293,6 +1293,73 @@ const styles = StyleSheet.create({
   closeButton: {
     padding: 5,
   },
+  // Language Selector Styles
+  languageButton: {
+    position: 'absolute',
+    top: 10,
+    right: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 20,
+    gap: 6,
+    zIndex: 10,
+  },
+  languageFlag: {
+    fontSize: 20,
+  },
+  languageModalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'flex-end',
+  },
+  languageModalContainer: {
+    backgroundColor: '#1A1A2E',
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    maxHeight: '80%',
+  },
+  languageModalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#333',
+  },
+  languageModalTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  languageList: {
+    padding: 16,
+  },
+  languageItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    marginBottom: 8,
+    backgroundColor: '#0F0F23',
+    borderRadius: 12,
+    gap: 16,
+  },
+  languageItemActive: {
+    backgroundColor: '#2A4A3F',
+    borderWidth: 2,
+    borderColor: '#2A9D8F',
+  },
+  languageItemFlag: {
+    fontSize: 28,
+  },
+  languageItemName: {
+    fontSize: 18,
+    color: '#fff',
+    flex: 1,
+    fontWeight: '500',
+  },
   // Museum Map Modal Styles
   mapModalContainer: {
     flex: 1,
