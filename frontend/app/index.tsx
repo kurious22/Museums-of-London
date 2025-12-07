@@ -496,108 +496,38 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginTop: -2,
   },
-  figuresContainer: {
+  // London Street Sign
+  streetSignContainer: {
     position: 'absolute',
     bottom: 240,
     right: 20,
-    flexDirection: 'row',
-    gap: 15,
-  },
-  // Female Figure (Pink/Magenta)
-  femaleFigure: {
     alignItems: 'center',
   },
-  femaleHead: {
-    width: 18,
-    height: 18,
-    borderRadius: 9,
-    backgroundColor: '#E91E63',
+  streetSignPost: {
+    width: 8,
+    height: 80,
+    backgroundColor: '#2c3e50',
+    borderRadius: 4,
   },
-  femaleNeck: {
-    width: 6,
-    height: 4,
-    backgroundColor: '#E91E63',
-    marginTop: 1,
-  },
-  femaleBodyContainer: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    marginTop: 1,
-  },
-  femaleArm: {
-    width: 5,
-    height: 24,
-    backgroundColor: '#E91E63',
-    borderRadius: 3,
-    marginTop: 2,
-  },
-  femaleArmRight: {
-    marginLeft: 2,
-  },
-  femaleBody: {
-    alignItems: 'center',
-    marginHorizontal: 2,
-  },
-  femaleTorso: {
-    width: 16,
-    height: 14,
-    backgroundColor: '#E91E63',
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
-  },
-  femaleWaist: {
-    width: 14,
-    height: 4,
-    backgroundColor: '#E91E63',
-  },
-  femaleSkirt: {
-    width: 0,
-    height: 0,
-    borderLeftWidth: 14,
-    borderRightWidth: 14,
-    borderTopWidth: 18,
-    borderLeftColor: 'transparent',
-    borderRightColor: 'transparent',
-    borderTopColor: '#E91E63',
-  },
-  femaleLegs: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: 18,
-    marginTop: 2,
-  },
-  femaleLeg: {
-    width: 6,
-    height: 24,
-    backgroundColor: '#E91E63',
-    borderRadius: 3,
-  },
-  // Male Figure (Teal/Cyan)
-  maleFigure: {
-    alignItems: 'center',
-  },
-  maleHead: {
-    width: 16,
-    height: 16,
+  streetSign: {
+    backgroundColor: '#E63946',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
     borderRadius: 8,
-    backgroundColor: '#00BCD4',
+    borderWidth: 3,
+    borderColor: '#fff',
+    marginTop: -45,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 8,
   },
-  maleBody: {
-    width: 18,
-    height: 26,
-    backgroundColor: '#00BCD4',
-    borderTopLeftRadius: 4,
-    borderTopRightRadius: 4,
-    marginTop: 2,
-  },
-  maleLegs: {
-    flexDirection: 'row',
-    gap: 4,
-  },
-  maleLeg: {
-    width: 6,
-    height: 22,
-    backgroundColor: '#00BCD4',
+  streetSignText: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#fff',
+    letterSpacing: 3,
   },
   heroContent: {
     marginTop: 20,
