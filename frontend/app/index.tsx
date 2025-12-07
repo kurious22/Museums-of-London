@@ -233,16 +233,18 @@ export default function HomeScreen() {
             <Text style={styles.statLabel}>Entry</Text>
           </LinearGradient>
           
-          <LinearGradient
-            colors={['#457B9D', '#1D3557']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-            style={styles.statCard}
-          >
-            <Ionicons name="footsteps" size={28} color="#fff" />
-            <Text style={styles.statNumber}>5</Text>
-            <Text style={styles.statLabel}>Tours</Text>
-          </LinearGradient>
+          <TouchableOpacity onPress={openMuseumMap}>
+            <LinearGradient
+              colors={['#457B9D', '#1D3557']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+              style={styles.statCard}
+            >
+              <Ionicons name="map" size={28} color="#fff" />
+              <Text style={styles.statNumber}>MAP</Text>
+              <Text style={styles.statLabel}>View All</Text>
+            </LinearGradient>
+          </TouchableOpacity>
         </View>
 
         {/* Featured Museums Section */}
