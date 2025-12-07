@@ -651,6 +651,194 @@ LONDON_MUSEUMS = [
         ],
         "featured": False,
         "rating": 4.6
+    },
+    {
+        "id": "22",
+        "name": "National Maritime Museum",
+        "description": "The National Maritime Museum in Greenwich is the world's largest maritime museum, exploring Britain's seafaring history and its impact on the world. The collection includes navigational instruments, ship models, and Nelson's uniform from the Battle of Trafalgar. The museum is part of Royal Museums Greenwich, alongside the Royal Observatory and Queen's House.",
+        "short_description": "World's largest maritime museum in historic Greenwich",
+        "address": "Romney Road, Greenwich, London SE10 9NF",
+        "latitude": 51.4810,
+        "longitude": -0.0052,
+        "image_url": "https://images.unsplash.com/photo-1730076784818-ba681289fd58?w=800&q=80",
+        "category": "Maritime History",
+        "free_entry": True,
+        "opening_hours": "Daily 10:00-17:00",
+        "website": "https://www.rmg.co.uk/national-maritime-museum",
+        "phone": "+44 20 8312 6608",
+        "transport": [
+            {"type": "dlr", "name": "Cutty Sark", "line": "DLR", "distance": "5 min walk"},
+            {"type": "train", "name": "Greenwich", "line": "Southeastern", "distance": "8 min walk"},
+            {"type": "river", "name": "Greenwich Pier", "line": "Thames Clipper", "distance": "10 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Pavilion Tea House", "type": "Cafe", "cuisine": "British", "distance": "Inside Greenwich Park", "price_range": "££", "address": "Greenwich Park", "latitude": 51.4778, "longitude": -0.0019},
+            {"name": "Old Brewery", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Old Royal Naval College", "latitude": 51.4826, "longitude": -0.0098},
+            {"name": "Goddards at Greenwich", "type": "Restaurant", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "22 King William Walk", "latitude": 51.4830, "longitude": -0.0092}
+        ],
+        "featured": False,
+        "rating": 4.7
+    },
+    {
+        "id": "23",
+        "name": "Courtauld Gallery",
+        "description": "The Courtauld Gallery at Somerset House houses one of the greatest collections of Impressionist and Post-Impressionist paintings in the world. Highlights include masterpieces by Manet, Monet, Renoir, Cézanne, Van Gogh, and Gauguin. The gallery underwent a major transformation and reopened in 2021 with enhanced displays.",
+        "short_description": "World-renowned collection of Impressionist masterpieces",
+        "address": "Somerset House, Strand, London WC2R 0RN",
+        "latitude": 51.5111,
+        "longitude": -0.1175,
+        "image_url": "https://images.unsplash.com/photo-1455995214891-0859bd03de34?w=800&q=80",
+        "category": "Art",
+        "free_entry": False,
+        "opening_hours": "Daily 10:00-18:00, last entry 17:15",
+        "website": "https://courtauld.ac.uk/gallery",
+        "phone": "+44 20 7848 2526",
+        "transport": [
+            {"type": "tube", "name": "Temple", "line": "Circle, District", "distance": "3 min walk"},
+            {"type": "tube", "name": "Covent Garden", "line": "Piccadilly", "distance": "8 min walk"},
+            {"type": "tube", "name": "Embankment", "line": "Bakerloo, Circle, District, Northern", "distance": "6 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Spring Restaurant", "type": "Restaurant", "cuisine": "Modern British", "distance": "Inside Somerset House", "price_range": "£££", "address": "Somerset House", "latitude": 51.5111, "longitude": -0.1175},
+            {"name": "Fernandez & Wells", "type": "Cafe", "cuisine": "European", "distance": "Inside Somerset House", "price_range": "££", "address": "Somerset House", "latitude": 51.5111, "longitude": -0.1175},
+            {"name": "Gordon's Wine Bar", "type": "Bar", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "47 Villiers St", "latitude": 51.5078, "longitude": -0.1227}
+        ],
+        "featured": False,
+        "rating": 4.6
+    },
+    {
+        "id": "24",
+        "name": "Saatchi Gallery",
+        "description": "The Saatchi Gallery is a leading contemporary art gallery showcasing cutting-edge work by emerging and established international artists. Housed in the Duke of York's Headquarters in Chelsea, the gallery is known for championing new artists and presenting thought-provoking exhibitions that often spark public debate.",
+        "short_description": "Contemporary art gallery showcasing emerging artists",
+        "address": "Duke of York's HQ, King's Road, London SW3 4RY",
+        "latitude": 51.4908,
+        "longitude": -0.1631,
+        "image_url": "https://images.unsplash.com/photo-1563095292-77c321bb8a35?w=800&q=80",
+        "category": "Contemporary Art",
+        "free_entry": True,
+        "opening_hours": "Daily 10:00-18:00",
+        "website": "https://www.saatchigallery.com",
+        "phone": "+44 20 7811 3070",
+        "transport": [
+            {"type": "tube", "name": "Sloane Square", "line": "Circle, District", "distance": "5 min walk"},
+            {"type": "bus", "name": "King's Road", "routes": ["11", "19", "22", "211", "319"], "distance": "2 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Saatchi Gallery Cafe", "type": "Cafe", "cuisine": "Modern European", "distance": "Inside gallery", "price_range": "££", "address": "Saatchi Gallery", "latitude": 51.4908, "longitude": -0.1631},
+            {"name": "Bluebird Chelsea", "type": "Restaurant", "cuisine": "British", "distance": "3 min walk", "price_range": "£££", "address": "350 King's Road", "latitude": 51.4883, "longitude": -0.1650},
+            {"name": "Megan's on the King's Road", "type": "Restaurant", "cuisine": "Mediterranean", "distance": "4 min walk", "price_range": "££", "address": "571 King's Road", "latitude": 51.4781, "longitude": -0.1735}
+        ],
+        "featured": False,
+        "rating": 4.5
+    },
+    {
+        "id": "25",
+        "name": "Serpentine Galleries",
+        "description": "The Serpentine Galleries comprise two exhibition spaces in Kensington Gardens: Serpentine South and Serpentine North. Known for presenting pioneering contemporary art exhibitions and the annual Serpentine Pavilion commission by leading architects, the galleries offer free access to world-class contemporary art in a beautiful park setting.",
+        "short_description": "Contemporary art galleries in Kensington Gardens",
+        "address": "Kensington Gardens, London W2 3XA",
+        "latitude": 51.5050,
+        "longitude": -0.1732,
+        "image_url": "https://images.unsplash.com/photo-1600331947653-246fb676115a?w=800&q=80",
+        "category": "Contemporary Art",
+        "free_entry": True,
+        "opening_hours": "Tue-Fri 10:00-18:00, Sat-Sun 10:00-19:00, Mon 12:00-18:00",
+        "website": "https://www.serpentinegalleries.org",
+        "phone": "+44 20 7402 6075",
+        "transport": [
+            {"type": "tube", "name": "Lancaster Gate", "line": "Central", "distance": "8 min walk"},
+            {"type": "tube", "name": "South Kensington", "line": "Circle, District, Piccadilly", "distance": "15 min walk"},
+            {"type": "bus", "name": "Bayswater Road", "routes": ["9", "10", "49", "52", "70"], "distance": "5 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Serpentine Bar & Kitchen", "type": "Restaurant", "cuisine": "British", "distance": "Inside gallery", "price_range": "££", "address": "Serpentine Galleries", "latitude": 51.5050, "longitude": -0.1732},
+            {"name": "The Magazine Restaurant", "type": "Restaurant", "cuisine": "Modern British", "distance": "5 min walk", "price_range": "£££", "address": "Serpentine Sackler Gallery", "latitude": 51.5078, "longitude": -0.1775},
+            {"name": "Honest Burgers", "type": "Restaurant", "cuisine": "American", "distance": "10 min walk", "price_range": "££", "address": "Queensway", "latitude": 51.5104, "longitude": -0.1875}
+        ],
+        "featured": False,
+        "rating": 4.6
+    },
+    {
+        "id": "26",
+        "name": "Museum of Brands",
+        "description": "The Museum of Brands in Notting Hill tells the story of consumer culture through over 12,000 original items of packaging, advertising, and branded products. The 'time tunnel' exhibition takes visitors on a journey from Victorian times to the present day, exploring how brands have shaped our lives and society.",
+        "short_description": "Journey through 150 years of British consumer culture",
+        "address": "111-117 Lancaster Road, London W11 1QT",
+        "latitude": 51.5171,
+        "longitude": -0.2027,
+        "image_url": "https://images.unsplash.com/photo-1681650669070-c04638e6f16e?w=800&q=80",
+        "category": "Social History",
+        "free_entry": False,
+        "opening_hours": "Mon-Sat 10:00-18:00, Sun 11:00-17:00",
+        "website": "https://museumofbrands.com",
+        "phone": "+44 20 7243 9611",
+        "transport": [
+            {"type": "tube", "name": "Ladbroke Grove", "line": "Circle, Hammersmith & City", "distance": "3 min walk"},
+            {"type": "tube", "name": "Notting Hill Gate", "line": "Central, Circle, District", "distance": "12 min walk"},
+            {"type": "bus", "name": "Lancaster Road", "routes": ["7", "23", "70"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Museum Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Museum of Brands", "latitude": 51.5171, "longitude": -0.2027},
+            {"name": "Granger & Co", "type": "Restaurant", "cuisine": "Australian", "distance": "8 min walk", "price_range": "££", "address": "175 Westbourne Grove", "latitude": 51.5163, "longitude": -0.1970},
+            {"name": "The Cock & Bottle", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "17 Needham Rd", "latitude": 51.5193, "longitude": -0.2053}
+        ],
+        "featured": False,
+        "rating": 4.5
+    },
+    {
+        "id": "27",
+        "name": "Grant Museum of Zoology",
+        "description": "The Grant Museum of Zoology at UCL is one of the oldest and most important natural history collections in Britain, with over 68,000 specimens. Founded in 1828, the museum features rare and extinct species including skeletons, mounted animals, and specimens preserved in fluid, offering a unique window into biodiversity past and present.",
+        "short_description": "UCL's historic zoology collection with rare specimens",
+        "address": "Rockefeller Building, 21 University Street, London WC1E 6DE",
+        "latitude": 51.5246,
+        "longitude": -0.1340,
+        "image_url": "https://images.unsplash.com/photo-1623960735384-d5f974262164?w=800&q=80",
+        "category": "Natural History",
+        "free_entry": True,
+        "opening_hours": "Tue-Fri 13:00-17:00, Sat 11:00-17:00",
+        "website": "https://www.ucl.ac.uk/culture/grant-museum-zoology",
+        "phone": "+44 20 3108 2052",
+        "transport": [
+            {"type": "tube", "name": "Euston Square", "line": "Circle, Hammersmith & City, Metropolitan", "distance": "3 min walk"},
+            {"type": "tube", "name": "Warren Street", "line": "Northern, Victoria", "distance": "5 min walk"},
+            {"type": "tube", "name": "Goodge Street", "line": "Northern", "distance": "7 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Pret A Manger", "type": "Cafe", "cuisine": "British", "distance": "2 min walk", "price_range": "£", "address": "Gower Street", "latitude": 51.5241, "longitude": -0.1335},
+            {"name": "Dalloway Terrace", "type": "Restaurant", "cuisine": "British", "distance": "8 min walk", "price_range": "£££", "address": "16-22 Great Russell St", "latitude": 51.5185, "longitude": -0.1278},
+            {"name": "The Bloomsbury Tavern", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "236 Shaftesbury Ave", "latitude": 51.5196, "longitude": -0.1296}
+        ],
+        "featured": False,
+        "rating": 4.7
+    },
+    {
+        "id": "28",
+        "name": "Petrie Museum of Egyptian Archaeology",
+        "description": "The Petrie Museum at UCL houses over 80,000 objects, making it one of the world's leading collections of Egyptian and Sudanese archaeology. Named after pioneering Egyptologist Flinders Petrie, the museum displays artifacts spanning from prehistory through the Pharaonic, Ptolemaic, Roman, and Coptic periods, including the oldest surviving dress and ancient manuscripts.",
+        "short_description": "World-class collection of Egyptian and Sudanese archaeology",
+        "address": "Malet Place, London WC1E 6BT",
+        "latitude": 51.5233,
+        "longitude": -0.1341,
+        "image_url": "https://images.unsplash.com/photo-1587902330131-10366c6fd83e?w=800&q=80",
+        "category": "Ancient History",
+        "free_entry": True,
+        "opening_hours": "Tue-Fri 13:00-17:00, Sat 11:00-17:00",
+        "website": "https://www.ucl.ac.uk/culture/petrie-museum",
+        "phone": "+44 20 7679 2884",
+        "transport": [
+            {"type": "tube", "name": "Euston Square", "line": "Circle, Hammersmith & City, Metropolitan", "distance": "4 min walk"},
+            {"type": "tube", "name": "Warren Street", "line": "Northern, Victoria", "distance": "6 min walk"},
+            {"type": "tube", "name": "Goodge Street", "line": "Northern", "distance": "8 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "The Espresso Room", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "31-35 Great Ormond St", "latitude": 51.5219, "longitude": -0.1223},
+            {"name": "North Sea Fish Restaurant", "type": "Restaurant", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "7-8 Leigh St", "latitude": 51.5250, "longitude": -0.1230},
+            {"name": "The Friend at Hand", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "2 Herbrand St", "latitude": 51.5254, "longitude": -0.1247}
+        ],
+        "featured": False,
+        "rating": 4.8
     }
 ]
 
