@@ -750,8 +750,8 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   museumsOfText: {
-    fontSize: 24,
-    fontWeight: '400',
+    fontSize: 36,
+    fontWeight: 'bold',
     color: '#FFFFFF',
     marginTop: 8,
   },
