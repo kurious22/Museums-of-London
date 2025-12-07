@@ -472,7 +472,7 @@ export default function HomeScreen() {
             </View>
             
             <Text style={styles.currencyDisclaimer}>
-              * Approximate rates. Check current rates before exchanging.
+              {i18n.t('approxRates')}
             </Text>
           </View>
         </View>
