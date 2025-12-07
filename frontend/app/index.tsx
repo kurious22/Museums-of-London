@@ -147,9 +147,15 @@ export default function HomeScreen() {
             {/* Female Figure - Pink/Purple */}
             <View style={styles.femaleFigure}>
               <View style={styles.femaleHead} />
-              <View style={styles.femaleBody}>
-                <View style={styles.femaleTorso} />
-                <View style={styles.femaleSkirt} />
+              <View style={styles.femaleNeck} />
+              <View style={styles.femaleBodyContainer}>
+                <View style={styles.femaleArm} />
+                <View style={styles.femaleBody}>
+                  <View style={styles.femaleTorso} />
+                  <View style={styles.femaleWaist} />
+                  <View style={styles.femaleSkirt} />
+                </View>
+                <View style={[styles.femaleArm, styles.femaleArmRight]} />
               </View>
               <View style={styles.femaleLegs}>
                 <View style={styles.femaleLeg} />
