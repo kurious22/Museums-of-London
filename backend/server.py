@@ -301,7 +301,7 @@ LONDON_MUSEUMS = [
         "category": "History & Heritage",
         "free_entry": False,
         "opening_hours": "Tue-Sat 09:00-17:00, Sun-Mon 10:00-17:00",
-        "website": "https://www.hrp.org.uk/tower-of-london",
+        "website": "https://www.tower of-london.com",
         "phone": "+44 20 3166 6000",
         "transport": [
             {"type": "tube", "name": "Tower Hill", "line": "Circle, District", "distance": "2 min walk"},
