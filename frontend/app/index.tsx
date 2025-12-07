@@ -351,6 +351,27 @@ export default function HomeScreen() {
         <View style={{ height: 30 }} />
       </ScrollView>
 
+      {/* Tube Map PDF Modal */}
+      <Modal
+        visible={showTubeMapModal}
+        animationType="slide"
+        transparent={false}
+        onRequestClose={() => setShowTubeMapModal(false)}
+      >
+        <View style={styles.pdfModalContainer}>
+          <View style={styles.pdfHeader}>
+            <Text style={styles.pdfTitle}>London Underground Map</Text>
+            <TouchableOpacity onPress={() => setShowTubeMapModal(false)}>
+              <Ionicons name="close-circle" size={32} color="#0019A8" />
+            </TouchableOpacity>
+          </View>
+          <WebView
+            source={{ uri: 'https://customer-assets.emergentagent.com/job_london-museums-app/artifacts/u9bo0nlh_tube-map-2025.pdf' }}
+            style={styles.pdfWebView}
+          />
+        </View>
+      </Modal>
+
       {/* Museum Map Modal */}
       <Modal
         visible={showMapModal}
