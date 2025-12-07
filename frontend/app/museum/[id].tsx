@@ -430,7 +430,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   heroContainer: {
-    height: 340,
+    height: 240,
     position: 'relative',
   },
   heroImage: {
