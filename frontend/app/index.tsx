@@ -779,7 +779,12 @@ const styles = StyleSheet.create({
     color: '#CCCCCC',
     flex: 1,
   },
-  // Search Section Styles
+  // Search Section Styles (In Hero)
+  searchSectionInHero: {
+    marginHorizontal: 20,
+    marginTop: 20,
+    marginBottom: 12,
+  },
   searchSection: {
     marginHorizontal: 20,
     marginVertical: 20,
