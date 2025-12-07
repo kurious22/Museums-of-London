@@ -347,67 +347,6 @@ export default function HomeScreen() {
           )}
         </View>
 
-        {/* Featured Museums Section */}
-        <View style={styles.sectionContainer}>
-          <View style={styles.sectionHeader}>
-            <View style={styles.sectionTitleContainer}>
-              <Ionicons name="star" size={22} color="#F1A208" />
-              <Text style={styles.sectionTitle}>Featured Museums</Text>
-            </View>
-            <TouchableOpacity onPress={navigateToExplore}>
-              <Text style={styles.seeAllText}>See All</Text>
-            </TouchableOpacity>
-          </View>
-
-          {loading ? (
-            <View style={styles.loadingContainer}>
-              <ActivityIndicator size="large" color="#E63946" />
-            </View>
-          ) : (
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.featuredScroll}
-            >
-              {featuredMuseums.map((museum, index) => (
-                <TouchableOpacity
-                  key={museum.id}
-                  style={styles.featuredCard}
-                  onPress={() => navigateToMuseum(museum.id)}
-                  activeOpacity={0.9}
-                >
-                  <Image
-                    source={{ uri: museum.image_url }}
-                    style={styles.featuredImage}
-                  />
-                  <LinearGradient
-                    colors={['transparent', 'rgba(0,0,0,0.8)']}
-                    style={styles.featuredOverlay}
-                  >
-                    <View style={styles.featuredBadge}>
-                      <Text style={styles.badgeText}>
-                        {museum.free_entry ? 'FREE' : 'PAID'}
-                      </Text>
-                    </View>
-                    <View style={styles.featuredInfo}>
-                      <Text style={styles.featuredName} numberOfLines={2}>
-                        {museum.name}
-                      </Text>
-                      <Text style={styles.featuredCategory}>
-                        {museum.category}
-                      </Text>
-                      <View style={styles.ratingContainer}>
-                        <Ionicons name="star" size={14} color="#FFD700" />
-                        <Text style={styles.ratingText}>{museum.rating}</Text>
-                      </View>
-                    </View>
-                  </LinearGradient>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          )}
-        </View>
-
         {/* Colorful Categories Section */}
         <View style={styles.sectionContainer}>
           <View style={styles.sectionTitleContainer}>
