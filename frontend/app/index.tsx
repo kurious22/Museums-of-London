@@ -431,7 +431,7 @@ export default function HomeScreen() {
                 <Text style={styles.currencyLabel}>From</Text>
                 <View style={styles.currencyPickerWrapper}>
                   <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.currencyScroll}>
-                    {['USD', 'EUR', 'JPY', 'CNY', 'AUD', 'CAD', 'CHF', 'INR', 'KRW', 'MXN'].map((currency) => (
+                    {['USD', 'EUR', 'JPY', 'CNY', 'AUD', 'CAD', 'CHF', 'INR', 'KRW', 'MXN', 'BRL', 'SGD', 'NZD', 'HKD', 'AED'].map((currency) => (
                       <TouchableOpacity
                         key={currency}
                         style={[
