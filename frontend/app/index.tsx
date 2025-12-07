@@ -124,40 +124,12 @@ export default function HomeScreen() {
           end={{ x: 1, y: 1 }}
           style={[styles.heroSection, { paddingTop: insets.top + 20 }]}
         >
-          {/* London Skyline Top Right - Cartoon Style */}
-          <View style={styles.smallSkyline}>
-            {/* Big Ben with clock */}
-            <View style={styles.smallBigBen}>
-              <View style={styles.smallBigBenTop} />
-              <View style={styles.smallBigBenTower}>
-                <View style={styles.smallClock} />
-              </View>
-              <View style={styles.smallBigBenBase} />
-              <View style={styles.smallBigBenSpire} />
-            </View>
-            {/* Generic building 1 */}
-            <View style={[styles.smallBuilding, { height: 45, width: 12 }]} />
-            {/* The Shard */}
-            <View style={styles.smallShard} />
-            {/* St Paul's Cathedral */}
-            <View style={styles.smallStPauls}>
-              <View style={styles.smallDome} />
-              <View style={styles.smallStPaulsBase} />
-            </View>
-            {/* Generic building 2 */}
-            <View style={[styles.smallBuilding, { height: 38, width: 10 }]} />
-            {/* London Eye */}
-            <View style={styles.smallLondonEye}>
-              <View style={styles.smallEyeWheel} />
-              <View style={styles.smallEyeBase} />
-            </View>
-            {/* Tower Bridge */}
-            <View style={styles.smallTowerBridge}>
-              <View style={styles.smallBridgeTower} />
-              <View style={styles.smallBridgeSpan} />
-              <View style={styles.smallBridgeTower} />
-            </View>
-          </View>
+          {/* London Skyline Image */}
+          <Image 
+            source={{ uri: 'https://customer-assets.emergentagent.com/job_london-museums-app/artifacts/5e9j783q_grok_image_fu5a6y.jpg' }}
+            style={styles.skylineImage}
+            resizeMode="contain"
+          />
 
           <View style={styles.heroContent}>
             <Text style={styles.welcomeText}>WELCOME TO</Text>
