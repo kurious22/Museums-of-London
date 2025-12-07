@@ -493,38 +493,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginTop: -2,
   },
-  // London Street Sign
-  streetSignContainer: {
+  // Globe Icon
+  globeContainer: {
     position: 'absolute',
     bottom: 240,
     right: 20,
-    alignItems: 'center',
-  },
-  streetSignPost: {
-    width: 5,
-    height: 50,
-    backgroundColor: '#2c3e50',
-    borderRadius: 3,
-  },
-  streetSign: {
-    backgroundColor: '#E63946',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 6,
-    borderWidth: 2,
-    borderColor: '#fff',
-    marginTop: -28,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 6,
-  },
-  streetSignText: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#fff',
-    letterSpacing: 2,
   },
   heroContent: {
     marginTop: 20,
