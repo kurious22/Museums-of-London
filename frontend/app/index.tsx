@@ -523,9 +523,9 @@ export default function HomeScreen() {
               <View style={styles.tourPromoContent}>
                 <Ionicons name="walk" size={40} color="#fff" />
                 <View style={styles.tourPromoText}>
-                  <Text style={styles.tourPromoTitle}>Walking Tours</Text>
+                  <Text style={styles.tourPromoTitle}>{i18n.t('walkingTours')}</Text>
                   <Text style={styles.tourPromoSubtitle}>
-                    Explore multiple museums in one day with our curated routes!
+                    {i18n.t('walkingToursSubtitle')}
                   </Text>
                 </View>
               </View>
