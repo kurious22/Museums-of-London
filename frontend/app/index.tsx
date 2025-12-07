@@ -74,6 +74,20 @@ export default function HomeScreen() {
     router.push('/tours');
   };
 
+  const openTubeMap = async () => {
+    const tubeMapUrl = 'https://tfl.gov.uk/maps/track/tube';
+    try {
+      const supported = await Linking.canOpenURL(tubeMapUrl);
+      if (supported) {
+        await Linking.openURL(tubeMapUrl);
+      } else {
+        Alert.alert('Error', 'Cannot open the Tube map');
+      }
+    } catch (error) {
+      Alert.alert('Error', 'Failed to open the Tube map');
+    }
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
