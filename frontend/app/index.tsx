@@ -791,8 +791,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingVertical: 10,
     marginHorizontal: 20,
-    marginTop: 16,
-    marginBottom: 8,
+    marginTop: 8,
+    marginBottom: 4,
     gap: 6,
   },
   tubeMapButtonText: {
