@@ -330,29 +330,21 @@ export default function MuseumDetailScreen() {
             <Ionicons name="train-outline" size={22} color="#E63946" />
             <Text style={styles.sectionTitle}>Getting There</Text>
           </View>
-          {(() => {
-            // Filter and limit to 3 nearest tube stations and 3 nearest bus stops
-            const tubes = museum.transport.filter(t => t.type.toLowerCase() === 'tube').slice(0, 3);
-            const buses = museum.transport.filter(t => t.type.toLowerCase() === 'bus').slice(0, 3);
-            const trains = museum.transport.filter(t => t.type.toLowerCase() === 'train');
-            const limitedTransport = [...tubes, ...buses, ...trains];
-            
-            return limitedTransport.map((t, index) => (
-              <View key={index} style={styles.transportItem}>
-                <View style={styles.transportIcon}>
-                  <Ionicons name={getTransportIcon(t.type) as any} size={24} color="#fff" />
-                </View>
-                <View style={styles.transportInfo}>
-                  <Text style={styles.transportName}>{t.name}</Text>
-                  {t.line && <Text style={styles.transportLine}>{t.line}</Text>}
-                  {t.routes && (
-                    <Text style={styles.transportLine}>Routes: {t.routes.join(', ')}</Text>
-                  )}
-                  <Text style={styles.transportDistance}>{t.distance}</Text>
-                </View>
+          {museum.transport.map((t, index) => (
+            <View key={index} style={styles.transportItem}>
+              <View style={styles.transportIcon}>
+                <Ionicons name={getTransportIcon(t.type) as any} size={24} color="#fff" />
               </View>
-            ));
-          })()}
+              <View style={styles.transportInfo}>
+                <Text style={styles.transportName}>{t.name}</Text>
+                {t.line && <Text style={styles.transportLine}>{t.line}</Text>}
+                {t.routes && (
+                  <Text style={styles.transportLine}>Routes: {t.routes.join(', ')}</Text>
+                )}
+                <Text style={styles.transportDistance}>{t.distance}</Text>
+              </View>
+            </View>
+          ))}
         </View>
 
         {/* Nearby Eateries Section */}
