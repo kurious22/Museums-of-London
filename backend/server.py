@@ -447,7 +447,7 @@ LONDON_MUSEUMS = [
         "address": "Millbank, London SW1P 4RG",
         "latitude": 51.4910,
         "longitude": -0.1277,
-        "image_url": "https://images.unsplash.com/photo-1671561038546-d85f517e1d3d?w=800&q=80",
+        "image_url": "https://images.unsplash.com/photo-1502052434201-a444d17aa5d7?w=800&q=80",
         "category": "Art",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
