@@ -167,7 +167,7 @@ LONDON_MUSEUMS = [
         "address": "Cromwell Road, London SW7 2RL",
         "latitude": 51.4966,
         "longitude": -0.1722,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/British_Museum_%28aerial%29.jpg",
+        "image_url": "https://images.pexels.com/photos/3889727/pexels-photo-3889727.jpeg?auto=compress&cs=tinysrgb&w=800",
         "category": "Art & Design",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:45, Fri until 22:00",
