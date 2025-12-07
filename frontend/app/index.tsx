@@ -124,42 +124,6 @@ export default function HomeScreen() {
           end={{ x: 1, y: 1 }}
           style={[styles.heroSection, { paddingTop: insets.top + 20 }]}
         >
-          {/* Large London Skyline Silhouette */}
-          <View style={styles.skylineContainer}>
-            <View style={styles.skylineBuildings}>
-              {/* Big Ben */}
-              <View style={styles.bigBen}>
-                <View style={styles.bigBenTower} />
-                <View style={styles.bigBenTop} />
-                <View style={styles.bigBenSpire} />
-              </View>
-              {/* Building 1 */}
-              <View style={[styles.building, { height: 90, width: 40 }]} />
-              {/* London Eye */}
-              <View style={styles.londonEye}>
-                <View style={styles.londonEyeWheel} />
-                <View style={styles.londonEyeBase} />
-              </View>
-              {/* Tower Bridge */}
-              <View style={styles.towerBridge}>
-                <View style={styles.bridgeTower} />
-                <View style={styles.bridgeSpan} />
-                <View style={styles.bridgeTower} />
-              </View>
-              {/* Building 2 */}
-              <View style={[styles.building, { height: 110, width: 35 }]} />
-              {/* The Shard */}
-              <View style={styles.shard} />
-              {/* St Paul's Dome */}
-              <View style={styles.stPauls}>
-                <View style={styles.stPaulsDome} />
-                <View style={styles.stPaulsBase} />
-              </View>
-              {/* Building 3 */}
-              <View style={[styles.building, { height: 70, width: 45 }]} />
-            </View>
-          </View>
-
           <View style={styles.heroContent}>
             <Text style={styles.welcomeText}>WELCOME TO</Text>
             <Text style={styles.appTitle}>Museums of</Text>
