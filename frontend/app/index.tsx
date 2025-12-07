@@ -507,19 +507,26 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     marginTop: 8,
   },
+  londonRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    marginTop: 8,
+  },
   londonBadge: {
     backgroundColor: '#E63946',
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 8,
-    alignSelf: 'flex-start',
-    marginTop: 8,
   },
   londonText: {
     fontSize: 32,
     fontWeight: 'bold',
     color: '#fff',
     letterSpacing: 2,
+  },
+  londonGlobe: {
+    marginLeft: 12,
   },
   heroSubtitle: {
     fontSize: 16,
