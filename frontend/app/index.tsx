@@ -124,13 +124,6 @@ export default function HomeScreen() {
           end={{ x: 1, y: 1 }}
           style={[styles.heroSection, { paddingTop: insets.top + 20 }]}
         >
-          {/* London Skyline Image */}
-          <Image 
-            source={{ uri: 'https://customer-assets.emergentagent.com/job_london-museums-app/artifacts/5e9j783q_grok_image_fu5a6y.jpg' }}
-            style={styles.skylineImage}
-            resizeMode="contain"
-          />
-
           <View style={styles.heroContent}>
             <Text style={styles.welcomeText}>WELCOME TO</Text>
             <Text style={styles.museumsOfText}>Museums of</Text>
