@@ -103,6 +103,30 @@ export default function HomeScreen() {
     setShowTubeMapModal(true);
   };
 
+  const handleSearch = async (query: string) => {
+    setSearchQuery(query);
+    if (query.trim().length === 0) {
+      setSearchResults([]);
+      return;
+    }
+    
+    setSearching(true);
+    try {
+      const response = await fetch(`${BACKEND_URL}/api/museums?search=${encodeURIComponent(query)}`);
+      const data = await response.json();
+      setSearchResults(data);
+    } catch (error) {
+      console.error('Error searching museums:', error);
+    } finally {
+      setSearching(false);
+    }
+  };
+
+  const clearSearch = () => {
+    setSearchQuery('');
+    setSearchResults([]);
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
