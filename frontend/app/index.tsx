@@ -418,7 +418,7 @@ export default function HomeScreen() {
           <View style={styles.currencyContent}>
             <View style={styles.currencyInputRow}>
               <View style={styles.currencyInputContainer}>
-                <Text style={styles.currencyLabel}>Amount</Text>
+                <Text style={styles.currencyLabel}>{i18n.t('amount')}</Text>
                 <TextInput
                   style={styles.currencyInput}
                   value={currencyAmount}
@@ -431,8 +431,8 @@ export default function HomeScreen() {
               
               <View style={styles.currencyPickerContainer}>
                 <View style={styles.currencyLabelRow}>
-                  <Text style={styles.currencyLabel}>From </Text>
-                  <Text style={styles.currencyScrollHint}>scroll left to right</Text>
+                  <Text style={styles.currencyLabel}>{i18n.t('from')} </Text>
+                  <Text style={styles.currencyScrollHint}>{i18n.t('scrollLeftRight')}</Text>
                 </View>
                 <View style={styles.currencyPickerWrapper}>
                   <ScrollView 
