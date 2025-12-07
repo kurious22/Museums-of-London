@@ -975,39 +975,6 @@ LONDON_MUSEUMS = [
             {"name": "Pret A Manger Grant", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "£", "address": "Near Grant Museum of Zoology", "latitude": 51.523, "longitude": -0.1366}],
         "featured": False,
         "rating": 4.7
-    },
-    {
-        "id": "28",
-        "name": "Petrie Museum of Egyptian Archaeology",
-        "description": "The Petrie Museum at UCL houses over 80,000 objects, making it one of the world's leading collections of Egyptian and Sudanese archaeology. Named after pioneering Egyptologist Flinders Petrie, the museum displays artifacts spanning from prehistory through the Pharaonic, Ptolemaic, Roman, and Coptic periods, including the oldest surviving dress and ancient manuscripts.",
-        "short_description": "World-class collection of Egyptian and Sudanese archaeology",
-        "address": "Malet Place, London WC1E 6BT",
-        "latitude": 51.5233,
-        "longitude": -0.1341,
-        "image_url": "https://images.unsplash.com/photo-1587902330131-10366c6fd83e?w=800&q=80",
-        "category": "Ancient History",
-        "free_entry": True,
-        "opening_hours": "Tue-Fri 13:00-17:00, Sat 11:00-17:00",
-        "website": "https://www.ucl.ac.uk/culture/petrie-museum",
-        "phone": "+44 20 7679 2884",
-        "transport": [
-            {"type": "tube", "name": "Euston Square", "line": "Circle, Hammersmith & City, Metropolitan", "distance": "4 min walk"},
-            {"type": "tube", "name": "Warren Street", "line": "Northern, Victoria", "distance": "6 min walk"},
-            {"type": "tube", "name": "Goodge Street", "line": "Northern", "distance": "8 min walk"}
-        ],
-        "nearby_eateries": [
-            {"name": "The Espresso Room", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "31-35 Great Ormond St", "latitude": 51.5219, "longitude": -0.1223},
-            {"name": "North Sea Fish Restaurant", "type": "Restaurant", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "7-8 Leigh St", "latitude": 51.5250, "longitude": -0.1230},
-            {"name": "The Friend at Hand", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "2 Herbrand St", "latitude": 51.5254, "longitude": -0.1247},
-            {"name": "Leon Petrie", "type": "Cafe", "cuisine": "Healthy", "distance": "6 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5225, "longitude": -0.1335},
-            {"name": "Starbucks Petrie", "type": "Cafe", "cuisine": "Coffee", "distance": "4 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5213, "longitude": -0.1317},
-            {"name": "Caffè Nero Petrie", "type": "Cafe", "cuisine": "Coffee", "distance": "5 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5209, "longitude": -0.1331},
-            {"name": "The Swan Petrie", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5222, "longitude": -0.1313},
-            {"name": "The White Hart Petrie", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.525, "longitude": -0.1359},
-            {"name": "The George Petrie", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5235, "longitude": -0.1312},
-            {"name": "Joe & The Juice Petrie", "type": "Cafe", "cuisine": "Healthy", "distance": "4 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5245, "longitude": -0.134}],
-        "featured": False,
-        "rating": 4.8
     }
 ]
 
