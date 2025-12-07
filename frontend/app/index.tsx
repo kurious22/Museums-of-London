@@ -496,27 +496,29 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        {/* Fun Tips Section */}
-        <View style={styles.tipsContainer}>
-          <View style={styles.sectionTitleContainer}>
-            <Ionicons name="bulb" size={22} color="#F1A208" />
-            <Text style={styles.sectionTitle}>Visitor Tips</Text>
-          </View>
-          <View style={styles.tipsList}>
-            {[
-              { icon: 'ticket-outline', text: 'Most major museums offer free entry', color: '#2A9D8F' },
-              { icon: 'time-outline', text: 'Visit early morning to avoid crowds', color: '#E63946' },
-              { icon: 'train-outline', text: 'All museums are accessible by tube', color: '#457B9D' },
-              { icon: 'camera-outline', text: 'Photography usually allowed (no flash)', color: '#9B59B6' },
-            ].map((tip, index) => (
-              <View key={index} style={styles.tipItem}>
-                <View style={[styles.tipIconContainer, { backgroundColor: tip.color + '20' }]}>
-                  <Ionicons name={tip.icon as any} size={20} color={tip.color} />
+        {/* Walking Tours Promo */}
+        <View style={styles.sectionContainer}>
+          <TouchableOpacity onPress={navigateToTours} activeOpacity={0.9}>
+            <LinearGradient
+              colors={['#9B59B6', '#3498DB', '#1ABC9C']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={styles.tourPromo}
+            >
+              <View style={styles.tourPromoContent}>
+                <Ionicons name="walk" size={40} color="#fff" />
+                <View style={styles.tourPromoText}>
+                  <Text style={styles.tourPromoTitle}>Walking Tours</Text>
+                  <Text style={styles.tourPromoSubtitle}>
+                    Explore multiple museums in one day with our curated routes!
+                  </Text>
                 </View>
-                <Text style={styles.tipText}>{tip.text}</Text>
               </View>
-            ))}
-          </View>
+              <View style={styles.tourPromoArrow}>
+                <Ionicons name="arrow-forward-circle" size={32} color="#fff" />
+              </View>
+            </LinearGradient>
+          </TouchableOpacity>
         </View>
 
         <View style={{ height: 30 }} />
