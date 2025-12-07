@@ -196,6 +196,22 @@ export default function HomeScreen() {
               <Text style={styles.tourButtonText}>Walking Tours</Text>
             </TouchableOpacity>
           </View>
+
+          {/* Tube Map Button */}
+          <TouchableOpacity
+            style={styles.tubeMapButton}
+            onPress={openTubeMap}
+            activeOpacity={0.8}
+          >
+            <View style={styles.tubeMapIconContainer}>
+              <Ionicons name="subway" size={24} color="#fff" />
+            </View>
+            <View style={styles.tubeMapTextContainer}>
+              <Text style={styles.tubeMapTitle}>London Underground Map</Text>
+              <Text style={styles.tubeMapSubtitle}>View the Tube network</Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color="#fff" />
+          </TouchableOpacity>
         </LinearGradient>
 
         {/* Colorful Quick Stats */}
