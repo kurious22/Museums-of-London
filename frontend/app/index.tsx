@@ -13,6 +13,8 @@ import {
   Linking,
   Alert,
   Modal,
+  TextInput,
+  FlatList,
 } from 'react-native';
 import ImageViewer from 'react-native-image-zoom-viewer';
 import { StatusBar } from 'expo-status-bar';
