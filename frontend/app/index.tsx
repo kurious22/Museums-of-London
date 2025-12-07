@@ -142,35 +142,11 @@ export default function HomeScreen() {
             </View>
           </View>
 
-          {/* Colorful Silhouette Figures */}
-          <View style={styles.figuresContainer}>
-            {/* Female Figure - Pink/Purple */}
-            <View style={styles.femaleFigure}>
-              <View style={styles.femaleHead} />
-              <View style={styles.femaleNeck} />
-              <View style={styles.femaleBodyContainer}>
-                <View style={styles.femaleArm} />
-                <View style={styles.femaleBody}>
-                  <View style={styles.femaleTorso} />
-                  <View style={styles.femaleWaist} />
-                  <View style={styles.femaleSkirt} />
-                </View>
-                <View style={[styles.femaleArm, styles.femaleArmRight]} />
-              </View>
-              <View style={styles.femaleLegs}>
-                <View style={styles.femaleLeg} />
-                <View style={styles.femaleLeg} />
-              </View>
-            </View>
-            
-            {/* Male Figure - Blue/Teal */}
-            <View style={styles.maleFigure}>
-              <View style={styles.maleHead} />
-              <View style={styles.maleBody} />
-              <View style={styles.maleLegs}>
-                <View style={styles.maleLeg} />
-                <View style={styles.maleLeg} />
-              </View>
+          {/* London Street Sign */}
+          <View style={styles.streetSignContainer}>
+            <View style={styles.streetSignPost} />
+            <View style={styles.streetSign}>
+              <Text style={styles.streetSignText}>LONDON</Text>
             </View>
           </View>
 
