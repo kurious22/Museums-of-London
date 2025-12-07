@@ -53,6 +53,8 @@ export default function HomeScreen() {
   const [currencyAmount, setCurrencyAmount] = useState('100');
   const [selectedCurrency, setSelectedCurrency] = useState('USD');
   const [convertedAmount, setConvertedAmount] = useState('0');
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState({ code: 'en', name: 'English', flag: '🇬🇧' });
 
   const fetchFeaturedMuseums = async () => {
     try {
