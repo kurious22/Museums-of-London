@@ -170,7 +170,7 @@ export default function HomeScreen() {
             activeOpacity={0.8}
           >
             <View style={styles.tubeMapIconContainer}>
-              <Ionicons name="subway" size={24} color="#fff" />
+              <Ionicons name="subway" size={18} color="#fff" />
             </View>
             <View style={styles.tubeMapTextContainer}>
               <Text style={styles.tubeMapTitle}>London Underground Map</Text>
