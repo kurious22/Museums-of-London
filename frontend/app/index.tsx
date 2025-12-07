@@ -173,6 +173,16 @@ export default function HomeScreen() {
           end={{ x: 1, y: 1 }}
           style={[styles.heroSection, { paddingTop: insets.top + 20 }]}
         >
+          {/* Language Selector Button - Top Right */}
+          <TouchableOpacity 
+            style={styles.languageButton}
+            onPress={() => setShowLanguageModal(true)}
+            activeOpacity={0.8}
+          >
+            <Text style={styles.languageFlag}>{selectedLanguage.flag}</Text>
+            <Ionicons name="chevron-down" size={16} color="#fff" />
+          </TouchableOpacity>
+
           <View style={styles.heroContent}>
             <Text style={styles.welcomeText}>WELCOME TO</Text>
             <Text style={styles.museumsOfText}>Museums of</Text>
