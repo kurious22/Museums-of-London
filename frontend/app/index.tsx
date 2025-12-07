@@ -711,6 +711,29 @@ const styles = StyleSheet.create({
     color: '#CCCCCC',
     flex: 1,
   },
+  // PDF Modal Styles
+  pdfModalContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  pdfHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    paddingTop: 50,
+    backgroundColor: '#fff',
+    borderBottomWidth: 2,
+    borderBottomColor: '#0019A8',
+  },
+  pdfTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#1D3557',
+  },
+  pdfWebView: {
+    flex: 1,
+  },
   // Museum Map Modal Styles
   mapModalContainer: {
     flex: 1,
