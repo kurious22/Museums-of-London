@@ -578,6 +578,74 @@ export default function HomeScreen() {
         </View>
       </Modal>
 
+      {/* Language Selection Modal */}
+      <Modal
+        visible={showLanguageModal}
+        animationType="slide"
+        transparent={true}
+        onRequestClose={() => setShowLanguageModal(false)}
+      >
+        <View style={styles.languageModalOverlay}>
+          <View style={styles.languageModalContainer}>
+            <View style={styles.languageModalHeader}>
+              <Text style={styles.languageModalTitle}>Select Language</Text>
+              <TouchableOpacity onPress={() => setShowLanguageModal(false)}>
+                <Ionicons name="close" size={28} color="#fff" />
+              </TouchableOpacity>
+            </View>
+            
+            <ScrollView style={styles.languageList}>
+              {[
+                { code: 'en', name: 'English', flag: '🇬🇧' },
+                { code: 'es', name: 'Español', flag: '🇪🇸' },
+                { code: 'fr', name: 'Français', flag: '🇫🇷' },
+                { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+                { code: 'zh', name: '中文', flag: '🇨🇳' },
+                { code: 'ja', name: '日本語', flag: '🇯🇵' },
+                { code: 'ko', name: '한국어', flag: '🇰🇷' },
+                { code: 'pt', name: 'Português', flag: '🇵🇹' },
+                { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+                { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+                { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+                { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
+                { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+                { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
+                { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+                { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
+                { code: 'no', name: 'Norsk', flag: '🇳🇴' },
+                { code: 'da', name: 'Dansk', flag: '🇩🇰' },
+                { code: 'fi', name: 'Suomi', flag: '🇫🇮' },
+                { code: 'el', name: 'Ελληνικά', flag: '🇬🇷' },
+              ].map((language) => (
+                <TouchableOpacity
+                  key={language.code}
+                  style={[
+                    styles.languageItem,
+                    selectedLanguage.code === language.code && styles.languageItemActive
+                  ]}
+                  onPress={() => {
+                    setSelectedLanguage(language);
+                    setShowLanguageModal(false);
+                    Alert.alert(
+                      'Language Changed',
+                      `Language set to ${language.name}. Full translation feature coming soon!`,
+                      [{ text: 'OK' }]
+                    );
+                  }}
+                  activeOpacity={0.7}
+                >
+                  <Text style={styles.languageItemFlag}>{language.flag}</Text>
+                  <Text style={styles.languageItemName}>{language.name}</Text>
+                  {selectedLanguage.code === language.code && (
+                    <Ionicons name="checkmark-circle" size={24} color="#2A9D8F" />
+                  )}
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
+        </View>
+      </Modal>
+
       {/* Museum Map Modal */}
       <Modal
         visible={showMapModal}
