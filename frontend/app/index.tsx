@@ -1205,9 +1205,10 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#2A9D8F',
     padding: 8,
+    height: 50,
   },
   currencyScroll: {
-    flexDirection: 'row',
+    flex: 1,
   },
   currencyOption: {
     paddingHorizontal: 16,
