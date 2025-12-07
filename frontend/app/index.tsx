@@ -828,13 +828,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
-    marginBottom: 16,
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    marginTop: 2,
+    marginTop: 4,
   },
   seeAllText: {
     fontSize: 14,
