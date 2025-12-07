@@ -582,7 +582,7 @@ export default function HomeScreen() {
         <View style={styles.languageModalOverlay}>
           <View style={styles.languageModalContainer}>
             <View style={styles.languageModalHeader}>
-              <Text style={styles.languageModalTitle}>Select Language</Text>
+              <Text style={styles.languageModalTitle}>{i18n.t('selectLanguage')}</Text>
               <TouchableOpacity onPress={() => setShowLanguageModal(false)}>
                 <Ionicons name="close" size={28} color="#fff" />
               </TouchableOpacity>
