@@ -217,7 +217,7 @@ export default function HomeScreen() {
                 )}
                 <TextInput
                   style={styles.searchInput}
-                  placeholder="Search museums by name..."
+                  placeholder={i18n.t('searchPlaceholder')}
                   placeholderTextColor="#666"
                   value={searchQuery}
                   onChangeText={handleSearch}
