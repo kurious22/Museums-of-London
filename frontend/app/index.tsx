@@ -199,8 +199,8 @@ export default function HomeScreen() {
               <View style={styles.londonBadge}>
                 <Text style={styles.londonText}>{i18n.t('london')}</Text>
               </View>
-              <Ionicons name="business-outline" size={28} color="#E63946" style={styles.towerBridgeIcon} />
               <Ionicons name="globe-outline" size={28} color="#fff" style={styles.londonGlobe} />
+              <Text style={styles.towerBridgeIcon}>🌉</Text>
             </View>
             <Text style={styles.heroSubtitle}>
               {i18n.t('subtitle')}
