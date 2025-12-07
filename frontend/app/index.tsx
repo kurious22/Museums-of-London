@@ -142,12 +142,9 @@ export default function HomeScreen() {
             </View>
           </View>
 
-          {/* London Street Sign */}
-          <View style={styles.streetSignContainer}>
-            <View style={styles.streetSignPost} />
-            <View style={styles.streetSign}>
-              <Text style={styles.streetSignText}>LONDON</Text>
-            </View>
+          {/* Globe Icon */}
+          <View style={styles.globeContainer}>
+            <Ionicons name="globe-outline" size={40} color="#fff" />
           </View>
 
           <View style={styles.heroContent}>
