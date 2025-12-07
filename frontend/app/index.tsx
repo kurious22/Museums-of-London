@@ -147,6 +147,11 @@ export default function HomeScreen() {
       'INR': 0.0095,
       'KRW': 0.00059,
       'MXN': 0.039,
+      'BRL': 0.13,
+      'SGD': 0.58,
+      'NZD': 0.47,
+      'HKD': 0.10,
+      'AED': 0.22,
       'GBP': 1.00,
     };
     const converted = numAmount * (rates[fromCurrency] || 1);
