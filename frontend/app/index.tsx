@@ -145,6 +145,8 @@ export default function HomeScreen() {
       'CHF': 0.90,
       'CNY': 0.11,
       'INR': 0.0095,
+      'KRW': 0.00059,
+      'MXN': 0.039,
       'GBP': 1.00,
     };
     const converted = numAmount * (rates[fromCurrency] || 1);
