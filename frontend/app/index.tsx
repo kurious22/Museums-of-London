@@ -322,31 +322,6 @@ export default function HomeScreen() {
           )}
         </View>
 
-        {/* Colorful Quick Stats */}
-        <View style={styles.statsContainer}>
-          <LinearGradient
-            colors={['#E63946', '#F1A208']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-            style={styles.statCard}
-          >
-            <Ionicons name="business" size={28} color="#fff" />
-            <Text style={styles.statNumber}>20+</Text>
-            <Text style={styles.statLabel}>Museums</Text>
-          </LinearGradient>
-          
-          <LinearGradient
-            colors={['#2A9D8F', '#38B000']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-            style={styles.statCard}
-          >
-            <Ionicons name="ticket" size={28} color="#fff" />
-            <Text style={styles.statNumber}>FREE</Text>
-            <Text style={styles.statLabel}>Entry</Text>
-          </LinearGradient>
-        </View>
-
         {/* Colorful Categories Section */}
         <View style={styles.sectionContainer}>
           <View style={styles.sectionTitleContainer}>
