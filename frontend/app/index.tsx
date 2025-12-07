@@ -496,31 +496,6 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        {/* Walking Tours Promo */}
-        <View style={styles.sectionContainer}>
-          <TouchableOpacity onPress={navigateToTours} activeOpacity={0.9}>
-            <LinearGradient
-              colors={['#9B59B6', '#3498DB', '#1ABC9C']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.tourPromo}
-            >
-              <View style={styles.tourPromoContent}>
-                <Ionicons name="walk" size={40} color="#fff" />
-                <View style={styles.tourPromoText}>
-                  <Text style={styles.tourPromoTitle}>Walking Tours</Text>
-                  <Text style={styles.tourPromoSubtitle}>
-                    Explore multiple museums in one day with our curated routes!
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.tourPromoArrow}>
-                <Ionicons name="arrow-forward-circle" size={32} color="#fff" />
-              </View>
-            </LinearGradient>
-          </TouchableOpacity>
-        </View>
-
         {/* Fun Tips Section */}
         <View style={styles.tipsContainer}>
           <View style={styles.sectionTitleContainer}>
