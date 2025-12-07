@@ -975,6 +975,40 @@ LONDON_MUSEUMS = [
             {"name": "Pret A Manger Grant", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "£", "address": "Near Grant Museum of Zoology", "latitude": 51.523, "longitude": -0.1366}],
         "featured": False,
         "rating": 4.7
+    },
+    {
+        "id": "28",
+        "name": "Paradox Museum",
+        "description": "The Paradox Museum is an immersive experience featuring over 50 paradox-based exhibits that challenge perception and reality. Visitors encounter mind-bending optical illusions, impossible objects, and interactive installations that blur the line between what's real and what's not. Perfect for all ages, the museum offers a unique journey through brain-teasing puzzles, gravity-defying rooms, and Instagram-worthy photo opportunities that will make you question everything you see.",
+        "short_description": "Mind-bending museum of optical illusions and paradoxes",
+        "address": "215-217 Brompton Road, London SW3 2EJ",
+        "latitude": 51.4944,
+        "longitude": -0.1699,
+        "image_url": "https://images.unsplash.com/photo-1618944847828-82e943c3bdb7?w=800&q=80",
+        "category": "Science & Experience",
+        "free_entry": False,
+        "opening_hours": "Daily 10:00-20:00",
+        "website": "https://www.paradoxmuseumlo.com",
+        "phone": "+44 20 3096 1173",
+        "transport": [
+            {"type": "tube", "name": "South Kensington", "line": "Circle, District, Piccadilly", "distance": "5 min walk"},
+            {"type": "tube", "name": "Knightsbridge", "line": "Piccadilly", "distance": "7 min walk"},
+            {"type": "bus", "name": "Brompton Road", "routes": ["14", "49", "70", "74", "345", "C1"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Comptoir Libanais", "type": "Restaurant", "cuisine": "Lebanese", "distance": "3 min walk", "price_range": "££", "address": "1 Exhibition Rd", "latitude": 51.4955, "longitude": -0.1740},
+            {"name": "Muriel's Kitchen", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "36 Old Brompton Rd", "latitude": 51.4942, "longitude": -0.1755},
+            {"name": "Zizzi", "type": "Restaurant", "cuisine": "Italian", "distance": "3 min walk", "price_range": "££", "address": "Brompton Road", "latitude": 51.4938, "longitude": -0.1705},
+            {"name": "The Brompton", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Brompton Road", "latitude": 51.4948, "longitude": -0.1692},
+            {"name": "Costa Coffee", "type": "Cafe", "cuisine": "Coffee", "distance": "2 min walk", "price_range": "£", "address": "Brompton Road", "latitude": 51.4951, "longitude": -0.1688},
+            {"name": "Pret A Manger", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "Brompton Road", "latitude": 51.4941, "longitude": -0.1715},
+            {"name": "Wasabi", "type": "Restaurant", "cuisine": "Japanese", "distance": "4 min walk", "price_range": "£", "address": "Brompton Road", "latitude": 51.4936, "longitude": -0.1721},
+            {"name": "Byron", "type": "Restaurant", "cuisine": "American", "distance": "5 min walk", "price_range": "££", "address": "Brompton Road", "latitude": 51.4933, "longitude": -0.1728},
+            {"name": "Nando's", "type": "Restaurant", "cuisine": "Portuguese", "distance": "6 min walk", "price_range": "££", "address": "Old Brompton Road", "latitude": 51.4930, "longitude": -0.1738},
+            {"name": "Caffè Nero", "type": "Cafe", "cuisine": "Coffee", "distance": "3 min walk", "price_range": "£", "address": "Brompton Road", "latitude": 51.4946, "longitude": -0.1696}
+        ],
+        "featured": False,
+        "rating": 4.6
     }
 ]
 
