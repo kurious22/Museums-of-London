@@ -131,6 +131,28 @@ export default function HomeScreen() {
     setSearchResults([]);
   };
 
+  const convertCurrency = (amount: string, fromCurrency: string) => {
+    const numAmount = parseFloat(amount) || 0;
+    // Exchange rates to GBP (approximate)
+    const rates: { [key: string]: number } = {
+      'USD': 0.79,
+      'EUR': 0.85,
+      'JPY': 0.0054,
+      'AUD': 0.51,
+      'CAD': 0.58,
+      'CHF': 0.90,
+      'CNY': 0.11,
+      'INR': 0.0095,
+      'GBP': 1.00,
+    };
+    const converted = numAmount * (rates[fromCurrency] || 1);
+    setConvertedAmount(converted.toFixed(2));
+  };
+
+  useEffect(() => {
+    convertCurrency(currencyAmount, selectedCurrency);
+  }, [currencyAmount, selectedCurrency]);
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
