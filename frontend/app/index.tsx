@@ -826,6 +826,112 @@ const styles = StyleSheet.create({
     color: '#CCCCCC',
     flex: 1,
   },
+  // Search Section Styles
+  searchSection: {
+    marginHorizontal: 20,
+    marginVertical: 20,
+    backgroundColor: '#1A1A2E',
+    borderRadius: 20,
+    padding: 20,
+  },
+  searchTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: 16,
+  },
+  searchBarContainer: {
+    marginBottom: 8,
+  },
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#0F0F23',
+    borderRadius: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    gap: 12,
+    borderWidth: 2,
+    borderColor: '#E63946',
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 16,
+    color: '#fff',
+  },
+  searchResultsContainer: {
+    marginTop: 12,
+    maxHeight: 400,
+  },
+  searchResultItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#0F0F23',
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 8,
+    gap: 12,
+  },
+  searchResultImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 8,
+  },
+  searchResultInfo: {
+    flex: 1,
+  },
+  searchResultName: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#fff',
+    marginBottom: 2,
+  },
+  searchResultCategory: {
+    fontSize: 12,
+    color: '#E63946',
+    marginBottom: 4,
+  },
+  searchResultBadge: {
+    flexDirection: 'row',
+    gap: 6,
+    alignItems: 'center',
+  },
+  searchFreeBadge: {
+    backgroundColor: '#2A9D8F',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 8,
+  },
+  searchFreeBadgeText: {
+    color: '#fff',
+    fontSize: 9,
+    fontWeight: 'bold',
+  },
+  searchRatingBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#333',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 8,
+    gap: 3,
+  },
+  searchRatingText: {
+    color: '#FFD700',
+    fontSize: 10,
+    fontWeight: '600',
+  },
+  noResultsContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 30,
+  },
+  noResultsText: {
+    fontSize: 14,
+    color: '#666',
+    marginTop: 8,
+  },
   // Image Modal Styles
   imageModalContainer: {
     flex: 1,
