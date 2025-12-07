@@ -50,6 +50,9 @@ export default function HomeScreen() {
   const [searchResults, setSearchResults] = useState<Museum[]>([]);
   const [searching, setSearching] = useState(false);
   const [tipsExpanded, setTipsExpanded] = useState(false);
+  const [currencyAmount, setCurrencyAmount] = useState('100');
+  const [selectedCurrency, setSelectedCurrency] = useState('USD');
+  const [convertedAmount, setConvertedAmount] = useState('0');
 
   const fetchFeaturedMuseums = async () => {
     try {
