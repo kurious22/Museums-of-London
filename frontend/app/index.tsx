@@ -428,6 +428,15 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
     minHeight: 420,
   },
+  // London Skyline Image
+  skylineImage: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    width: '50%',
+    height: 200,
+    opacity: 0.9,
+  },
   londonRow: {
     flexDirection: 'row',
     alignItems: 'center',
