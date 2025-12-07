@@ -430,7 +430,12 @@ export default function HomeScreen() {
               <View style={styles.currencyPickerContainer}>
                 <Text style={styles.currencyLabel}>From</Text>
                 <View style={styles.currencyPickerWrapper}>
-                  <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.currencyScroll}>
+                  <ScrollView 
+                    horizontal 
+                    showsHorizontalScrollIndicator={false} 
+                    style={styles.currencyScroll}
+                    contentContainerStyle={{ paddingRight: 8 }}
+                  >
                     {['USD', 'EUR', 'JPY', 'CNY', 'AUD', 'CAD', 'CHF', 'INR', 'KRW', 'MXN', 'BRL', 'SGD', 'NZD', 'HKD', 'AED'].map((currency) => (
                       <TouchableOpacity
                         key={currency}
