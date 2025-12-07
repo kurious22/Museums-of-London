@@ -145,12 +145,23 @@ export default function HomeScreen() {
             </Text>
           </View>
           
+          {/* Tube Map Button - First */}
+          <TouchableOpacity
+            style={styles.tubeMapButton}
+            onPress={openTubeMap}
+            activeOpacity={0.8}
+          >
+            <Ionicons name="subway" size={18} color="#fff" />
+            <Text style={styles.tubeMapButtonText}>London Underground</Text>
+          </TouchableOpacity>
+
+          {/* Other Two Buttons Below */}
           <View style={styles.heroButtons}>
             <TouchableOpacity
               style={styles.exploreButton}
               onPress={navigateToExplore}
             >
-              <Ionicons name="compass" size={20} color="#fff" />
+              <Ionicons name="compass" size={18} color="#fff" />
               <Text style={styles.exploreButtonText}>Explore Museums</Text>
             </TouchableOpacity>
             
@@ -158,26 +169,10 @@ export default function HomeScreen() {
               style={styles.tourButton}
               onPress={navigateToTours}
             >
-              <Ionicons name="map" size={20} color="#E63946" />
+              <Ionicons name="map" size={18} color="#E63946" />
               <Text style={styles.tourButtonText}>Walking Tours</Text>
             </TouchableOpacity>
           </View>
-
-          {/* Tube Map Button */}
-          <TouchableOpacity
-            style={styles.tubeMapButton}
-            onPress={openTubeMap}
-            activeOpacity={0.8}
-          >
-            <View style={styles.tubeMapIconContainer}>
-              <Ionicons name="subway" size={18} color="#fff" />
-            </View>
-            <View style={styles.tubeMapTextContainer}>
-              <Text style={styles.tubeMapTitle}>London Underground Map</Text>
-              <Text style={styles.tubeMapSubtitle}>View the Tube network</Text>
-            </View>
-            <Ionicons name="chevron-forward" size={20} color="#fff" />
-          </TouchableOpacity>
         </LinearGradient>
 
         {/* Colorful Quick Stats */}
