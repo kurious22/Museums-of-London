@@ -94,18 +94,8 @@ export default function HomeScreen() {
     router.push('/tours');
   };
 
-  const openTubeMap = async () => {
-    const tubeMapUrl = 'https://customer-assets.emergentagent.com/job_london-museums-app/artifacts/u9bo0nlh_tube-map-2025.pdf';
-    try {
-      const supported = await Linking.canOpenURL(tubeMapUrl);
-      if (supported) {
-        await Linking.openURL(tubeMapUrl);
-      } else {
-        Alert.alert('Error', 'Cannot open the Tube map');
-      }
-    } catch (error) {
-      Alert.alert('Error', 'Failed to open the Tube map');
-    }
+  const openTubeMap = () => {
+    setShowTubeMapModal(true);
   };
 
   return (
