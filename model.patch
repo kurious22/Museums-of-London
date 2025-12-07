@@ -1,134 +1,227 @@
+diff --git a/frontend/app/index.tsx b/frontend/app/index.tsx
+index 1a27aba..ee46de9 100644
+--- a/frontend/app/index.tsx
++++ b/frontend/app/index.tsx
+@@ -532,41 +532,69 @@ const styles = StyleSheet.create({
+     alignItems: 'center',
+   },
+   femaleHead: {
+-    width: 16,
+-    height: 16,
+-    borderRadius: 8,
++    width: 18,
++    height: 18,
++    borderRadius: 9,
++    backgroundColor: '#E91E63',
++  },
++  femaleNeck: {
++    width: 6,
++    height: 4,
+     backgroundColor: '#E91E63',
++    marginTop: 1,
++  },
++  femaleBodyContainer: {
++    flexDirection: 'row',
++    alignItems: 'flex-start',
++    marginTop: 1,
++  },
++  femaleArm: {
++    width: 5,
++    height: 24,
++    backgroundColor: '#E91E63',
++    borderRadius: 3,
++    marginTop: 2,
++  },
++  femaleArmRight: {
++    marginLeft: 2,
+   },
+   femaleBody: {
+     alignItems: 'center',
+-    marginTop: 2,
++    marginHorizontal: 2,
+   },
+   femaleTorso: {
++    width: 16,
++    height: 14,
++    backgroundColor: '#E91E63',
++    borderTopLeftRadius: 5,
++    borderTopRightRadius: 5,
++  },
++  femaleWaist: {
+     width: 14,
+-    height: 18,
++    height: 4,
+     backgroundColor: '#E91E63',
+-    borderTopLeftRadius: 4,
+-    borderTopRightRadius: 4,
+   },
+   femaleSkirt: {
+     width: 0,
+     height: 0,
+-    borderLeftWidth: 12,
+-    borderRightWidth: 12,
+-    borderTopWidth: 20,
++    borderLeftWidth: 14,
++    borderRightWidth: 14,
++    borderTopWidth: 18,
+     borderLeftColor: 'transparent',
+     borderRightColor: 'transparent',
+     borderTopColor: '#E91E63',
+-    marginTop: -2,
+   },
+   femaleLegs: {
+     flexDirection: 'row',
+-    gap: 4,
++    justifyContent: 'space-between',
++    width: 18,
++    marginTop: 2,
+   },
+   femaleLeg: {
+-    width: 5,
+-    height: 20,
++    width: 6,
++    height: 24,
+     backgroundColor: '#E91E63',
++    borderRadius: 3,
+   },
+   // Male Figure (Teal/Cyan)
+   maleFigure: {
 diff --git a/model.patch b/model.patch
-index 38ff121..e69de29 100644
+index d9d8d43..e69de29 100644
 --- a/model.patch
 +++ b/model.patch
-@@ -1,129 +0,0 @@
+@@ -1,134 +0,0 @@
 -diff --git a/model.patch b/model.patch
--index 92f607a..e69de29 100644
+-index 38ff121..e69de29 100644
 ---- a/model.patch
 -+++ b/model.patch
--@@ -1,124 +0,0 @@
+-@@ -1,129 +0,0 @@
 --diff --git a/model.patch b/model.patch
---index c8d5e22..e69de29 100644
+--index 92f607a..e69de29 100644
 ----- a/model.patch
 --+++ b/model.patch
---@@ -1,119 +0,0 @@
+--@@ -1,124 +0,0 @@
 ---diff --git a/model.patch b/model.patch
----index e7f2c2b..e69de29 100644
+---index c8d5e22..e69de29 100644
 ------ a/model.patch
 ---+++ b/model.patch
----@@ -1,114 +0,0 @@
+---@@ -1,119 +0,0 @@
 ----diff --git a/model.patch b/model.patch
-----index c11f6cf..e69de29 100644
+----index e7f2c2b..e69de29 100644
 ------- a/model.patch
 ----+++ b/model.patch
-----@@ -1,109 +0,0 @@
+----@@ -1,114 +0,0 @@
 -----diff --git a/model.patch b/model.patch
------index 4a35b6f..e69de29 100644
+-----index c11f6cf..e69de29 100644
 -------- a/model.patch
 -----+++ b/model.patch
------@@ -1,104 +0,0 @@
-------diff --git a/test_result.md b/test_result.md
-------index 8520cfe..3a905b7 100644
---------- a/test_result.md
-------+++ b/test_result.md
-------@@ -107,51 +107,63 @@ user_problem_statement: "Build Museums Of London mobile app with museums, photos
------- backend:
-------   - task: "GET /api/museums endpoint - list all museums with filtering"
-------     implemented: true
--------    working: "NA"
-------+    working: true
-------     file: "/app/backend/server.py"
-------     stuck_count: 0
-------     priority: "high"
--------    needs_retesting: true
-------+    needs_retesting: false
-------     status_history:
-------       - working: "NA"
-------         agent: "main"
-------         comment: "Implemented endpoint to get all museums with optional category, free_only, and search filters"
-------+      - working: true
-------+        agent: "testing"
-------+        comment: "✅ TESTED: All filtering works perfectly. Retrieved 20 museums total, category filter (9 art museums), free_only filter (16 free museums), search functionality (4 museums for 'British'), combined filters work correctly. Case-insensitive search confirmed."
------- 
-------   - task: "GET /api/museums/featured endpoint - featured museums"
-------     implemented: true
--------    working: "NA"
-------+    working: true
-------     file: "/app/backend/server.py"
-------     stuck_count: 0
-------     priority: "high"
--------    needs_retesting: true
-------+    needs_retesting: false
-------     status_history:
-------       - working: "NA"
-------         agent: "main"
-------         comment: "Implemented endpoint to get featured museums for home page"
-------+      - working: true
-------+        agent: "testing"
-------+        comment: "✅ TESTED: Featured museums endpoint working perfectly. Retrieved 6 featured museums, all correctly marked as featured=true."
------- 
-------   - task: "GET /api/museums/{id} endpoint - museum details"
-------     implemented: true
--------    working: "NA"
-------+    working: true
-------     file: "/app/backend/server.py"
-------     stuck_count: 0
-------     priority: "high"
--------    needs_retesting: true
-------+    needs_retesting: false
-------     status_history:
-------       - working: "NA"
-------         agent: "main"
-------         comment: "Implemented endpoint to get individual museum by ID with transport and eateries"
-------+      - working: true
-------+        agent: "testing"
-------+        comment: "✅ TESTED: Museum details endpoint working perfectly. Transport links (3 options with type, name, distance) and nearby eateries (3 options with name, type, price_range) data structure is complete and accurate. 404 handling for invalid IDs works correctly."
------- 
-------   - task: "Favorites endpoints - add, remove, list, check"
-------     implemented: true
--------    working: "NA"
-------+    working: true
-------     file: "/app/backend/server.py"
-------     stuck_count: 0
-------     priority: "medium"
--------    needs_retesting: true
-------+    needs_retesting: false
-------     status_history:
-------       - working: "NA"
-------         agent: "main"
-------         comment: "Implemented favorites with MongoDB storage - POST, DELETE, GET /api/favorites"
-------+      - working: true
-------+        agent: "testing"
-------+        comment: "✅ TESTED: All favorites endpoints working perfectly. POST /api/favorites/{id} adds correctly, DELETE removes correctly, GET /api/favorites lists all, GET /api/favorites/check/{id} returns proper status. MongoDB connection confirmed working. Error handling for invalid museum IDs works (404 responses)."
------- 
------- frontend:
-------   - task: "Home screen with London skyline and featured museums"
-------@@ -205,19 +217,17 @@ frontend:
------- metadata:
-------   created_by: "main_agent"
-------   version: "1.0"
--------  test_sequence: 1
-------+  test_sequence: 2
-------   run_ui: false
------- 
------- test_plan:
--------  current_focus:
--------    - "GET /api/museums endpoint"
--------    - "GET /api/museums/featured endpoint"
--------    - "GET /api/museums/{id} endpoint"
--------    - "Favorites endpoints"
-------+  current_focus: []
-------   stuck_tasks: []
--------  test_all: true
-------+  test_all: false
-------   test_priority: "high_first"
------- 
------- agent_communication:
-------   - agent: "main"
--------    message: "Implemented complete Museums Of London app. Backend has all museum data with 20 London museums including transport links and eateries. Frontend has home, explore, detail, and favorites screens. Ready for backend testing."
-------\ No newline at end of file
-------+    message: "Implemented complete Museums Of London app. Backend has all museum data with 20 London museums including transport links and eateries. Frontend has home, explore, detail, and favorites screens. Ready for backend testing."
-------+  - agent: "testing"
-------+    message: "✅ BACKEND TESTING COMPLETE: All 4 backend tasks tested and working perfectly. Created comprehensive backend_test.py with 18 test cases (100% pass rate). All API endpoints functional: museums listing with filtering (category, free_only, search), featured museums, museum details with transport/eateries data, and complete favorites CRUD operations. MongoDB connection confirmed working. All error handling (404s) working correctly. Backend is production-ready."
-------\ No newline at end of file
+-----@@ -1,109 +0,0 @@
+------diff --git a/model.patch b/model.patch
+------index 4a35b6f..e69de29 100644
+--------- a/model.patch
+------+++ b/model.patch
+------@@ -1,104 +0,0 @@
+-------diff --git a/test_result.md b/test_result.md
+-------index 8520cfe..3a905b7 100644
+---------- a/test_result.md
+-------+++ b/test_result.md
+-------@@ -107,51 +107,63 @@ user_problem_statement: "Build Museums Of London mobile app with museums, photos
+------- backend:
+-------   - task: "GET /api/museums endpoint - list all museums with filtering"
+-------     implemented: true
+--------    working: "NA"
+-------+    working: true
+-------     file: "/app/backend/server.py"
+-------     stuck_count: 0
+-------     priority: "high"
+--------    needs_retesting: true
+-------+    needs_retesting: false
+-------     status_history:
+-------       - working: "NA"
+-------         agent: "main"
+-------         comment: "Implemented endpoint to get all museums with optional category, free_only, and search filters"
+-------+      - working: true
+-------+        agent: "testing"
+-------+        comment: "✅ TESTED: All filtering works perfectly. Retrieved 20 museums total, category filter (9 art museums), free_only filter (16 free museums), search functionality (4 museums for 'British'), combined filters work correctly. Case-insensitive search confirmed."
+------- 
+-------   - task: "GET /api/museums/featured endpoint - featured museums"
+-------     implemented: true
+--------    working: "NA"
+-------+    working: true
+-------     file: "/app/backend/server.py"
+-------     stuck_count: 0
+-------     priority: "high"
+--------    needs_retesting: true
+-------+    needs_retesting: false
+-------     status_history:
+-------       - working: "NA"
+-------         agent: "main"
+-------         comment: "Implemented endpoint to get featured museums for home page"
+-------+      - working: true
+-------+        agent: "testing"
+-------+        comment: "✅ TESTED: Featured museums endpoint working perfectly. Retrieved 6 featured museums, all correctly marked as featured=true."
+------- 
+-------   - task: "GET /api/museums/{id} endpoint - museum details"
+-------     implemented: true
+--------    working: "NA"
+-------+    working: true
+-------     file: "/app/backend/server.py"
+-------     stuck_count: 0
+-------     priority: "high"
+--------    needs_retesting: true
+-------+    needs_retesting: false
+-------     status_history:
+-------       - working: "NA"
+-------         agent: "main"
+-------         comment: "Implemented endpoint to get individual museum by ID with transport and eateries"
+-------+      - working: true
+-------+        agent: "testing"
+-------+        comment: "✅ TESTED: Museum details endpoint working perfectly. Transport links (3 options with type, name, distance) and nearby eateries (3 options with name, type, price_range) data structure is complete and accurate. 404 handling for invalid IDs works correctly."
+------- 
+-------   - task: "Favorites endpoints - add, remove, list, check"
+-------     implemented: true
+--------    working: "NA"
+-------+    working: true
+-------     file: "/app/backend/server.py"
+-------     stuck_count: 0
+-------     priority: "medium"
+--------    needs_retesting: true
+-------+    needs_retesting: false
+-------     status_history:
+-------       - working: "NA"
+-------         agent: "main"
+-------         comment: "Implemented favorites with MongoDB storage - POST, DELETE, GET /api/favorites"
+-------+      - working: true
+-------+        agent: "testing"
+-------+        comment: "✅ TESTED: All favorites endpoints working perfectly. POST /api/favorites/{id} adds correctly, DELETE removes correctly, GET /api/favorites lists all, GET /api/favorites/check/{id} returns proper status. MongoDB connection confirmed working. Error handling for invalid museum IDs works (404 responses)."
+------- 
+------- frontend:
+-------   - task: "Home screen with London skyline and featured museums"
+-------@@ -205,19 +217,17 @@ frontend:
+------- metadata:
+-------   created_by: "main_agent"
+-------   version: "1.0"
+--------  test_sequence: 1
+-------+  test_sequence: 2
+-------   run_ui: false
+------- 
+------- test_plan:
+--------  current_focus:
+--------    - "GET /api/museums endpoint"
+--------    - "GET /api/museums/featured endpoint"
+--------    - "GET /api/museums/{id} endpoint"
+--------    - "Favorites endpoints"
+-------+  current_focus: []
+-------   stuck_tasks: []
+--------  test_all: true
+-------+  test_all: false
+-------   test_priority: "high_first"
+------- 
+------- agent_communication:
+-------   - agent: "main"
+--------    message: "Implemented complete Museums Of London app. Backend has all museum data with 20 London museums including transport links and eateries. Frontend has home, explore, detail, and favorites screens. Ready for backend testing."
+-------\ No newline at end of file
+-------+    message: "Implemented complete Museums Of London app. Backend has all museum data with 20 London museums including transport links and eateries. Frontend has home, explore, detail, and favorites screens. Ready for backend testing."
+-------+  - agent: "testing"
+-------+    message: "✅ BACKEND TESTING COMPLETE: All 4 backend tasks tested and working perfectly. Created comprehensive backend_test.py with 18 test cases (100% pass rate). All API endpoints functional: museums listing with filtering (category, free_only, search), featured museums, museum details with transport/eateries data, and complete favorites CRUD operations. MongoDB connection confirmed working. All error handling (404s) working correctly. Backend is production-ready."
+-------\ No newline at end of file
