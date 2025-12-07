@@ -392,6 +392,54 @@ export default function HomeScreen() {
 
         <View style={{ height: 30 }} />
       </ScrollView>
+
+      {/* Museum Map Modal */}
+      <Modal
+        visible={showMapModal}
+        animationType="slide"
+        transparent={false}
+        onRequestClose={() => setShowMapModal(false)}
+      >
+        <View style={styles.mapModalContainer}>
+          <View style={styles.mapHeader}>
+            <Text style={styles.mapTitle}>London Museums Map</Text>
+            <TouchableOpacity onPress={() => setShowMapModal(false)}>
+              <Ionicons name="close-circle" size={32} color="#E63946" />
+            </TouchableOpacity>
+          </View>
+
+          <ScrollView style={styles.mapScrollView}>
+            {/* Cartoon Map Background */}
+            <View style={styles.cartoonMap}>
+              <Text style={styles.mapWatermark}>London</Text>
+              
+              {/* River Thames illustration */}
+              <View style={styles.thamesRiver} />
+
+              {/* Museum Pins */}
+              {allMuseums.map((museum, index) => (
+                <TouchableOpacity
+                  key={museum.id}
+                  style={[styles.museumPin, { 
+                    top: `${15 + (index % 6) * 14}%`, 
+                    left: `${10 + (index % 4) * 22}%` 
+                  }]}
+                  onPress={() => {
+                    setShowMapModal(false);
+                    router.push(`/museum/${museum.id}`);
+                  }}
+                >
+                  <View style={styles.pinHead}>
+                    <Ionicons name="business" size={16} color="#fff" />
+                  </View>
+                  <View style={styles.pinStick} />
+                  <Text style={styles.pinLabel}>{museum.name}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </ScrollView>
+        </View>
+      </Modal>
     </View>
   );
 }
