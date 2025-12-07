@@ -150,8 +150,11 @@ export default function HomeScreen() {
           <View style={styles.heroContent}>
             <Text style={styles.welcomeText}>WELCOME TO</Text>
             <Text style={styles.appTitle}>Museums of</Text>
-            <View style={styles.londonBadge}>
-              <Text style={styles.londonText}>LONDON</Text>
+            <View style={styles.londonRow}>
+              <View style={styles.londonBadge}>
+                <Text style={styles.londonText}>LONDON</Text>
+              </View>
+              <Ionicons name="globe-outline" size={28} color="#fff" style={styles.londonGlobe} />
             </View>
             <Text style={styles.heroSubtitle}>
               Discover world-class art, history, and culture
