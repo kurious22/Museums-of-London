@@ -834,6 +834,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#FFFFFF',
+    marginTop: 2,
   },
   seeAllText: {
     fontSize: 14,
