@@ -1305,6 +1305,21 @@ const styles = StyleSheet.create({
   closeButton: {
     padding: 5,
   },
+  // Footer Styles
+  footerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    marginTop: 20,
+    gap: 10,
+  },
+  footerText: {
+    fontSize: 14,
+    color: '#CCCCCC',
+    fontWeight: '500',
+  },
   // Language Selector Styles
   languageButton: {
     position: 'absolute',
