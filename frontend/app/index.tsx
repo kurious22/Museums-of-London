@@ -428,7 +428,10 @@ export default function HomeScreen() {
               </View>
               
               <View style={styles.currencyPickerContainer}>
-                <Text style={styles.currencyLabel}>From</Text>
+                <View style={styles.currencyLabelRow}>
+                  <Text style={styles.currencyLabel}>From </Text>
+                  <Text style={styles.currencyScrollHint}>scroll left to right</Text>
+                </View>
                 <View style={styles.currencyPickerWrapper}>
                   <ScrollView 
                     horizontal 
