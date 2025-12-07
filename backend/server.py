@@ -1009,6 +1009,41 @@ LONDON_MUSEUMS = [
         ],
         "featured": False,
         "rating": 4.6
+    },
+    {
+        "id": "29",
+        "name": "London Film Museum",
+        "description": "The London Film Museum is dedicated to preserving and showcasing British film history and the art of filmmaking. The museum features iconic props, costumes, and memorabilia from beloved films and TV shows. Visitors can explore the magic of cinema through interactive exhibits, behind-the-scenes insights, and rare artifacts from classic and contemporary productions. The museum celebrates the UK's rich contribution to the global film industry with rotating exhibitions and permanent collections.",
+        "short_description": "Museum celebrating British film history and cinema",
+        "address": "45 Wellington Street, Covent Garden, London WC2E 7BN",
+        "latitude": 51.5115,
+        "longitude": -0.1218,
+        "image_url": "https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=800&q=80",
+        "category": "Film & Entertainment",
+        "free_entry": False,
+        "opening_hours": "Mon-Sun 10:00-18:00",
+        "website": "https://www.londonfilmmuseum.com",
+        "phone": "+44 20 7202 7040",
+        "transport": [
+            {"type": "tube", "name": "Covent Garden", "line": "Piccadilly", "distance": "3 min walk"},
+            {"type": "tube", "name": "Temple", "line": "Circle, District", "distance": "5 min walk"},
+            {"type": "tube", "name": "Charing Cross", "line": "Bakerloo, Northern", "distance": "7 min walk"},
+            {"type": "bus", "name": "Wellington Street", "routes": ["6", "9", "11", "13", "15", "23", "87", "91"], "distance": "1 min walk"}
+        ],
+        "nearby_eateries": [
+            {"name": "Flat Iron", "type": "Restaurant", "cuisine": "Steak", "distance": "2 min walk", "price_range": "££", "address": "17 Henrietta St", "latitude": 51.5115, "longitude": -0.1233},
+            {"name": "Shake Shack", "type": "Restaurant", "cuisine": "American", "distance": "3 min walk", "price_range": "££", "address": "24 Market Building", "latitude": 51.5120, "longitude": -0.1230},
+            {"name": "Dishoom Covent Garden", "type": "Restaurant", "cuisine": "Indian", "distance": "4 min walk", "price_range": "££", "address": "12 Upper St Martin's Lane", "latitude": 51.5127, "longitude": -0.1268},
+            {"name": "The Ivy Market Grill", "type": "Restaurant", "cuisine": "British", "distance": "3 min walk", "price_range": "£££", "address": "1 Henrietta St", "latitude": 51.5110, "longitude": -0.1240},
+            {"name": "Balthazar", "type": "Restaurant", "cuisine": "French", "distance": "2 min walk", "price_range": "£££", "address": "4-6 Russell St", "latitude": 51.5118, "longitude": -0.1225},
+            {"name": "Bill's Covent Garden", "type": "Restaurant", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "36-44 Floral St", "latitude": 51.5122, "longitude": -0.1238},
+            {"name": "Wagamama Covent Garden", "type": "Restaurant", "cuisine": "Japanese", "distance": "4 min walk", "price_range": "££", "address": "1 Tavistock St", "latitude": 51.5108, "longitude": -0.1210},
+            {"name": "The Crusting Pipe", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "27 The Piazza", "latitude": 51.5120, "longitude": -0.1223},
+            {"name": "Café Rouge", "type": "Restaurant", "cuisine": "French", "distance": "3 min walk", "price_range": "££", "address": "34 Wellington St", "latitude": 51.5112, "longitude": -0.1215},
+            {"name": "Five Guys", "type": "Restaurant", "cuisine": "American", "distance": "4 min walk", "price_range": "££", "address": "Covent Garden", "latitude": 51.5125, "longitude": -0.1235}
+        ],
+        "featured": False,
+        "rating": 4.4
     }
 ]
 
