@@ -836,7 +836,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   seeAllText: {
-    fontSize: 14,
+    fontSize: 20,
     color: '#E63946',
     fontWeight: '600',
   },
