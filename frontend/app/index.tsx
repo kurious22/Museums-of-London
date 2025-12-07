@@ -411,9 +411,9 @@ export default function HomeScreen() {
         <View style={styles.currencyContainer}>
           <View style={styles.currencyHeader}>
             <Ionicons name="cash" size={22} color="#2A9D8F" />
-            <Text style={styles.currencyTitle}>Currency Converter</Text>
+            <Text style={styles.currencyTitle}>{i18n.t('currencyConverter')}</Text>
           </View>
-          <Text style={styles.currencySubtitle}>Convert to British Pounds (GBP)</Text>
+          <Text style={styles.currencySubtitle}>{i18n.t('convertToGBP')}</Text>
           
           <View style={styles.currencyContent}>
             <View style={styles.currencyInputRow}>
