@@ -93,7 +93,7 @@ export default function HomeScreen() {
   };
 
   const openTubeMap = async () => {
-    const tubeMapUrl = 'https://tfl.gov.uk/maps/track/tube';
+    const tubeMapUrl = 'https://customer-assets.emergentagent.com/job_london-museums-app/artifacts/u9bo0nlh_tube-map-2025.pdf';
     try {
       const supported = await Linking.canOpenURL(tubeMapUrl);
       if (supported) {
