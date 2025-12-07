@@ -44,6 +44,9 @@ export default function HomeScreen() {
   const [showMapModal, setShowMapModal] = useState(false);
   const [showTubeMapModal, setShowTubeMapModal] = useState(false);
   const [allMuseums, setAllMuseums] = useState<Museum[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<Museum[]>([]);
+  const [searching, setSearching] = useState(false);
 
   const fetchFeaturedMuseums = async () => {
     try {
