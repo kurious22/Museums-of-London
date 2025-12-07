@@ -167,7 +167,7 @@ LONDON_MUSEUMS = [
         "address": "Cromwell Road, London SW7 2RL",
         "latitude": 51.4966,
         "longitude": -0.1722,
-        "image_url": "https://images.pexels.com/photos/5604001/pexels-photo-5604001.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "image_url": "https://customer-assets.emergentagent.com/job_london-museums-app/artifacts/w0zwio3k_1312x.jpg",
         "category": "Art & Design",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:45, Fri until 22:00",
