@@ -115,7 +115,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "The Museum Tavern", "type": "Pub", "cuisine": "British", "distance": "1 min walk", "price_range": "££", "address": "49 Great Russell St", "latitude": 51.5188, "longitude": -0.1265},
             {"name": "Cafe in the Great Court", "type": "Cafe", "cuisine": "International", "distance": "Inside museum", "price_range": "££", "address": "British Museum", "latitude": 51.5194, "longitude": -0.1269},
-            {"name": "Plum + Spilt Milk", "type": "Restaurant", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Great Northern Hotel", "latitude": 51.5180, "longitude": -0.1240}
+            {"name": "Plum + Spilt Milk", "type": "Restaurant", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Great Northern Hotel", "latitude": 51.5180, "longitude": -0.1240},
+            {"name": "Wasabi", "type": "Restaurant", "cuisine": "Japanese", "distance": "3 min walk", "price_range": "£", "address": "58 Great Russell St", "latitude": 51.5191, "longitude": -0.1272},
+            {"name": "Snog", "type": "Cafe", "cuisine": "Desserts", "distance": "2 min walk", "price_range": "£", "address": "90 Southampton Row", "latitude": 51.5199, "longitude": -0.1253},
+            {"name": "Tas Restaurant", "type": "Restaurant", "cuisine": "Turkish", "distance": "5 min walk", "price_range": "££", "address": "22 Bloomsbury St", "latitude": 51.5175, "longitude": -0.1290},
+            {"name": "North Sea Fish Restaurant", "type": "Restaurant", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "7-8 Leigh St", "latitude": 51.5220, "longitude": -0.1230},
+            {"name": "The Perseverance", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "63 Lamb's Conduit St", "latitude": 51.5211, "longitude": -0.1193},
+            {"name": "Hare & Tortoise", "type": "Restaurant", "cuisine": "Asian", "distance": "4 min walk", "price_range": "££", "address": "11-13 Brunswick Centre", "latitude": 51.5234, "longitude": -0.1216},
+            {"name": "Wagamama", "type": "Restaurant", "cuisine": "Japanese", "distance": "5 min walk", "price_range": "££", "address": "4A Streatham St", "latitude": 51.5205, "longitude": -0.1295}
         ],
         "featured": True,
         "rating": 4.8
