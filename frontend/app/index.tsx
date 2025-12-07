@@ -322,52 +322,6 @@ export default function HomeScreen() {
           )}
         </View>
 
-        {/* Museum Tips Section - Collapsible */}
-        <View style={styles.tipsContainer}>
-          <TouchableOpacity 
-            style={styles.tipsHeader}
-            onPress={() => setTipsExpanded(!tipsExpanded)}
-            activeOpacity={0.7}
-          >
-            <View style={styles.tipsHeaderLeft}>
-              <Ionicons name="bulb" size={22} color="#F1A208" />
-              <Text style={styles.tipsTitle}>Top 10 Tips for Visiting Museums</Text>
-            </View>
-            <Ionicons 
-              name={tipsExpanded ? "chevron-up" : "chevron-down"} 
-              size={24} 
-              color="#fff" 
-            />
-          </TouchableOpacity>
-
-          {tipsExpanded && (
-            <View style={styles.tipsContent}>
-              {[
-                { title: "Plan Ahead", desc: "Research the museums you want to visit and their exhibitions. Some may require advanced bookings, especially for special exhibits." },
-                { title: "Check Opening Hours", desc: "Many museums have varying opening times, so make sure to check before you go." },
-                { title: "Free Entry", desc: "Many of London's museums, like the British Museum and the Natural History Museum, offer free entry. Take advantage of this!" },
-                { title: "Visit on Weekdays", desc: "If possible, visit during weekdays to avoid large crowds, especially during peak tourist seasons." },
-                { title: "Use the Audio Guide", desc: "Many museums offer audio guides or apps; they can enrich your experience by providing in-depth information about exhibits." },
-                { title: "Take Your Time", desc: "Don't rush through the exhibits; spend time at the pieces that interest you the most." },
-                { title: "Join a Guided Tour", desc: "Consider joining a guided tour for insights from knowledgeable guides and to explore sections you might overlook." },
-                { title: "Stay Together", desc: "If visiting with a group, set meeting points or times to regroup since museums can be large and overwhelming." },
-                { title: "Explore the Gift Shops", desc: "Museum gift shops often sell unique items related to the exhibitions and can be a great place to find souvenirs." },
-                { title: "Check Temporary Exhibitions", desc: "Look for any temporary exhibitions that may be taking place during your visit, as they often feature special collections or themes." }
-              ].map((tip, index) => (
-                <View key={index} style={styles.tipItem}>
-                  <View style={styles.tipNumber}>
-                    <Text style={styles.tipNumberText}>{index + 1}</Text>
-                  </View>
-                  <View style={styles.tipTextContainer}>
-                    <Text style={styles.tipTitle}>{tip.title}</Text>
-                    <Text style={styles.tipDescription}>{tip.desc}</Text>
-                  </View>
-                </View>
-              ))}
-            </View>
-          )}
-        </View>
-
         {/* Colorful Categories Section */}
         <View style={styles.sectionContainer}>
           <View style={styles.sectionTitleContainer}>
