@@ -437,7 +437,7 @@ const styles = StyleSheet.create({
     height: 140,
     opacity: 0.8,
     marginTop: 10,
-    marginRight: 10,
+    marginRight: 2,
   },
   londonRow: {
     flexDirection: 'row',
