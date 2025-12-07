@@ -305,10 +305,10 @@ export default function HomeScreen() {
           <View style={styles.sectionHeader}>
             <View style={styles.sectionTitleContainer}>
               <Ionicons name="star" size={22} color="#F1A208" />
-              <Text style={styles.sectionTitle}>Featured Museums</Text>
+              <Text style={styles.sectionTitle}>{i18n.t('featuredMuseums')}</Text>
             </View>
             <TouchableOpacity onPress={navigateToExplore}>
-              <Text style={styles.seeAllText}>See All</Text>
+              <Text style={styles.seeAllText}>{i18n.t('seeAll')}</Text>
             </TouchableOpacity>
           </View>
 
