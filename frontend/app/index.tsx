@@ -75,7 +75,7 @@ export default function HomeScreen() {
   };
 
   const openTubeMap = async () => {
-    const tubeMapUrl = 'https://content.tfl.gov.uk/standard-tube-map.pdf';
+    const tubeMapUrl = 'https://tfl.gov.uk/maps/track/tube';
     try {
       const supported = await Linking.canOpenURL(tubeMapUrl);
       if (supported) {
