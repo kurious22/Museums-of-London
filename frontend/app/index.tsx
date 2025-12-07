@@ -1086,6 +1086,114 @@ const styles = StyleSheet.create({
     color: '#CCCCCC',
     lineHeight: 20,
   },
+  // Currency Conversion Styles
+  currencyContainer: {
+    marginHorizontal: 20,
+    marginVertical: 20,
+    backgroundColor: '#1A1A2E',
+    borderRadius: 20,
+    padding: 20,
+  },
+  currencyHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    marginBottom: 4,
+  },
+  currencyTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  currencySubtitle: {
+    fontSize: 14,
+    color: '#2A9D8F',
+    marginBottom: 20,
+  },
+  currencyContent: {
+    gap: 16,
+  },
+  currencyInputRow: {
+    gap: 16,
+  },
+  currencyInputContainer: {
+    marginBottom: 12,
+  },
+  currencyLabel: {
+    fontSize: 14,
+    color: '#CCCCCC',
+    marginBottom: 8,
+  },
+  currencyInput: {
+    backgroundColor: '#0F0F23',
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    fontSize: 18,
+    color: '#fff',
+    borderWidth: 2,
+    borderColor: '#2A9D8F',
+  },
+  currencyPickerContainer: {
+    marginBottom: 12,
+  },
+  currencyPickerWrapper: {
+    backgroundColor: '#0F0F23',
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: '#2A9D8F',
+    padding: 8,
+  },
+  currencyScroll: {
+    flexDirection: 'row',
+  },
+  currencyOption: {
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginRight: 8,
+    backgroundColor: '#1A1A2E',
+  },
+  currencyOptionActive: {
+    backgroundColor: '#2A9D8F',
+  },
+  currencyOptionText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#CCCCCC',
+  },
+  currencyOptionTextActive: {
+    color: '#fff',
+  },
+  currencyResultContainer: {
+    alignItems: 'center',
+    gap: 12,
+    paddingVertical: 16,
+  },
+  currencyResult: {
+    alignItems: 'center',
+    backgroundColor: '#0F0F23',
+    borderRadius: 16,
+    padding: 20,
+    width: '100%',
+  },
+  currencyResultAmount: {
+    fontSize: 36,
+    fontWeight: 'bold',
+    color: '#2A9D8F',
+    marginBottom: 4,
+  },
+  currencyResultLabel: {
+    fontSize: 16,
+    color: '#CCCCCC',
+    fontWeight: '600',
+  },
+  currencyDisclaimer: {
+    fontSize: 12,
+    color: '#999',
+    fontStyle: 'italic',
+    textAlign: 'center',
+  },
   // Image Modal Styles
   imageModalContainer: {
     flex: 1,
