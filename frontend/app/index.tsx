@@ -142,11 +142,6 @@ export default function HomeScreen() {
             </View>
           </View>
 
-          {/* Globe Icon */}
-          <View style={styles.globeContainer}>
-            <Ionicons name="globe-outline" size={40} color="#fff" />
-          </View>
-
           <View style={styles.heroContent}>
             <Text style={styles.welcomeText}>WELCOME TO</Text>
             <Text style={styles.appTitle}>Museums of</Text>
