@@ -754,7 +754,7 @@ LONDON_MUSEUMS = [
         "address": "15-20 Phoenix Place, London WC1X 0DA",
         "latitude": 51.5278,
         "longitude": -0.1099,
-        "image_url": "https://images.unsplash.com/photo-1713707948927-784d3102d6a2?w=800&q=80",
+        "image_url": "https://images.unsplash.com/photo-1688194860509-1cbbe23ea331?w=800&q=80",
         "category": "History & Transport",
         "free_entry": False,
         "opening_hours": "Wed-Sun 10:00-17:00",
