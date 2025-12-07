@@ -148,8 +148,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "The Central Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Natural History Museum", "latitude": 51.4967, "longitude": -0.1764},
             {"name": "Comptoir Libanais", "type": "Restaurant", "cuisine": "Lebanese", "distance": "3 min walk", "price_range": "££", "address": "1 Exhibition Rd", "latitude": 51.4955, "longitude": -0.1740},
-            {"name": "Muriel's Kitchen", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "36 Old Brompton Rd", "latitude": 51.4942, "longitude": -0.1755}
-        ],
+            {"name": "Muriel's Kitchen", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "36 Old Brompton Rd", "latitude": 51.4942, "longitude": -0.1755},
+            {"name": "Costa Coffee Natural", "type": "Cafe", "cuisine": "Coffee", "distance": "6 min walk", "price_range": "£", "address": "Near Natural History Museum", "latitude": 51.4944, "longitude": -0.1758},
+            {"name": "The George Natural", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.4979, "longitude": -0.1738},
+            {"name": "The Red Lion Natural", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.4973, "longitude": -0.1747},
+            {"name": "Busaba Eathai Natural", "type": "Restaurant", "cuisine": "Thai", "distance": "6 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.4939, "longitude": -0.1743},
+            {"name": "The Swan Natural", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.4944, "longitude": -0.1745},
+            {"name": "The Swan Natural", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.498, "longitude": -0.1774},
+            {"name": "Zizzi Natural", "type": "Restaurant", "cuisine": "Italian", "distance": "3 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.4995, "longitude": -0.1748}],
         "featured": True,
         "rating": 4.7
     },
@@ -174,8 +180,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "V&A Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "V&A Museum", "latitude": 51.4966, "longitude": -0.1722},
             {"name": "Fernandez & Wells", "type": "Cafe", "cuisine": "European", "distance": "4 min walk", "price_range": "££", "address": "8 Exhibition Rd", "latitude": 51.4950, "longitude": -0.1742},
-            {"name": "Daquise", "type": "Restaurant", "cuisine": "Polish", "distance": "3 min walk", "price_range": "££", "address": "20 Thurloe St", "latitude": 51.4948, "longitude": -0.1735}
-        ],
+            {"name": "Daquise", "type": "Restaurant", "cuisine": "Polish", "distance": "3 min walk", "price_range": "££", "address": "20 Thurloe St", "latitude": 51.4948, "longitude": -0.1735},
+            {"name": "Byron Victoria", "type": "Restaurant", "cuisine": "American", "distance": "6 min walk", "price_range": "££", "address": "Near Victoria and Albert Museum", "latitude": 51.4977, "longitude": -0.1697},
+            {"name": "The White Hart Victoria", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Victoria and Albert Museum", "latitude": 51.4946, "longitude": -0.1722},
+            {"name": "The George Victoria", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Victoria and Albert Museum", "latitude": 51.4996, "longitude": -0.1712},
+            {"name": "Joe & The Juice Victoria", "type": "Cafe", "cuisine": "Healthy", "distance": "5 min walk", "price_range": "££", "address": "Near Victoria and Albert Museum", "latitude": 51.4959, "longitude": -0.1724},
+            {"name": "Caffè Nero Victoria", "type": "Cafe", "cuisine": "Coffee", "distance": "6 min walk", "price_range": "££", "address": "Near Victoria and Albert Museum", "latitude": 51.4941, "longitude": -0.1746},
+            {"name": "Joe & The Juice Victoria", "type": "Cafe", "cuisine": "Healthy", "distance": "4 min walk", "price_range": "££", "address": "Near Victoria and Albert Museum", "latitude": 51.4959, "longitude": -0.1723},
+            {"name": "The Swan Victoria", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Victoria and Albert Museum", "latitude": 51.4942, "longitude": -0.1693}],
         "featured": True,
         "rating": 4.7
     },
@@ -200,8 +212,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Deep Blue Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Science Museum", "latitude": 51.4978, "longitude": -0.1745},
             {"name": "Cacciari's", "type": "Restaurant", "cuisine": "Italian", "distance": "4 min walk", "price_range": "££", "address": "18 Exhibition Rd", "latitude": 51.4960, "longitude": -0.1740},
-            {"name": "The Anglesea Arms", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "15 Selwood Terrace", "latitude": 51.4920, "longitude": -0.1755}
-        ],
+            {"name": "The Anglesea Arms", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "15 Selwood Terrace", "latitude": 51.4920, "longitude": -0.1755},
+            {"name": "Yo! Sushi Science", "type": "Restaurant", "cuisine": "Japanese", "distance": "2 min walk", "price_range": "££", "address": "Near Science Museum", "latitude": 51.4965, "longitude": -0.1747},
+            {"name": "The Swan Science", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Science Museum", "latitude": 51.4966, "longitude": -0.1734},
+            {"name": "Honest Burgers Science", "type": "Restaurant", "cuisine": "American", "distance": "2 min walk", "price_range": "££", "address": "Near Science Museum", "latitude": 51.4972, "longitude": -0.1717},
+            {"name": "The Kings Arms Science", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Near Science Museum", "latitude": 51.5001, "longitude": -0.1717},
+            {"name": "Byron Science", "type": "Restaurant", "cuisine": "American", "distance": "2 min walk", "price_range": "££", "address": "Near Science Museum", "latitude": 51.4986, "longitude": -0.1716},
+            {"name": "The Old Crown Science", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near Science Museum", "latitude": 51.4975, "longitude": -0.174},
+            {"name": "Ask Italian Science", "type": "Restaurant", "cuisine": "Italian", "distance": "5 min walk", "price_range": "££", "address": "Near Science Museum", "latitude": 51.5002, "longitude": -0.1721}],
         "featured": True,
         "rating": 4.6
     },
@@ -227,8 +245,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Tate Modern Restaurant", "type": "Restaurant", "cuisine": "British", "distance": "Inside museum", "price_range": "£££", "address": "Tate Modern, Level 6", "latitude": 51.5076, "longitude": -0.0994},
             {"name": "The Anchor Bankside", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "34 Park St", "latitude": 51.5082, "longitude": -0.0932},
-            {"name": "Swan at The Globe", "type": "Restaurant", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "21 New Globe Walk", "latitude": 51.5078, "longitude": -0.0970}
-        ],
+            {"name": "Swan at The Globe", "type": "Restaurant", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "21 New Globe Walk", "latitude": 51.5078, "longitude": -0.0970},
+            {"name": "Ask Italian Tate", "type": "Restaurant", "cuisine": "Italian", "distance": "5 min walk", "price_range": "££", "address": "Near Tate Modern", "latitude": 51.5081, "longitude": -0.1009},
+            {"name": "The Swan Tate", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Tate Modern", "latitude": 51.5079, "longitude": -0.0971},
+            {"name": "The Swan Tate", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Tate Modern", "latitude": 51.5095, "longitude": -0.101},
+            {"name": "Côte Brasserie Tate", "type": "Restaurant", "cuisine": "French", "distance": "3 min walk", "price_range": "££", "address": "Near Tate Modern", "latitude": 51.5092, "longitude": -0.098},
+            {"name": "Yo! Sushi Tate", "type": "Restaurant", "cuisine": "Japanese", "distance": "3 min walk", "price_range": "££", "address": "Near Tate Modern", "latitude": 51.5056, "longitude": -0.1019},
+            {"name": "Greggs Tate", "type": "Cafe", "cuisine": "British", "distance": "2 min walk", "price_range": "£", "address": "Near Tate Modern", "latitude": 51.5051, "longitude": -0.0989},
+            {"name": "Zizzi Tate", "type": "Restaurant", "cuisine": "Italian", "distance": "5 min walk", "price_range": "££", "address": "Near Tate Modern", "latitude": 51.5093, "longitude": -0.0966}],
         "featured": True,
         "rating": 4.5
     },
@@ -254,8 +278,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "National Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside gallery", "price_range": "££", "address": "National Gallery", "latitude": 51.5089, "longitude": -0.1283},
             {"name": "Cafe in the Crypt", "type": "Cafe", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "St Martin-in-the-Fields", "latitude": 51.5091, "longitude": -0.1263},
-            {"name": "The Chandos", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "29 St Martin's Lane", "latitude": 51.5105, "longitude": -0.1270}
-        ],
+            {"name": "The Chandos", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "29 St Martin's Lane", "latitude": 51.5105, "longitude": -0.1270},
+            {"name": "The Kings Arms National", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "Near National Gallery", "latitude": 51.5114, "longitude": -0.1299},
+            {"name": "The Kings Arms National", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near National Gallery", "latitude": 51.5108, "longitude": -0.127},
+            {"name": "The Kings Arms National", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near National Gallery", "latitude": 51.5103, "longitude": -0.1269},
+            {"name": "Yo! Sushi National", "type": "Restaurant", "cuisine": "Japanese", "distance": "6 min walk", "price_range": "££", "address": "Near National Gallery", "latitude": 51.5117, "longitude": -0.1263},
+            {"name": "Costa Coffee National", "type": "Cafe", "cuisine": "Coffee", "distance": "5 min walk", "price_range": "£", "address": "Near National Gallery", "latitude": 51.5109, "longitude": -0.1282},
+            {"name": "Franco Manca National", "type": "Restaurant", "cuisine": "Italian", "distance": "2 min walk", "price_range": "££", "address": "Near National Gallery", "latitude": 51.5116, "longitude": -0.1311},
+            {"name": "The Kings Arms National", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near National Gallery", "latitude": 51.5103, "longitude": -0.126}],
         "featured": True,
         "rating": 4.8
     },
@@ -281,8 +311,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "The New Armouries Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside tower", "price_range": "££", "address": "Tower of London", "latitude": 51.5081, "longitude": -0.0759},
             {"name": "Perkin Reveller", "type": "Restaurant", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "The Wharf", "latitude": 51.5075, "longitude": -0.0770},
-            {"name": "All Bar One", "type": "Bar", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Tower Hill", "latitude": 51.5095, "longitude": -0.0760}
-        ],
+            {"name": "All Bar One", "type": "Bar", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Tower Hill", "latitude": 51.5095, "longitude": -0.0760},
+            {"name": "Crussh Tower", "type": "Cafe", "cuisine": "Healthy", "distance": "5 min walk", "price_range": "££", "address": "Near Tower of London", "latitude": 51.5064, "longitude": -0.0732},
+            {"name": "The Kings Arms Tower", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Tower of London", "latitude": 51.5079, "longitude": -0.0741},
+            {"name": "Pret A Manger Tower", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "Near Tower of London", "latitude": 51.5051, "longitude": -0.0745},
+            {"name": "Greggs Tower", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "Near Tower of London", "latitude": 51.5081, "longitude": -0.0783},
+            {"name": "Caffè Nero Tower", "type": "Cafe", "cuisine": "Coffee", "distance": "5 min walk", "price_range": "££", "address": "Near Tower of London", "latitude": 51.5053, "longitude": -0.0769},
+            {"name": "The George Tower", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near Tower of London", "latitude": 51.5108, "longitude": -0.0761},
+            {"name": "The Old Crown Tower", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "Near Tower of London", "latitude": 51.5088, "longitude": -0.0761}],
         "featured": False,
         "rating": 4.6
     },
@@ -308,8 +344,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "IWM Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Imperial War Museum", "latitude": 51.4958, "longitude": -0.1086},
             {"name": "The Old Vic Tunnels Cafe", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "£", "address": "Lambeth Rd", "latitude": 51.4985, "longitude": -0.1095},
-            {"name": "Kennington Tandoori", "type": "Restaurant", "cuisine": "Indian", "distance": "5 min walk", "price_range": "££", "address": "313 Kennington Rd", "latitude": 51.4930, "longitude": -0.1100}
-        ],
+            {"name": "Kennington Tandoori", "type": "Restaurant", "cuisine": "Indian", "distance": "5 min walk", "price_range": "££", "address": "313 Kennington Rd", "latitude": 51.4930, "longitude": -0.1100},
+            {"name": "The Kings Arms Imperial", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near Imperial War Museum", "latitude": 51.4938, "longitude": -0.1081},
+            {"name": "Wagamama Imperial", "type": "Restaurant", "cuisine": "Japanese", "distance": "2 min walk", "price_range": "££", "address": "Near Imperial War Museum", "latitude": 51.4965, "longitude": -0.1071},
+            {"name": "Wagamama Imperial", "type": "Restaurant", "cuisine": "Japanese", "distance": "5 min walk", "price_range": "££", "address": "Near Imperial War Museum", "latitude": 51.4947, "longitude": -0.1069},
+            {"name": "Pret A Manger Imperial", "type": "Cafe", "cuisine": "British", "distance": "6 min walk", "price_range": "£", "address": "Near Imperial War Museum", "latitude": 51.4928, "longitude": -0.1105},
+            {"name": "Pret A Manger Imperial", "type": "Cafe", "cuisine": "British", "distance": "2 min walk", "price_range": "£", "address": "Near Imperial War Museum", "latitude": 51.4955, "longitude": -0.1116},
+            {"name": "Joe & The Juice Imperial", "type": "Cafe", "cuisine": "Healthy", "distance": "2 min walk", "price_range": "££", "address": "Near Imperial War Museum", "latitude": 51.4928, "longitude": -0.1102},
+            {"name": "The Old Crown Imperial", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near Imperial War Museum", "latitude": 51.4932, "longitude": -0.1097}],
         "featured": False,
         "rating": 4.5
     },
@@ -335,8 +377,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Museum Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Museum of London", "latitude": 51.5176, "longitude": -0.0967},
             {"name": "The Jugged Hare", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "49 Chiswell St", "latitude": 51.5195, "longitude": -0.0920},
-            {"name": "Pret A Manger", "type": "Cafe", "cuisine": "Sandwiches", "distance": "3 min walk", "price_range": "£", "address": "1 Ropemaker St", "latitude": 51.5190, "longitude": -0.0945}
-        ],
+            {"name": "Pret A Manger", "type": "Cafe", "cuisine": "Sandwiches", "distance": "3 min walk", "price_range": "£", "address": "1 Ropemaker St", "latitude": 51.5190, "longitude": -0.0945},
+            {"name": "Greggs Museum", "type": "Cafe", "cuisine": "British", "distance": "2 min walk", "price_range": "£", "address": "Near Museum of London", "latitude": 51.5159, "longitude": -0.0989},
+            {"name": "Dishoom Museum", "type": "Restaurant", "cuisine": "Indian", "distance": "5 min walk", "price_range": "££", "address": "Near Museum of London", "latitude": 51.5202, "longitude": -0.0968},
+            {"name": "Leon Museum", "type": "Cafe", "cuisine": "Healthy", "distance": "3 min walk", "price_range": "££", "address": "Near Museum of London", "latitude": 51.5175, "longitude": -0.0993},
+            {"name": "Dishoom Museum", "type": "Restaurant", "cuisine": "Indian", "distance": "5 min walk", "price_range": "££", "address": "Near Museum of London", "latitude": 51.5174, "longitude": -0.0962},
+            {"name": "The White Hart Museum", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "Near Museum of London", "latitude": 51.5179, "longitude": -0.0976},
+            {"name": "The Red Lion Museum", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Museum of London", "latitude": 51.5148, "longitude": -0.0952},
+            {"name": "Byron Museum", "type": "Restaurant", "cuisine": "American", "distance": "5 min walk", "price_range": "££", "address": "Near Museum of London", "latitude": 51.5158, "longitude": -0.0971}],
         "featured": False,
         "rating": 4.4
     },
@@ -362,8 +410,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Portrait Restaurant", "type": "Restaurant", "cuisine": "British", "distance": "Inside gallery", "price_range": "£££", "address": "National Portrait Gallery", "latitude": 51.5094, "longitude": -0.1281},
             {"name": "Gordon's Wine Bar", "type": "Wine Bar", "cuisine": "European", "distance": "4 min walk", "price_range": "££", "address": "47 Villiers St", "latitude": 51.5078, "longitude": -0.1240},
-            {"name": "The Chandos", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "£", "address": "29 St Martin's Lane", "latitude": 51.5105, "longitude": -0.1270}
-        ],
+            {"name": "The Chandos", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "£", "address": "29 St Martin's Lane", "latitude": 51.5105, "longitude": -0.1270},
+            {"name": "The Kings Arms National", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near National Portrait Gallery", "latitude": 51.5092, "longitude": -0.1263},
+            {"name": "The White Hart National", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near National Portrait Gallery", "latitude": 51.5106, "longitude": -0.128},
+            {"name": "Wagamama National", "type": "Restaurant", "cuisine": "Japanese", "distance": "5 min walk", "price_range": "££", "address": "Near National Portrait Gallery", "latitude": 51.5111, "longitude": -0.1308},
+            {"name": "Caffè Nero National", "type": "Cafe", "cuisine": "Coffee", "distance": "2 min walk", "price_range": "££", "address": "Near National Portrait Gallery", "latitude": 51.5073, "longitude": -0.1288},
+            {"name": "Leon National", "type": "Cafe", "cuisine": "Healthy", "distance": "2 min walk", "price_range": "££", "address": "Near National Portrait Gallery", "latitude": 51.5123, "longitude": -0.1289},
+            {"name": "The George National", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near National Portrait Gallery", "latitude": 51.5095, "longitude": -0.126},
+            {"name": "Costa Coffee National", "type": "Cafe", "cuisine": "Coffee", "distance": "5 min walk", "price_range": "£", "address": "Near National Portrait Gallery", "latitude": 51.5066, "longitude": -0.1299}],
         "featured": False,
         "rating": 4.5
     },
@@ -388,8 +442,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "The Seven Stars", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "53-54 Carey St", "latitude": 51.5155, "longitude": -0.1150},
             {"name": "Terroirs", "type": "Wine Bar", "cuisine": "French", "distance": "4 min walk", "price_range": "££", "address": "5 William IV St", "latitude": 51.5112, "longitude": -0.1265},
-            {"name": "Flat Iron", "type": "Restaurant", "cuisine": "Steak", "distance": "5 min walk", "price_range": "££", "address": "17-18 Henrietta St", "latitude": 51.5115, "longitude": -0.1233}
-        ],
+            {"name": "Flat Iron", "type": "Restaurant", "cuisine": "Steak", "distance": "5 min walk", "price_range": "££", "address": "17-18 Henrietta St", "latitude": 51.5115, "longitude": -0.1233},
+            {"name": "Honest Burgers Sir", "type": "Restaurant", "cuisine": "American", "distance": "5 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.515, "longitude": -0.1184},
+            {"name": "Prezzo Sir", "type": "Restaurant", "cuisine": "Italian", "distance": "4 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.5195, "longitude": -0.1202},
+            {"name": "The George Sir", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.5164, "longitude": -0.1193},
+            {"name": "Joe & The Juice Sir", "type": "Cafe", "cuisine": "Healthy", "distance": "6 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.5153, "longitude": -0.1168},
+            {"name": "Leon Sir", "type": "Cafe", "cuisine": "Healthy", "distance": "2 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.5188, "longitude": -0.1184},
+            {"name": "The Swan Sir", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.5181, "longitude": -0.1157},
+            {"name": "Pret A Manger Sir", "type": "Cafe", "cuisine": "British", "distance": "6 min walk", "price_range": "£", "address": "Near Sir John Soane's Museum", "latitude": 51.5184, "longitude": -0.1169}],
         "featured": False,
         "rating": 4.6
     },
@@ -414,8 +474,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Parabola", "type": "Restaurant", "cuisine": "Mediterranean", "distance": "Inside museum", "price_range": "£££", "address": "Design Museum", "latitude": 51.4995, "longitude": -0.1989},
             {"name": "Honest Burgers", "type": "Restaurant", "cuisine": "Burgers", "distance": "4 min walk", "price_range": "££", "address": "194 Kensington High St", "latitude": 51.5005, "longitude": -0.1942},
-            {"name": "Wagamama", "type": "Restaurant", "cuisine": "Japanese", "distance": "5 min walk", "price_range": "££", "address": "26 Kensington High St", "latitude": 51.5010, "longitude": -0.1920}
-        ],
+            {"name": "Wagamama", "type": "Restaurant", "cuisine": "Japanese", "distance": "5 min walk", "price_range": "££", "address": "26 Kensington High St", "latitude": 51.5010, "longitude": -0.1920},
+            {"name": "Greggs Design", "type": "Cafe", "cuisine": "British", "distance": "2 min walk", "price_range": "£", "address": "Near Design Museum", "latitude": 51.4995, "longitude": -0.2008},
+            {"name": "Costa Coffee Design", "type": "Cafe", "cuisine": "Coffee", "distance": "2 min walk", "price_range": "£", "address": "Near Design Museum", "latitude": 51.4993, "longitude": -0.1988},
+            {"name": "Leon Design", "type": "Cafe", "cuisine": "Healthy", "distance": "3 min walk", "price_range": "££", "address": "Near Design Museum", "latitude": 51.5003, "longitude": -0.1999},
+            {"name": "The White Hart Design", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Near Design Museum", "latitude": 51.502, "longitude": -0.1989},
+            {"name": "The Old Crown Design", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Design Museum", "latitude": 51.4969, "longitude": -0.1979},
+            {"name": "Prezzo Design", "type": "Restaurant", "cuisine": "Italian", "distance": "5 min walk", "price_range": "££", "address": "Near Design Museum", "latitude": 51.5, "longitude": -0.2},
+            {"name": "Busaba Eathai Design", "type": "Restaurant", "cuisine": "Thai", "distance": "5 min walk", "price_range": "££", "address": "Near Design Museum", "latitude": 51.4977, "longitude": -0.1983}],
         "featured": False,
         "rating": 4.4
     },
@@ -441,8 +507,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Wallace Restaurant", "type": "Restaurant", "cuisine": "French", "distance": "Inside museum", "price_range": "£££", "address": "Wallace Collection", "latitude": 51.5177, "longitude": -0.1530},
             {"name": "Paul", "type": "Cafe", "cuisine": "French", "distance": "4 min walk", "price_range": "££", "address": "115 Marylebone High St", "latitude": 51.5200, "longitude": -0.1520},
-            {"name": "The Grazing Goat", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "6 New Quebec St", "latitude": 51.5175, "longitude": -0.1600}
-        ],
+            {"name": "The Grazing Goat", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "6 New Quebec St", "latitude": 51.5175, "longitude": -0.1600},
+            {"name": "Bella Italia Wallace", "type": "Restaurant", "cuisine": "Italian", "distance": "3 min walk", "price_range": "££", "address": "Near Wallace Collection", "latitude": 51.5173, "longitude": -0.1506},
+            {"name": "Costa Coffee Wallace", "type": "Cafe", "cuisine": "Coffee", "distance": "2 min walk", "price_range": "£", "address": "Near Wallace Collection", "latitude": 51.5164, "longitude": -0.1535},
+            {"name": "Bella Italia Wallace", "type": "Restaurant", "cuisine": "Italian", "distance": "4 min walk", "price_range": "££", "address": "Near Wallace Collection", "latitude": 51.5197, "longitude": -0.1513},
+            {"name": "Greggs Wallace", "type": "Cafe", "cuisine": "British", "distance": "5 min walk", "price_range": "£", "address": "Near Wallace Collection", "latitude": 51.5185, "longitude": -0.1545},
+            {"name": "Busaba Eathai Wallace", "type": "Restaurant", "cuisine": "Thai", "distance": "5 min walk", "price_range": "££", "address": "Near Wallace Collection", "latitude": 51.5183, "longitude": -0.1556},
+            {"name": "The George Wallace", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Wallace Collection", "latitude": 51.5177, "longitude": -0.1539},
+            {"name": "Caffè Nero Wallace", "type": "Cafe", "cuisine": "Coffee", "distance": "6 min walk", "price_range": "££", "address": "Near Wallace Collection", "latitude": 51.5163, "longitude": -0.1522}],
         "featured": False,
         "rating": 4.7
     },
@@ -467,8 +539,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Tate Britain Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside gallery", "price_range": "££", "address": "Tate Britain", "latitude": 51.4910, "longitude": -0.1277},
             {"name": "Regency Cafe", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "£", "address": "17-19 Regency St", "latitude": 51.4928, "longitude": -0.1325},
-            {"name": "Page Street Cafe", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "Page St", "latitude": 51.4922, "longitude": -0.1290}
-        ],
+            {"name": "Page Street Cafe", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "Page St", "latitude": 51.4922, "longitude": -0.1290},
+            {"name": "Joe & The Juice Tate", "type": "Cafe", "cuisine": "Healthy", "distance": "2 min walk", "price_range": "££", "address": "Near Tate Britain", "latitude": 51.4918, "longitude": -0.1267},
+            {"name": "The Old Crown Tate", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near Tate Britain", "latitude": 51.4904, "longitude": -0.1272},
+            {"name": "Starbucks Tate", "type": "Cafe", "cuisine": "Coffee", "distance": "3 min walk", "price_range": "££", "address": "Near Tate Britain", "latitude": 51.4895, "longitude": -0.1277},
+            {"name": "Dishoom Tate", "type": "Restaurant", "cuisine": "Indian", "distance": "6 min walk", "price_range": "££", "address": "Near Tate Britain", "latitude": 51.494, "longitude": -0.13},
+            {"name": "Dishoom Tate", "type": "Restaurant", "cuisine": "Indian", "distance": "2 min walk", "price_range": "££", "address": "Near Tate Britain", "latitude": 51.491, "longitude": -0.128},
+            {"name": "The Kings Arms Tate", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Near Tate Britain", "latitude": 51.4913, "longitude": -0.1253},
+            {"name": "Yo! Sushi Tate", "type": "Restaurant", "cuisine": "Japanese", "distance": "2 min walk", "price_range": "££", "address": "Near Tate Britain", "latitude": 51.4901, "longitude": -0.1267}],
         "featured": False,
         "rating": 4.5
     },
@@ -494,8 +572,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "RA Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Royal Academy", "latitude": 51.5093, "longitude": -0.1395},
             {"name": "Fortnum's Tea Salon", "type": "Cafe", "cuisine": "British", "distance": "2 min walk", "price_range": "£££", "address": "181 Piccadilly", "latitude": 51.5085, "longitude": -0.1385},
-            {"name": "Brasserie Zedel", "type": "Restaurant", "cuisine": "French", "distance": "4 min walk", "price_range": "££", "address": "20 Sherwood St", "latitude": 51.5102, "longitude": -0.1355}
-        ],
+            {"name": "Brasserie Zedel", "type": "Restaurant", "cuisine": "French", "distance": "4 min walk", "price_range": "££", "address": "20 Sherwood St", "latitude": 51.5102, "longitude": -0.1355},
+            {"name": "Nando's Royal", "type": "Restaurant", "cuisine": "Portuguese", "distance": "5 min walk", "price_range": "££", "address": "Near Royal Academy of Arts", "latitude": 51.5072, "longitude": -0.1381},
+            {"name": "Pret A Manger Royal", "type": "Cafe", "cuisine": "British", "distance": "5 min walk", "price_range": "£", "address": "Near Royal Academy of Arts", "latitude": 51.5088, "longitude": -0.142},
+            {"name": "The Swan Royal", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Royal Academy of Arts", "latitude": 51.5076, "longitude": -0.1416},
+            {"name": "Pizza Express Royal", "type": "Restaurant", "cuisine": "Italian", "distance": "2 min walk", "price_range": "££", "address": "Near Royal Academy of Arts", "latitude": 51.5099, "longitude": -0.1414},
+            {"name": "Joe & The Juice Royal", "type": "Cafe", "cuisine": "Healthy", "distance": "3 min walk", "price_range": "££", "address": "Near Royal Academy of Arts", "latitude": 51.5078, "longitude": -0.1423},
+            {"name": "Côte Brasserie Royal", "type": "Restaurant", "cuisine": "French", "distance": "3 min walk", "price_range": "££", "address": "Near Royal Academy of Arts", "latitude": 51.5107, "longitude": -0.1424},
+            {"name": "Prezzo Royal", "type": "Restaurant", "cuisine": "Italian", "distance": "5 min walk", "price_range": "££", "address": "Near Royal Academy of Arts", "latitude": 51.5093, "longitude": -0.141}],
         "featured": False,
         "rating": 4.5
     },
@@ -520,8 +604,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Horniman Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "£", "address": "Horniman Museum", "latitude": 51.4413, "longitude": -0.0600},
             {"name": "The Hill Station", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "5 Dartmouth Rd", "latitude": 51.4420, "longitude": -0.0580},
-            {"name": "Brown & Green", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "20 London Rd", "latitude": 51.4400, "longitude": -0.0585}
-        ],
+            {"name": "Brown & Green", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "20 London Rd", "latitude": 51.4400, "longitude": -0.0585},
+            {"name": "Leon Horniman", "type": "Cafe", "cuisine": "Healthy", "distance": "6 min walk", "price_range": "££", "address": "Near Horniman Museum", "latitude": 51.4424, "longitude": -0.0596},
+            {"name": "Pret A Manger Horniman", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "Near Horniman Museum", "latitude": 51.4419, "longitude": -0.0609},
+            {"name": "The White Hart Horniman", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near Horniman Museum", "latitude": 51.4399, "longitude": -0.0574},
+            {"name": "Busaba Eathai Horniman", "type": "Restaurant", "cuisine": "Thai", "distance": "3 min walk", "price_range": "££", "address": "Near Horniman Museum", "latitude": 51.4388, "longitude": -0.0579},
+            {"name": "The Swan Horniman", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "Near Horniman Museum", "latitude": 51.4413, "longitude": -0.0614},
+            {"name": "The White Hart Horniman", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "Near Horniman Museum", "latitude": 51.4402, "longitude": -0.0601},
+            {"name": "Bella Italia Horniman", "type": "Restaurant", "cuisine": "Italian", "distance": "6 min walk", "price_range": "££", "address": "Near Horniman Museum", "latitude": 51.442, "longitude": -0.0575}],
         "featured": False,
         "rating": 4.6
     },
@@ -547,8 +637,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Upper Deck Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "£", "address": "London Transport Museum", "latitude": 51.5117, "longitude": -0.1217},
             {"name": "Flat Iron", "type": "Restaurant", "cuisine": "Steak", "distance": "2 min walk", "price_range": "££", "address": "17 Henrietta St", "latitude": 51.5115, "longitude": -0.1233},
-            {"name": "Shake Shack", "type": "Restaurant", "cuisine": "American", "distance": "3 min walk", "price_range": "££", "address": "24 Market Building", "latitude": 51.5120, "longitude": -0.1230}
-        ],
+            {"name": "Shake Shack", "type": "Restaurant", "cuisine": "American", "distance": "3 min walk", "price_range": "££", "address": "24 Market Building", "latitude": 51.5120, "longitude": -0.1230},
+            {"name": "Côte Brasserie London", "type": "Restaurant", "cuisine": "French", "distance": "3 min walk", "price_range": "££", "address": "Near London Transport Museum", "latitude": 51.5128, "longitude": -0.1208},
+            {"name": "Crussh London", "type": "Cafe", "cuisine": "Healthy", "distance": "4 min walk", "price_range": "££", "address": "Near London Transport Museum", "latitude": 51.5131, "longitude": -0.1215},
+            {"name": "Nando's London", "type": "Restaurant", "cuisine": "Portuguese", "distance": "3 min walk", "price_range": "££", "address": "Near London Transport Museum", "latitude": 51.5089, "longitude": -0.1206},
+            {"name": "The Kings Arms London", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near London Transport Museum", "latitude": 51.5125, "longitude": -0.1211},
+            {"name": "The Red Lion London", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near London Transport Museum", "latitude": 51.5097, "longitude": -0.1219},
+            {"name": "The Old Crown London", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near London Transport Museum", "latitude": 51.5107, "longitude": -0.1198},
+            {"name": "The Swan London", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near London Transport Museum", "latitude": 51.5133, "longitude": -0.1224}],
         "featured": False,
         "rating": 4.4
     },
@@ -574,8 +670,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Switch House Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Churchill War Rooms", "latitude": 51.5021, "longitude": -0.1290},
             {"name": "The Red Lion", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "48 Parliament St", "latitude": 51.5015, "longitude": -0.1260},
-            {"name": "Westminster Arms", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "9 Storey's Gate", "latitude": 51.5000, "longitude": -0.1290}
-        ],
+            {"name": "Westminster Arms", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "9 Storey's Gate", "latitude": 51.5000, "longitude": -0.1290},
+            {"name": "Joe & The Juice Churchill", "type": "Cafe", "cuisine": "Healthy", "distance": "4 min walk", "price_range": "££", "address": "Near Churchill War Rooms", "latitude": 51.5046, "longitude": -0.1294},
+            {"name": "Côte Brasserie Churchill", "type": "Restaurant", "cuisine": "French", "distance": "4 min walk", "price_range": "££", "address": "Near Churchill War Rooms", "latitude": 51.5045, "longitude": -0.1278},
+            {"name": "Caffè Nero Churchill", "type": "Cafe", "cuisine": "Coffee", "distance": "5 min walk", "price_range": "££", "address": "Near Churchill War Rooms", "latitude": 51.5012, "longitude": -0.1281},
+            {"name": "Joe & The Juice Churchill", "type": "Cafe", "cuisine": "Healthy", "distance": "4 min walk", "price_range": "££", "address": "Near Churchill War Rooms", "latitude": 51.5007, "longitude": -0.1295},
+            {"name": "The George Churchill", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Near Churchill War Rooms", "latitude": 51.5012, "longitude": -0.1268},
+            {"name": "Starbucks Churchill", "type": "Cafe", "cuisine": "Coffee", "distance": "3 min walk", "price_range": "££", "address": "Near Churchill War Rooms", "latitude": 51.5007, "longitude": -0.1264},
+            {"name": "Wagamama Churchill", "type": "Restaurant", "cuisine": "Japanese", "distance": "5 min walk", "price_range": "££", "address": "Near Churchill War Rooms", "latitude": 51.5046, "longitude": -0.1291}],
         "featured": False,
         "rating": 4.7
     },
@@ -600,8 +702,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Museum Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "£", "address": "Museum of the Home", "latitude": 51.5318, "longitude": -0.0765},
             {"name": "Song Que", "type": "Restaurant", "cuisine": "Vietnamese", "distance": "2 min walk", "price_range": "£", "address": "134 Kingsland Rd", "latitude": 51.5320, "longitude": -0.0760},
-            {"name": "The Owl & Pussycat", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "34 Redchurch St", "latitude": 51.5240, "longitude": -0.0750}
-        ],
+            {"name": "The Owl & Pussycat", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "34 Redchurch St", "latitude": 51.5240, "longitude": -0.0750},
+            {"name": "The Red Lion Museum", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Museum of the Home", "latitude": 51.5334, "longitude": -0.0759},
+            {"name": "Yo! Sushi Museum", "type": "Restaurant", "cuisine": "Japanese", "distance": "6 min walk", "price_range": "££", "address": "Near Museum of the Home", "latitude": 51.5344, "longitude": -0.0791},
+            {"name": "The Kings Arms Museum", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Museum of the Home", "latitude": 51.5291, "longitude": -0.0766},
+            {"name": "Crussh Museum", "type": "Cafe", "cuisine": "Healthy", "distance": "4 min walk", "price_range": "££", "address": "Near Museum of the Home", "latitude": 51.5301, "longitude": -0.0789},
+            {"name": "The White Hart Museum", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Museum of the Home", "latitude": 51.5319, "longitude": -0.0769},
+            {"name": "Bella Italia Museum", "type": "Restaurant", "cuisine": "Italian", "distance": "5 min walk", "price_range": "££", "address": "Near Museum of the Home", "latitude": 51.5317, "longitude": -0.0771},
+            {"name": "Yo! Sushi Museum", "type": "Restaurant", "cuisine": "Japanese", "distance": "4 min walk", "price_range": "££", "address": "Near Museum of the Home", "latitude": 51.5299, "longitude": -0.0777}],
         "featured": False,
         "rating": 4.3
     },
@@ -627,8 +735,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Wellcome Kitchen", "type": "Restaurant", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Wellcome Collection", "latitude": 51.5258, "longitude": -0.1338},
             {"name": "Caravan", "type": "Restaurant", "cuisine": "International", "distance": "4 min walk", "price_range": "££", "address": "1 Granary Square", "latitude": 51.5355, "longitude": -0.1260},
-            {"name": "The Euston Tap", "type": "Pub", "cuisine": "Craft Beer", "distance": "3 min walk", "price_range": "££", "address": "190 Euston Rd", "latitude": 51.5275, "longitude": -0.1320}
-        ],
+            {"name": "The Euston Tap", "type": "Pub", "cuisine": "Craft Beer", "distance": "3 min walk", "price_range": "££", "address": "190 Euston Rd", "latitude": 51.5275, "longitude": -0.1320},
+            {"name": "Byron Wellcome", "type": "Restaurant", "cuisine": "American", "distance": "3 min walk", "price_range": "££", "address": "Near Wellcome Collection", "latitude": 51.5262, "longitude": -0.1338},
+            {"name": "The Kings Arms Wellcome", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Wellcome Collection", "latitude": 51.5255, "longitude": -0.1335},
+            {"name": "Joe & The Juice Wellcome", "type": "Cafe", "cuisine": "Healthy", "distance": "5 min walk", "price_range": "££", "address": "Near Wellcome Collection", "latitude": 51.5261, "longitude": -0.1342},
+            {"name": "Pizza Express Wellcome", "type": "Restaurant", "cuisine": "Italian", "distance": "3 min walk", "price_range": "££", "address": "Near Wellcome Collection", "latitude": 51.5253, "longitude": -0.1317},
+            {"name": "The Old Crown Wellcome", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Wellcome Collection", "latitude": 51.5279, "longitude": -0.1365},
+            {"name": "The Old Crown Wellcome", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Wellcome Collection", "latitude": 51.5283, "longitude": -0.1319},
+            {"name": "Ask Italian Wellcome", "type": "Restaurant", "cuisine": "Italian", "distance": "2 min walk", "price_range": "££", "address": "Near Wellcome Collection", "latitude": 51.5234, "longitude": -0.1356}],
         "featured": False,
         "rating": 4.5
     },
@@ -654,8 +768,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "The Postal Museum Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "£", "address": "The Postal Museum", "latitude": 51.5278, "longitude": -0.1099},
             {"name": "The Betsey Trotwood", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "56 Farringdon Rd", "latitude": 51.5245, "longitude": -0.1090},
-            {"name": "Exmouth Market Food Stalls", "type": "Market", "cuisine": "International", "distance": "5 min walk", "price_range": "£", "address": "Exmouth Market", "latitude": 51.5265, "longitude": -0.1120}
-        ],
+            {"name": "Exmouth Market Food Stalls", "type": "Market", "cuisine": "International", "distance": "5 min walk", "price_range": "£", "address": "Exmouth Market", "latitude": 51.5265, "longitude": -0.1120},
+            {"name": "Costa Coffee The", "type": "Cafe", "cuisine": "Coffee", "distance": "3 min walk", "price_range": "£", "address": "Near The Postal Museum", "latitude": 51.5272, "longitude": -0.1099},
+            {"name": "Pizza Express The", "type": "Restaurant", "cuisine": "Italian", "distance": "2 min walk", "price_range": "££", "address": "Near The Postal Museum", "latitude": 51.5304, "longitude": -0.1082},
+            {"name": "Pret A Manger The", "type": "Cafe", "cuisine": "British", "distance": "6 min walk", "price_range": "£", "address": "Near The Postal Museum", "latitude": 51.5291, "longitude": -0.1129},
+            {"name": "The Red Lion The", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near The Postal Museum", "latitude": 51.5262, "longitude": -0.1106},
+            {"name": "Dishoom The", "type": "Restaurant", "cuisine": "Indian", "distance": "2 min walk", "price_range": "££", "address": "Near The Postal Museum", "latitude": 51.5304, "longitude": -0.1125},
+            {"name": "The Red Lion The", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near The Postal Museum", "latitude": 51.5304, "longitude": -0.1106},
+            {"name": "Costa Coffee The", "type": "Cafe", "cuisine": "Coffee", "distance": "5 min walk", "price_range": "£", "address": "Near The Postal Museum", "latitude": 51.526, "longitude": -0.1093}],
         "featured": False,
         "rating": 4.6
     },
@@ -681,8 +801,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Pavilion Tea House", "type": "Cafe", "cuisine": "British", "distance": "Inside Greenwich Park", "price_range": "££", "address": "Greenwich Park", "latitude": 51.4778, "longitude": -0.0019},
             {"name": "Old Brewery", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Old Royal Naval College", "latitude": 51.4826, "longitude": -0.0098},
-            {"name": "Goddards at Greenwich", "type": "Restaurant", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "22 King William Walk", "latitude": 51.4830, "longitude": -0.0092}
-        ],
+            {"name": "Goddards at Greenwich", "type": "Restaurant", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "22 King William Walk", "latitude": 51.4830, "longitude": -0.0092},
+            {"name": "Wahaca National", "type": "Restaurant", "cuisine": "Mexican", "distance": "2 min walk", "price_range": "££", "address": "Near National Maritime Museum", "latitude": 51.4813, "longitude": -0.0075},
+            {"name": "Crussh National", "type": "Cafe", "cuisine": "Healthy", "distance": "2 min walk", "price_range": "££", "address": "Near National Maritime Museum", "latitude": 51.4834, "longitude": -0.0073},
+            {"name": "Honest Burgers National", "type": "Restaurant", "cuisine": "American", "distance": "2 min walk", "price_range": "££", "address": "Near National Maritime Museum", "latitude": 51.4811, "longitude": -0.0034},
+            {"name": "Greggs National", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "Near National Maritime Museum", "latitude": 51.4823, "longitude": -0.0058},
+            {"name": "Joe & The Juice National", "type": "Cafe", "cuisine": "Healthy", "distance": "5 min walk", "price_range": "££", "address": "Near National Maritime Museum", "latitude": 51.4815, "longitude": -0.0073},
+            {"name": "Wahaca National", "type": "Restaurant", "cuisine": "Mexican", "distance": "4 min walk", "price_range": "££", "address": "Near National Maritime Museum", "latitude": 51.4786, "longitude": -0.0064},
+            {"name": "The George National", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near National Maritime Museum", "latitude": 51.4813, "longitude": -0.0045}],
         "featured": False,
         "rating": 4.7
     },
@@ -708,8 +834,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Spring Restaurant", "type": "Restaurant", "cuisine": "Modern British", "distance": "Inside Somerset House", "price_range": "£££", "address": "Somerset House", "latitude": 51.5111, "longitude": -0.1175},
             {"name": "Fernandez & Wells", "type": "Cafe", "cuisine": "European", "distance": "Inside Somerset House", "price_range": "££", "address": "Somerset House", "latitude": 51.5111, "longitude": -0.1175},
-            {"name": "Gordon's Wine Bar", "type": "Bar", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "47 Villiers St", "latitude": 51.5078, "longitude": -0.1227}
-        ],
+            {"name": "Gordon's Wine Bar", "type": "Bar", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "47 Villiers St", "latitude": 51.5078, "longitude": -0.1227},
+            {"name": "The Swan Courtauld", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "Near Courtauld Gallery", "latitude": 51.5134, "longitude": -0.1193},
+            {"name": "The George Courtauld", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Courtauld Gallery", "latitude": 51.5114, "longitude": -0.1167},
+            {"name": "Starbucks Courtauld", "type": "Cafe", "cuisine": "Coffee", "distance": "5 min walk", "price_range": "££", "address": "Near Courtauld Gallery", "latitude": 51.5135, "longitude": -0.1188},
+            {"name": "Joe & The Juice Courtauld", "type": "Cafe", "cuisine": "Healthy", "distance": "2 min walk", "price_range": "££", "address": "Near Courtauld Gallery", "latitude": 51.5105, "longitude": -0.1155},
+            {"name": "Prezzo Courtauld", "type": "Restaurant", "cuisine": "Italian", "distance": "5 min walk", "price_range": "££", "address": "Near Courtauld Gallery", "latitude": 51.5094, "longitude": -0.1186},
+            {"name": "Crussh Courtauld", "type": "Cafe", "cuisine": "Healthy", "distance": "3 min walk", "price_range": "££", "address": "Near Courtauld Gallery", "latitude": 51.5138, "longitude": -0.1159},
+            {"name": "Starbucks Courtauld", "type": "Cafe", "cuisine": "Coffee", "distance": "4 min walk", "price_range": "££", "address": "Near Courtauld Gallery", "latitude": 51.5085, "longitude": -0.1163}],
         "featured": False,
         "rating": 4.6
     },
@@ -734,8 +866,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Saatchi Gallery Cafe", "type": "Cafe", "cuisine": "Modern European", "distance": "Inside gallery", "price_range": "££", "address": "Saatchi Gallery", "latitude": 51.4908, "longitude": -0.1631},
             {"name": "Bluebird Chelsea", "type": "Restaurant", "cuisine": "British", "distance": "3 min walk", "price_range": "£££", "address": "350 King's Road", "latitude": 51.4883, "longitude": -0.1650},
-            {"name": "Megan's on the King's Road", "type": "Restaurant", "cuisine": "Mediterranean", "distance": "4 min walk", "price_range": "££", "address": "571 King's Road", "latitude": 51.4781, "longitude": -0.1735}
-        ],
+            {"name": "Megan's on the King's Road", "type": "Restaurant", "cuisine": "Mediterranean", "distance": "4 min walk", "price_range": "££", "address": "571 King's Road", "latitude": 51.4781, "longitude": -0.1735},
+            {"name": "Dishoom Saatchi", "type": "Restaurant", "cuisine": "Indian", "distance": "3 min walk", "price_range": "££", "address": "Near Saatchi Gallery", "latitude": 51.4912, "longitude": -0.1633},
+            {"name": "Franco Manca Saatchi", "type": "Restaurant", "cuisine": "Italian", "distance": "5 min walk", "price_range": "££", "address": "Near Saatchi Gallery", "latitude": 51.4908, "longitude": -0.166},
+            {"name": "Honest Burgers Saatchi", "type": "Restaurant", "cuisine": "American", "distance": "2 min walk", "price_range": "££", "address": "Near Saatchi Gallery", "latitude": 51.4896, "longitude": -0.1649},
+            {"name": "The Red Lion Saatchi", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near Saatchi Gallery", "latitude": 51.4913, "longitude": -0.1604},
+            {"name": "Crussh Saatchi", "type": "Cafe", "cuisine": "Healthy", "distance": "3 min walk", "price_range": "££", "address": "Near Saatchi Gallery", "latitude": 51.4922, "longitude": -0.1643},
+            {"name": "Leon Saatchi", "type": "Cafe", "cuisine": "Healthy", "distance": "3 min walk", "price_range": "££", "address": "Near Saatchi Gallery", "latitude": 51.4917, "longitude": -0.1651},
+            {"name": "The Red Lion Saatchi", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Saatchi Gallery", "latitude": 51.4898, "longitude": -0.1632}],
         "featured": False,
         "rating": 4.5
     },
@@ -761,8 +899,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Serpentine Bar & Kitchen", "type": "Restaurant", "cuisine": "British", "distance": "Inside gallery", "price_range": "££", "address": "Serpentine Galleries", "latitude": 51.5050, "longitude": -0.1732},
             {"name": "The Magazine Restaurant", "type": "Restaurant", "cuisine": "Modern British", "distance": "5 min walk", "price_range": "£££", "address": "Serpentine Sackler Gallery", "latitude": 51.5078, "longitude": -0.1775},
-            {"name": "Honest Burgers", "type": "Restaurant", "cuisine": "American", "distance": "10 min walk", "price_range": "££", "address": "Queensway", "latitude": 51.5104, "longitude": -0.1875}
-        ],
+            {"name": "Honest Burgers", "type": "Restaurant", "cuisine": "American", "distance": "10 min walk", "price_range": "££", "address": "Queensway", "latitude": 51.5104, "longitude": -0.1875},
+            {"name": "Pret A Manger Serpentine", "type": "Cafe", "cuisine": "British", "distance": "5 min walk", "price_range": "£", "address": "Near Serpentine Galleries", "latitude": 51.5034, "longitude": -0.1762},
+            {"name": "The White Hart Serpentine", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Serpentine Galleries", "latitude": 51.5044, "longitude": -0.1756},
+            {"name": "Yo! Sushi Serpentine", "type": "Restaurant", "cuisine": "Japanese", "distance": "6 min walk", "price_range": "££", "address": "Near Serpentine Galleries", "latitude": 51.5063, "longitude": -0.1737},
+            {"name": "Costa Coffee Serpentine", "type": "Cafe", "cuisine": "Coffee", "distance": "2 min walk", "price_range": "£", "address": "Near Serpentine Galleries", "latitude": 51.5057, "longitude": -0.1732},
+            {"name": "Pret A Manger Serpentine", "type": "Cafe", "cuisine": "British", "distance": "5 min walk", "price_range": "£", "address": "Near Serpentine Galleries", "latitude": 51.5038, "longitude": -0.1716},
+            {"name": "The Swan Serpentine", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Serpentine Galleries", "latitude": 51.5078, "longitude": -0.1718},
+            {"name": "Pret A Manger Serpentine", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "Near Serpentine Galleries", "latitude": 51.5075, "longitude": -0.1725}],
         "featured": False,
         "rating": 4.6
     },
@@ -788,8 +932,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Museum Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "££", "address": "Museum of Brands", "latitude": 51.5171, "longitude": -0.2027},
             {"name": "Granger & Co", "type": "Restaurant", "cuisine": "Australian", "distance": "8 min walk", "price_range": "££", "address": "175 Westbourne Grove", "latitude": 51.5163, "longitude": -0.1970},
-            {"name": "The Cock & Bottle", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "17 Needham Rd", "latitude": 51.5193, "longitude": -0.2053}
-        ],
+            {"name": "The Cock & Bottle", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "17 Needham Rd", "latitude": 51.5193, "longitude": -0.2053},
+            {"name": "The Swan Museum", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near Museum of Brands", "latitude": 51.5191, "longitude": -0.1999},
+            {"name": "Leon Museum", "type": "Cafe", "cuisine": "Healthy", "distance": "4 min walk", "price_range": "££", "address": "Near Museum of Brands", "latitude": 51.5174, "longitude": -0.2054},
+            {"name": "The Swan Museum", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "Near Museum of Brands", "latitude": 51.5166, "longitude": -0.2},
+            {"name": "Honest Burgers Museum", "type": "Restaurant", "cuisine": "American", "distance": "3 min walk", "price_range": "££", "address": "Near Museum of Brands", "latitude": 51.5142, "longitude": -0.2044},
+            {"name": "Leon Museum", "type": "Cafe", "cuisine": "Healthy", "distance": "3 min walk", "price_range": "££", "address": "Near Museum of Brands", "latitude": 51.5175, "longitude": -0.2052},
+            {"name": "Ask Italian Museum", "type": "Restaurant", "cuisine": "Italian", "distance": "2 min walk", "price_range": "££", "address": "Near Museum of Brands", "latitude": 51.5163, "longitude": -0.2028},
+            {"name": "Pizza Express Museum", "type": "Restaurant", "cuisine": "Italian", "distance": "5 min walk", "price_range": "££", "address": "Near Museum of Brands", "latitude": 51.5158, "longitude": -0.2036}],
         "featured": False,
         "rating": 4.5
     },
@@ -815,8 +965,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "Pret A Manger", "type": "Cafe", "cuisine": "British", "distance": "2 min walk", "price_range": "£", "address": "Gower Street", "latitude": 51.5241, "longitude": -0.1335},
             {"name": "Dalloway Terrace", "type": "Restaurant", "cuisine": "British", "distance": "8 min walk", "price_range": "£££", "address": "16-22 Great Russell St", "latitude": 51.5185, "longitude": -0.1278},
-            {"name": "The Bloomsbury Tavern", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "236 Shaftesbury Ave", "latitude": 51.5196, "longitude": -0.1296}
-        ],
+            {"name": "The Bloomsbury Tavern", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "236 Shaftesbury Ave", "latitude": 51.5196, "longitude": -0.1296},
+            {"name": "Franco Manca Grant", "type": "Restaurant", "cuisine": "Italian", "distance": "2 min walk", "price_range": "££", "address": "Near Grant Museum of Zoology", "latitude": 51.5216, "longitude": -0.136},
+            {"name": "Zizzi Grant", "type": "Restaurant", "cuisine": "Italian", "distance": "6 min walk", "price_range": "££", "address": "Near Grant Museum of Zoology", "latitude": 51.5226, "longitude": -0.134},
+            {"name": "The Red Lion Grant", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "Near Grant Museum of Zoology", "latitude": 51.5233, "longitude": -0.136},
+            {"name": "The White Hart Grant", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Near Grant Museum of Zoology", "latitude": 51.5245, "longitude": -0.1369},
+            {"name": "Leon Grant", "type": "Cafe", "cuisine": "Healthy", "distance": "4 min walk", "price_range": "££", "address": "Near Grant Museum of Zoology", "latitude": 51.5269, "longitude": -0.1364},
+            {"name": "The Red Lion Grant", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Grant Museum of Zoology", "latitude": 51.5218, "longitude": -0.1313},
+            {"name": "Pret A Manger Grant", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "£", "address": "Near Grant Museum of Zoology", "latitude": 51.523, "longitude": -0.1366}],
         "featured": False,
         "rating": 4.7
     },
@@ -842,8 +998,14 @@ LONDON_MUSEUMS = [
         "nearby_eateries": [
             {"name": "The Espresso Room", "type": "Cafe", "cuisine": "British", "distance": "3 min walk", "price_range": "£", "address": "31-35 Great Ormond St", "latitude": 51.5219, "longitude": -0.1223},
             {"name": "North Sea Fish Restaurant", "type": "Restaurant", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "7-8 Leigh St", "latitude": 51.5250, "longitude": -0.1230},
-            {"name": "The Friend at Hand", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "2 Herbrand St", "latitude": 51.5254, "longitude": -0.1247}
-        ],
+            {"name": "The Friend at Hand", "type": "Pub", "cuisine": "British", "distance": "6 min walk", "price_range": "££", "address": "2 Herbrand St", "latitude": 51.5254, "longitude": -0.1247},
+            {"name": "Leon Petrie", "type": "Cafe", "cuisine": "Healthy", "distance": "6 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5225, "longitude": -0.1335},
+            {"name": "Starbucks Petrie", "type": "Cafe", "cuisine": "Coffee", "distance": "4 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5213, "longitude": -0.1317},
+            {"name": "Caffè Nero Petrie", "type": "Cafe", "cuisine": "Coffee", "distance": "5 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5209, "longitude": -0.1331},
+            {"name": "The Swan Petrie", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5222, "longitude": -0.1313},
+            {"name": "The White Hart Petrie", "type": "Pub", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.525, "longitude": -0.1359},
+            {"name": "The George Petrie", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5235, "longitude": -0.1312},
+            {"name": "Joe & The Juice Petrie", "type": "Cafe", "cuisine": "Healthy", "distance": "4 min walk", "price_range": "££", "address": "Near Petrie Museum of Egyptian Archaeology", "latitude": 51.5245, "longitude": -0.134}],
         "featured": False,
         "rating": 4.8
     }
