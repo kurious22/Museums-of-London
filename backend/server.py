@@ -301,7 +301,7 @@ LONDON_MUSEUMS = [
         "category": "History & Heritage",
         "free_entry": False,
         "opening_hours": "Tue-Sat 09:00-17:00, Sun-Mon 10:00-17:00",
-        "website": "https://www.tower of-london.com",
+        "website": "https://www.hrp.org.uk/tower-of-london",
         "phone": "+44 20 3166 6000",
         "transport": [
             {"type": "tube", "name": "Tower Hill", "line": "Circle, District", "distance": "2 min walk"},
@@ -334,7 +334,7 @@ LONDON_MUSEUMS = [
         "category": "History & Military",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
-        "website": "https://www.iwm.org.uk/visits/iwm-london",
+        "website": "https://iwm.org.uk",
         "phone": "+44 20 7416 5000",
         "transport": [
             {"type": "tube", "name": "Lambeth North", "line": "Bakerloo", "distance": "5 min walk"},
@@ -400,7 +400,7 @@ LONDON_MUSEUMS = [
         "category": "Art",
         "free_entry": True,
         "opening_hours": "Daily 10:30-18:00, Fri until 21:00",
-        "website": "https://www.npg.org.uk",
+        "website": "https://npg.org.uk",
         "phone": "+44 20 7306 0055",
         "transport": [
             {"type": "tube", "name": "Leicester Square", "line": "Northern, Piccadilly", "distance": "2 min walk"},
@@ -595,7 +595,7 @@ LONDON_MUSEUMS = [
         "category": "Natural History & Culture",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:30",
-        "website": "https://www.horniman.ac.uk",
+        "website": "https://horniman.ac.uk",
         "phone": "+44 20 8699 1872",
         "transport": [
             {"type": "train", "name": "Forest Hill", "line": "London Overground", "distance": "5 min walk"},
@@ -627,7 +627,7 @@ LONDON_MUSEUMS = [
         "category": "Transport & History",
         "free_entry": False,
         "opening_hours": "Daily 10:00-18:00",
-        "website": "https://www.ltmuseum.co.uk",
+        "website": "https://ltmuseum.co.uk",
         "phone": "+44 20 7379 6344",
         "transport": [
             {"type": "tube", "name": "Covent Garden", "line": "Piccadilly", "distance": "2 min walk"},
@@ -660,7 +660,7 @@ LONDON_MUSEUMS = [
         "category": "History & Military",
         "free_entry": False,
         "opening_hours": "Daily 09:30-18:00",
-        "website": "https://www.iwm.org.uk/visits/churchill-war-rooms",
+        "website": "https://iwm.org.uk/churchill-war-rooms",
         "phone": "+44 20 7416 5000",
         "transport": [
             {"type": "tube", "name": "Westminster", "line": "Circle, District, Jubilee", "distance": "4 min walk"},
@@ -758,7 +758,7 @@ LONDON_MUSEUMS = [
         "category": "History & Transport",
         "free_entry": False,
         "opening_hours": "Wed-Sun 10:00-17:00",
-        "website": "https://www.postalmuseum.org",
+        "website": "https://postalmuseum.org",
         "phone": "+44 20 7239 2570",
         "transport": [
             {"type": "tube", "name": "Farringdon", "line": "Circle, Hammersmith & City, Metropolitan, Elizabeth", "distance": "5 min walk"},
