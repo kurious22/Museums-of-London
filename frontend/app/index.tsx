@@ -56,6 +56,21 @@ export default function HomeScreen() {
     }
   };
 
+  const fetchAllMuseums = async () => {
+    try {
+      const response = await fetch(`${BACKEND_URL}/api/museums`);
+      const data = await response.json();
+      setAllMuseums(data);
+    } catch (error) {
+      console.error('Error fetching all museums:', error);
+    }
+  };
+
+  const openMuseumMap = () => {
+    fetchAllMuseums();
+    setShowMapModal(true);
+  };
+
   useEffect(() => {
     fetchFeaturedMuseums();
   }, []);
