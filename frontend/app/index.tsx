@@ -287,7 +287,7 @@ export default function HomeScreen() {
               activeOpacity={0.8}
             >
               <Ionicons name="subway" size={18} color="#fff" />
-              <Text style={styles.tubeMapButtonText}>London Underground</Text>
+              <Text style={styles.tubeMapButtonText}>{i18n.t('londonUnderground')}</Text>
             </TouchableOpacity>
             
             <TouchableOpacity
@@ -295,7 +295,7 @@ export default function HomeScreen() {
               onPress={navigateToExplore}
             >
               <Ionicons name="compass" size={18} color="#fff" />
-              <Text style={styles.exploreButtonText}>Explore Museums</Text>
+              <Text style={styles.exploreButtonText}>{i18n.t('exploreMuseums')}</Text>
             </TouchableOpacity>
           </View>
         </LinearGradient>
