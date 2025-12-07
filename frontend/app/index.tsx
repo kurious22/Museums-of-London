@@ -49,6 +49,7 @@ export default function HomeScreen() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<Museum[]>([]);
   const [searching, setSearching] = useState(false);
+  const [tipsExpanded, setTipsExpanded] = useState(false);
 
   const fetchFeaturedMuseums = async () => {
     try {
