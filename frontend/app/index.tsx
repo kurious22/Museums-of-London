@@ -619,10 +619,12 @@ export default function HomeScreen() {
                   ]}
                   onPress={() => {
                     setSelectedLanguage(language);
+                    i18n.locale = language.code;
                     setShowLanguageModal(false);
+                    forceUpdate({});
                     Alert.alert(
-                      'Language Changed',
-                      `Language set to ${language.name}. Full translation feature coming soon!`,
+                      i18n.t('languageChanged'),
+                      `${i18n.t('languageSetTo')} ${language.name}`,
                       [{ text: 'OK' }]
                     );
                   }}
