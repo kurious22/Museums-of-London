@@ -432,7 +432,7 @@ const styles = StyleSheet.create({
   skylineImage: {
     position: 'absolute',
     top: 0,
-    right: 0,
+    right: -5,
     width: 350,
     height: 180,
     opacity: 0.85,
