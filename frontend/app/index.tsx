@@ -393,6 +393,68 @@ export default function HomeScreen() {
           )}
         </View>
 
+        {/* Currency Conversion Section */}
+        <View style={styles.currencyContainer}>
+          <View style={styles.currencyHeader}>
+            <Ionicons name="cash" size={22} color="#2A9D8F" />
+            <Text style={styles.currencyTitle}>Currency Converter</Text>
+          </View>
+          <Text style={styles.currencySubtitle}>Convert to British Pounds (GBP)</Text>
+          
+          <View style={styles.currencyContent}>
+            <View style={styles.currencyInputRow}>
+              <View style={styles.currencyInputContainer}>
+                <Text style={styles.currencyLabel}>Amount</Text>
+                <TextInput
+                  style={styles.currencyInput}
+                  value={currencyAmount}
+                  onChangeText={setCurrencyAmount}
+                  keyboardType="numeric"
+                  placeholder="100"
+                  placeholderTextColor="#666"
+                />
+              </View>
+              
+              <View style={styles.currencyPickerContainer}>
+                <Text style={styles.currencyLabel}>From</Text>
+                <View style={styles.currencyPickerWrapper}>
+                  <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.currencyScroll}>
+                    {['USD', 'EUR', 'JPY', 'AUD', 'CAD', 'CHF', 'CNY', 'INR'].map((currency) => (
+                      <TouchableOpacity
+                        key={currency}
+                        style={[
+                          styles.currencyOption,
+                          selectedCurrency === currency && styles.currencyOptionActive
+                        ]}
+                        onPress={() => setSelectedCurrency(currency)}
+                      >
+                        <Text style={[
+                          styles.currencyOptionText,
+                          selectedCurrency === currency && styles.currencyOptionTextActive
+                        ]}>
+                          {currency}
+                        </Text>
+                      </TouchableOpacity>
+                    ))}
+                  </ScrollView>
+                </View>
+              </View>
+            </View>
+            
+            <View style={styles.currencyResultContainer}>
+              <Ionicons name="arrow-down" size={24} color="#2A9D8F" />
+              <View style={styles.currencyResult}>
+                <Text style={styles.currencyResultAmount}>£{convertedAmount}</Text>
+                <Text style={styles.currencyResultLabel}>GBP</Text>
+              </View>
+            </View>
+            
+            <Text style={styles.currencyDisclaimer}>
+              * Approximate rates. Check current rates before exchanging.
+            </Text>
+          </View>
+        </View>
+
         {/* Colorful Categories Section */}
         <View style={styles.sectionContainer}>
           <View style={styles.sectionTitleContainer}>
