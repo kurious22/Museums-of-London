@@ -536,6 +536,12 @@ export default function HomeScreen() {
           </TouchableOpacity>
         </View>
 
+        {/* Footer - Powered By */}
+        <View style={styles.footerContainer}>
+          <Ionicons name="globe-outline" size={24} color="#CCCCCC" />
+          <Text style={styles.footerText}>Powered by Whelan Industries</Text>
+        </View>
+
         <View style={{ height: 30 }} />
       </ScrollView>
 
