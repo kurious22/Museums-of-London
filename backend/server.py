@@ -757,7 +757,7 @@ LONDON_MUSEUMS = [
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Postal_Museum%2C_Phoenix_Place_-_geograph.org.uk_-_7206605.jpg",
         "category": "History & Transport",
         "free_entry": False,
-        "opening_hours": "Wed-Sun 10:00-17:00",
+        "opening_hours": "Tue-Sun 10:00-17:00",
         "website": "https://postalmuseum.org",
         "phone": "+44 20 7239 2570",
         "transport": [
