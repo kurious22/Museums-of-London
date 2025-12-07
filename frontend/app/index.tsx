@@ -351,23 +351,35 @@ export default function HomeScreen() {
         <View style={{ height: 30 }} />
       </ScrollView>
 
-      {/* Tube Map PDF Modal */}
+      {/* Tube Map Image Modal with Zoom */}
       <Modal
         visible={showTubeMapModal}
-        animationType="slide"
-        transparent={false}
+        animationType="fade"
+        transparent={true}
         onRequestClose={() => setShowTubeMapModal(false)}
       >
-        <View style={styles.pdfModalContainer}>
-          <View style={styles.pdfHeader}>
-            <Text style={styles.pdfTitle}>London Underground Map</Text>
-            <TouchableOpacity onPress={() => setShowTubeMapModal(false)}>
-              <Ionicons name="close-circle" size={32} color="#0019A8" />
+        <View style={styles.imageModalContainer}>
+          <View style={styles.imageHeader}>
+            <Text style={styles.imageTitle}>London Underground Map</Text>
+            <TouchableOpacity 
+              onPress={() => setShowTubeMapModal(false)}
+              style={styles.closeButton}
+            >
+              <Ionicons name="close-circle" size={40} color="#fff" />
             </TouchableOpacity>
           </View>
-          <WebView
-            source={{ uri: 'https://customer-assets.emergentagent.com/job_london-museums-app/artifacts/u9bo0nlh_tube-map-2025.pdf' }}
-            style={styles.pdfWebView}
+          <ImageViewer
+            imageUrls={[{
+              url: 'https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/gzyemsxs_tube-map-2025.jpg',
+            }]}
+            enableSwipeDown={true}
+            onSwipeDown={() => setShowTubeMapModal(false)}
+            backgroundColor="#000"
+            renderIndicator={() => null}
+            saveToLocalByLongPress={false}
+            doubleClickInterval={250}
+            maxOverflow={300}
+            enablePreload={true}
           />
         </View>
       </Modal>
