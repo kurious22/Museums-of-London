@@ -491,12 +491,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginTop: -2,
   },
-  // Globe Icon
-  globeContainer: {
-    position: 'absolute',
-    bottom: 240,
-    right: 20,
-  },
   heroContent: {
     marginTop: 20,
     marginBottom: 24,
