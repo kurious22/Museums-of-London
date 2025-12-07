@@ -138,7 +138,7 @@ export default function HomeScreen() {
 
           <View style={styles.heroContent}>
             <Text style={styles.welcomeText}>WELCOME TO</Text>
-            <Text style={styles.appTitle}>Museums of</Text>
+            <Text style={styles.museumsOfText}>Museums of</Text>
             <View style={styles.londonRow}>
               <View style={styles.londonBadge}>
                 <Text style={styles.londonText}>LONDON</Text>
