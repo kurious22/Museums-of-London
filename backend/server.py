@@ -129,7 +129,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "2",
-        "name": "Natural History",
+        "name": "Natural History Museum",
         "description": "The Natural History Museum is home to life and earth science specimens comprising some 80 million items within five main collections. The museum is particularly famous for its dinosaur skeletons, including a Diplodocus cast named Dippy, and the dramatic blue whale skeleton in Hintze Hall. The stunning Romanesque architecture makes it one of London's most beautiful buildings.",
         "short_description": "Iconic museum featuring dinosaurs, wildlife, and natural wonders",
         "address": "Cromwell Road, South Kensington, London SW7 5BD",
