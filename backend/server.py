@@ -820,7 +820,7 @@ LONDON_MUSEUMS = [
         "address": "Somerset House, Strand, London WC2R 0RN",
         "latitude": 51.5111,
         "longitude": -0.1175,
-        "image_url": "https://images.unsplash.com/photo-1455995214891-0859bd03de34?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/mt9t7nn5_Courtauld-exterior_new_small.jpg",
         "category": "Art",
         "free_entry": False,
         "opening_hours": "Daily 10:00-18:00, last entry 17:15",
