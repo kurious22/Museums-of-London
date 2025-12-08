@@ -101,7 +101,7 @@ LONDON_MUSEUMS = [
         "address": "Great Russell Street, London WC1B 3DG",
         "latitude": 51.5194,
         "longitude": -0.1269,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/British_Museum_%28aerial%29.jpg/800px-British_Museum_%28aerial%29.jpg",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/u76djmv8_london-uk-22-april-2024-600nw-2471806603.jpg",
         "category": "History & Culture",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:00, Fri until 20:30",
