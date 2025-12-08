@@ -636,7 +636,7 @@ LONDON_MUSEUMS = [
         ],
         "nearby_eateries": [
             {"name": "Upper Deck Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "£", "address": "London Transport Museum", "latitude": 51.5117, "longitude": -0.1217},
-            {"name": "Flat Iron", "type": "Restaurant", "cuisine": "Steak", "distance": "2 min walk", "price_range": "££", "address": "17 Henrietta St", "latitude": 51.5115, "longitude": -0.1233},
+            {"name": "Hawksmoor Seven Dials", "type": "Restaurant", "cuisine": "Steak", "distance": "8 min walk", "price_range": "£££", "address": "11 Langley St", "latitude": 51.5145, "longitude": -0.1265},
             {"name": "Shake Shack", "type": "Restaurant", "cuisine": "American", "distance": "3 min walk", "price_range": "££", "address": "24 Market Building", "latitude": 51.5120, "longitude": -0.1230},
             {"name": "Côte Brasserie London", "type": "Restaurant", "cuisine": "French", "distance": "3 min walk", "price_range": "££", "address": "Near London Transport Museum", "latitude": 51.5128, "longitude": -0.1208},
             {"name": "Crussh London", "type": "Cafe", "cuisine": "Healthy", "distance": "4 min walk", "price_range": "££", "address": "Near London Transport Museum", "latitude": 51.5131, "longitude": -0.1215},
