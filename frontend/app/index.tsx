@@ -920,11 +920,11 @@ const styles = StyleSheet.create({
   categoriesGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 12,
+    justifyContent: 'space-between',
   },
   categoryCardWrapper: {
     width: (width - 52) / 2,
-    marginBottom: 0,
+    marginBottom: 12,
   },
   categoryCard: {
     borderRadius: 20,
