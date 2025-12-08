@@ -429,7 +429,7 @@ LONDON_MUSEUMS = [
         "address": "13 Lincoln's Inn Fields, London WC2A 3BP",
         "latitude": 51.5170,
         "longitude": -0.1177,
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Sir_John_Soane%27s_Museum_-_geograph.org.uk_-_3360274.jpg",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/j8l4bv5m_Sir_John_Soane_Museum_%2813952611347%29.jpg",
         "category": "Art & Architecture",
         "free_entry": True,
         "opening_hours": "Wed-Sun 10:00-17:00",
