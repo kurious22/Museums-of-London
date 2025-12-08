@@ -20,10 +20,6 @@ const FavoritesIcon = ({ color, size }: { color: string; size: number }) => (
   <Ionicons name="heart" size={size} color={color} />
 );
 
-const AdminIcon = ({ color, size }: { color: string; size: number }) => (
-  <Ionicons name="settings" size={size} color={color} />
-);
-
 export default function RootLayout() {
   return (
     <SafeAreaProvider>
