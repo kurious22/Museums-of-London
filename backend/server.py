@@ -1019,7 +1019,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.5115,
         "longitude": -0.1218,
         "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/is10pqem_London-Film-Museum-scaled.webp",
-        "category": "Film & Entertainment",
+        "category": "Culture",
         "free_entry": False,
         "opening_hours": "Mon-Sun 10:00-18:00",
         "website": "https://www.londonfilmmuseum.com",
