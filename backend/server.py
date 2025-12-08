@@ -996,7 +996,7 @@ LONDON_MUSEUMS = [
             {"type": "bus", "name": "Brompton Road", "routes": ["14", "49", "70", "74", "345", "C1"], "distance": "1 min walk"}
         ],
         "nearby_eateries": [
-            {"name": "Comptoir Libanais", "type": "Restaurant", "cuisine": "Lebanese", "distance": "3 min walk", "price_range": "££", "address": "1 Exhibition Rd", "latitude": 51.4955, "longitude": -0.1740},
+            {"name": "Zaika", "type": "Restaurant", "cuisine": "Indian", "distance": "9 min walk", "price_range": "£££", "address": "1 Kensington High St", "latitude": 51.4990, "longitude": -0.1780},
             {"name": "Muriel's Kitchen", "type": "Cafe", "cuisine": "British", "distance": "4 min walk", "price_range": "££", "address": "36 Old Brompton Rd", "latitude": 51.4942, "longitude": -0.1755},
             {"name": "Zizzi", "type": "Restaurant", "cuisine": "Italian", "distance": "3 min walk", "price_range": "££", "address": "Brompton Road", "latitude": 51.4938, "longitude": -0.1705},
             {"name": "The Brompton", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Brompton Road", "latitude": 51.4948, "longitude": -0.1692},
