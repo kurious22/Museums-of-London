@@ -885,7 +885,7 @@ LONDON_MUSEUMS = [
         "address": "Kensington Gardens, London W2 3XA",
         "latitude": 51.5050,
         "longitude": -0.1732,
-        "image_url": "https://images.unsplash.com/photo-1600331947653-246fb676115a?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/tylbte1l_Serpentine__2018__MG_8820.jpg",
         "category": "Contemporary Art",
         "free_entry": True,
         "opening_hours": "Tue-Fri 10:00-18:00, Sat-Sun 10:00-19:00, Mon 12:00-18:00",
