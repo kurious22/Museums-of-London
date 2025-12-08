@@ -592,7 +592,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.4413,
         "longitude": -0.0600,
         "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/u0668h6y_Horniman-Andrew-Lee-not-to-be-used-for-commercial-purposes.jpg",
-        "category": "Natural History & Culture",
+        "category": "Culture",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:30",
         "website": "https://horniman.ac.uk",
