@@ -234,7 +234,7 @@ LONDON_MUSEUMS = [
         "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/akty6zrp_tate-modern-main-1.jpg",
         "category": "Art",
         "free_entry": True,
-        "opening_hours": "Sun-Thu 10:00-18:00, Fri-Sat until 22:00",
+        "opening_hours": "Sun-Thu 10:00-18:00, Fri-Sat until 21:00",
         "website": "https://www.tate.org.uk/visit/tate-modern",
         "phone": "+44 20 7887 8888",
         "transport": [
