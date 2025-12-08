@@ -921,9 +921,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    marginTop: 4,
   },
   categoryCardWrapper: {
-    width: (width - 52) / 2,
+    width: '48%',
     marginBottom: 12,
   },
   categoryCard: {
