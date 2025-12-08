@@ -307,8 +307,9 @@ export default function HomeScreen() {
               <Ionicons name="star" size={22} color="#F1A208" />
               <Text style={styles.sectionTitle}>{i18n.t('featuredMuseums')}</Text>
             </View>
-            <TouchableOpacity onPress={navigateToExplore}>
+            <TouchableOpacity onPress={navigateToExplore} style={styles.seeAllButton}>
               <Text style={styles.seeAllText}>{i18n.t('seeAll')}</Text>
+              <Ionicons name="arrow-forward" size={16} color="#fff" style={styles.seeAllArrow} />
             </TouchableOpacity>
           </View>
 
