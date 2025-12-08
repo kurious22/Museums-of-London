@@ -1018,7 +1018,7 @@ LONDON_MUSEUMS = [
         "address": "45 Wellington Street, Covent Garden, London WC2E 7BN",
         "latitude": 51.5115,
         "longitude": -0.1218,
-        "image_url": "https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/is10pqem_London-Film-Museum-scaled.webp",
         "category": "Film & Entertainment",
         "free_entry": False,
         "opening_hours": "Mon-Sun 10:00-18:00",
