@@ -232,7 +232,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.5076,
         "longitude": -0.0994,
         "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/akty6zrp_tate-modern-main-1.jpg",
-        "category": "Modern Art",
+        "category": "Art",
         "free_entry": True,
         "opening_hours": "Sun-Thu 10:00-18:00, Fri-Sat until 22:00",
         "website": "https://www.tate.org.uk/visit/tate-modern",
