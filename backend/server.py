@@ -984,7 +984,7 @@ LONDON_MUSEUMS = [
         "address": "215-217 Brompton Road, London SW3 2EJ",
         "latitude": 51.4944,
         "longitude": -0.1699,
-        "image_url": "https://images.unsplash.com/photo-1618944847828-82e943c3bdb7?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/arma0wp4_download.jpeg",
         "category": "Science & Experience",
         "free_entry": False,
         "opening_hours": "Daily 10:00-20:00",
