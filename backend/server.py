@@ -493,7 +493,7 @@ LONDON_MUSEUMS = [
         "address": "Hertford House, Manchester Square, London W1U 3BN",
         "latitude": 51.5177,
         "longitude": -0.1530,
-        "image_url": "https://images.unsplash.com/photo-1686852213986-9f81802a02da?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/2jlbht61_Wallace-Collection-Image-by-Chrispictures-Shutterstock-scaled.jpg",
         "category": "Art",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:00",
