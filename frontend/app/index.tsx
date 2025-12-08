@@ -485,18 +485,17 @@ export default function HomeScreen() {
           </View>
           <View style={styles.categoriesGrid}>
             {[
-              { name: 'Art', icon: 'color-palette', colors: ['#FF006E', '#FB5607', '#FFBE0B'], emoji: '🎨' },
-              { name: 'History', icon: 'library', colors: ['#5F0F40', '#9A031E', '#FB8B24'], emoji: '🏛️' },
+              { name: 'Art', icon: 'brush', colors: ['#FF006E', '#FB5607', '#FFBE0B'], emoji: '🎨' },
+              { name: 'History', icon: 'book', colors: ['#5F0F40', '#9A031E', '#FB8B24'], emoji: '🏛️' },
               { name: 'Science', icon: 'flask', colors: ['#03045E', '#0077B6', '#00B4D8'], emoji: '🔬' },
-              { name: 'Culture', icon: 'earth', colors: ['#7209B7', '#F72585', '#4CC9F0'], emoji: '🌍' },
-              { name: 'Military', icon: 'shield-checkmark', colors: ['#2B2D42', '#8D99AE', '#EDF2F4'], emoji: '⚔️' },
+              { name: 'Culture', icon: 'people', colors: ['#7209B7', '#F72585', '#4CC9F0'], emoji: '🌍' },
+              { name: 'Military', icon: 'shield', colors: ['#2B2D42', '#8D99AE', '#EDF2F4'], emoji: '⚔️' },
               { name: 'Transport', icon: 'train', colors: ['#E63946', '#A8DADC', '#457B9D'], emoji: '🚇' },
             ].map((category, index) => (
               <TouchableOpacity
                 key={category.name}
                 onPress={() => router.push(`/explore?category=${category.name}`)}
                 activeOpacity={0.8}
-                style={styles.categoryCardWrapper}
               >
                 <LinearGradient
                   colors={category.colors}
@@ -504,13 +503,10 @@ export default function HomeScreen() {
                   end={{ x: 1, y: 1 }}
                   style={styles.categoryCard}
                 >
-                  <View style={styles.categoryIconCircle}>
-                    <Ionicons name={category.icon as any} size={36} color="#fff" />
+                  <View style={styles.categoryIcon}>
+                    <Text style={styles.categoryEmoji}>{category.emoji}</Text>
                   </View>
-                  <View style={styles.categoryContent}>
-                    <Text style={styles.categoryName}>{category.name}</Text>
-                    <Ionicons name="arrow-forward-circle" size={24} color="rgba(255,255,255,0.9)" />
-                  </View>
+                  <Text style={styles.categoryName}>{category.name}</Text>
                 </LinearGradient>
               </TouchableOpacity>
             ))}
