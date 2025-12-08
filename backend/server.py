@@ -235,7 +235,7 @@ LONDON_MUSEUMS = [
         "category": "Art",
         "free_entry": True,
         "opening_hours": "Sun-Thu 10:00-18:00, Fri-Sat until 21:00",
-        "website": "https://www.tate.org.uk/visit/tate-modern",
+        "website": "https://www.tate.org.uk/visit/tate-modern/",
         "phone": "+44 20 7887 8888",
         "transport": [
             {"type": "tube", "name": "Southwark", "line": "Jubilee", "distance": "5 min walk"},
