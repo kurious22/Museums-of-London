@@ -363,7 +363,7 @@ LONDON_MUSEUMS = [
         "address": "150 London Wall, London EC2Y 5HN",
         "latitude": 51.5176,
         "longitude": -0.0967,
-        "image_url": "https://images.pexels.com/photos/11167231/pexels-photo-11167231.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/159nivlf_Museum-of-London-4266.jpg",
         "category": "History & Culture",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
