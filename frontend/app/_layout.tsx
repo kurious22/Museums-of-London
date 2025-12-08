@@ -64,8 +64,7 @@ export default function RootLayout() {
         <Tabs.Screen
           name="admin"
           options={{
-            title: 'Admin',
-            tabBarIcon: AdminIcon,
+            href: null,
           }}
         />
         <Tabs.Screen
