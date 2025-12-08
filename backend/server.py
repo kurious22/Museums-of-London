@@ -656,7 +656,7 @@ LONDON_MUSEUMS = [
         "address": "Clive Steps, King Charles Street, London SW1A 2AQ",
         "latitude": 51.5021,
         "longitude": -0.1290,
-        "image_url": "https://images.unsplash.com/photo-1586426818048-d4ff7a16b4f8?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/vnp437cu_df%20%281%29.jpg",
         "category": "History & Military",
         "free_entry": False,
         "opening_hours": "Daily 09:30-18:00",
