@@ -624,7 +624,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.5117,
         "longitude": -0.1217,
         "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/79ngn0zg_330px-London_Transport_Museum_%2842206944281%29.jpg",
-        "category": "Transport & History",
+        "category": "Transport",
         "free_entry": False,
         "opening_hours": "Daily 10:00-18:00",
         "website": "https://ltmuseum.co.uk",
