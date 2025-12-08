@@ -985,7 +985,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.4944,
         "longitude": -0.1699,
         "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/arma0wp4_download.jpeg",
-        "category": "Science & Experience",
+        "category": "Science",
         "free_entry": False,
         "opening_hours": "Daily 10:00-20:00",
         "website": "https://www.paradoxmuseumlo.com",
