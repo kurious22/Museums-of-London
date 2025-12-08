@@ -788,7 +788,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.4810,
         "longitude": -0.0052,
         "image_url": "https://images.unsplash.com/photo-1730076784818-ba681289fd58?w=800&q=80",
-        "category": "Maritime History",
+        "category": "History",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:00",
         "website": "https://www.rmg.co.uk/national-maritime-museum",
