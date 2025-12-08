@@ -12,7 +12,7 @@ from typing import List, Dict, Any
 import time
 
 # Backend URL from environment
-BACKEND_URL = "https://culture-compass-6.preview.emergentagent.com/api"
+BACKEND_URL = "https://london-museums.preview.emergentagent.com/api"
 
 class MuseumAPITester:
     def __init__(self):
