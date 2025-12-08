@@ -193,7 +193,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "4",
-        "name": "Science",
+        "name": "Science Museum",
         "description": "The Science Museum is a major museum showcasing the development of science and technology. With over 15,000 objects on display, including the first jet engine, Stephenson's Rocket, and the Apollo 10 command module, the museum brings science to life through interactive galleries and IMAX shows.",
         "short_description": "Interactive science and technology museum for all ages",
         "address": "Exhibition Road, South Kensington, London SW7 2DD",
@@ -291,7 +291,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "7",
-        "name": "Tower of",
+        "name": "Tower of London",
         "description": "A historic castle and World Heritage Site, the Tower of London has served as royal residence, prison, and fortress for over 900 years. Home to the Crown Jewels, the Yeoman Warders (Beefeaters), and the famous ravens. Explore the medieval palace, armour collection, and learn about the tower's dark history.",
         "short_description": "Historic royal palace with Crown Jewels and 900 years of history",
         "address": "St Katharine's & Wapping, London EC3N 4AB",
@@ -306,7 +306,7 @@ LONDON_MUSEUMS = [
         "transport": [
             {"type": "tube", "name": "Tower Hill", "line": "Circle, District", "distance": "2 min walk"},
             {"type": "train", "name": "Fenchurch Street", "line": "National Rail", "distance": "5 min walk"},
-            {"type": "bus", "name": "Tower of", "routes": ["15", "42", "78", "100", "RV1"], "distance": "1 min walk"}
+            {"type": "bus", "name": "Tower of London", "routes": ["15", "42", "78", "100", "RV1"], "distance": "1 min walk"}
         ],
         "nearby_eateries": [
             {"name": "The New Armouries Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside tower", "price_range": "££", "address": "Tower of London", "latitude": 51.5081, "longitude": -0.0759},
@@ -324,7 +324,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "8",
-        "name": "Imperial War",
+        "name": "Imperial War Museum",
         "description": "The Imperial War Museum explores the causes and consequences of modern conflict, from World War I to present day. The museum features a suspended Spitfire, V-2 rocket, and powerful Holocaust Exhibition. Interactive displays and personal stories bring history to life.",
         "short_description": "Powerful museum exploring conflict from WWI to today",
         "address": "Lambeth Road, London SE1 6HZ",
@@ -357,7 +357,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "9",
-        "name": "Museum of",
+        "name": "Museum of London",
         "description": "Discover the story of London and its people from prehistoric times to the present day. The museum features the Lord Mayor's State Coach, Victorian streets, and the story of the Great Fire. Temporary exhibitions explore contemporary London life.",
         "short_description": "Explore London's fascinating story from prehistory to today",
         "address": "150 London Wall, London EC2Y 5HN",
@@ -423,7 +423,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "11",
-        "name": "Sir John Soane's",
+        "name": "Sir John Soane's Museum",
         "description": "One of London's hidden gems, this unique museum is the former home of architect Sir John Soane, preserved exactly as he left it. Packed with antiquities, paintings, and architectural curiosities including the sarcophagus of Seti I and works by Hogarth.",
         "short_description": "Quirky museum in the former home of architect Sir John Soane",
         "address": "13 Lincoln's Inn Fields, London WC2A 3BP",
@@ -455,7 +455,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "12",
-        "name": "Design",
+        "name": "Design Museum",
         "description": "The Design Museum is dedicated to contemporary design in all its forms. Located in a stunning former Commonwealth Institute building, the museum showcases innovation in fashion, architecture, graphics, digital, and product design through changing exhibitions.",
         "short_description": "Contemporary design museum in stunning Kensington building",
         "address": "224-238 Kensington High Street, London W8 6AG",
@@ -585,7 +585,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "16",
-        "name": "Horniman",
+        "name": "Horniman Museum",
         "description": "The Horniman Museum in Forest Hill offers a unique blend of natural history, anthropology, and music. Famous for its overstuffed walrus and extensive musical instrument collection, the museum also features beautiful gardens with stunning views of London.",
         "short_description": "Quirky museum of natural history, world cultures, and music",
         "address": "100 London Road, Forest Hill, London SE23 3PQ",
@@ -599,7 +599,7 @@ LONDON_MUSEUMS = [
         "phone": "+44 20 8699 1872",
         "transport": [
             {"type": "train", "name": "Forest Hill", "line": "London Overground", "distance": "5 min walk"},
-            {"type": "bus", "name": "Horniman", "routes": ["176", "185", "197", "356", "P4"], "distance": "1 min walk"}
+            {"type": "bus", "name": "Horniman Museum", "routes": ["176", "185", "197", "356", "P4"], "distance": "1 min walk"}
         ],
         "nearby_eateries": [
             {"name": "Horniman Cafe", "type": "Cafe", "cuisine": "British", "distance": "Inside museum", "price_range": "£", "address": "Horniman Museum", "latitude": 51.4413, "longitude": -0.0600},
@@ -617,7 +617,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "17",
-        "name": "London Transport",
+        "name": "London Transport Museum",
         "description": "Explore the history of London's transport from horse-drawn buses to the Elizabeth line. Interactive exhibits let you drive a tube train simulator, and the collection includes vintage buses, trams, and tube trains. Perfect for families.",
         "short_description": "Interactive museum of London's iconic transport history",
         "address": "Covent Garden Piazza, London WC2E 7BB",
@@ -748,7 +748,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "21",
-        "name": "The Postal",
+        "name": "The Postal Museum",
         "description": "The Postal Museum tells the story of 500 years of British postal history, from the first stamp to the present day. The highlight is Mail Rail, a unique underground railway ride through the original tunnels that once transported millions of letters beneath London's streets. Interactive galleries explore communication, technology, and the social history of the postal service.",
         "short_description": "Discover 500 years of postal history and ride the Mail Rail underground",
         "address": "15-20 Phoenix Place, London WC1X 0DA",
@@ -781,7 +781,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "22",
-        "name": "National Maritime",
+        "name": "National Maritime Museum",
         "description": "The National Maritime Museum in Greenwich is the world's largest maritime museum, exploring Britain's seafaring history and its impact on the world. The collection includes navigational instruments, ship models, and Nelson's uniform from the Battle of Trafalgar. The museum is part of Royal Museums Greenwich, alongside the Royal Observatory and Queen's House.",
         "short_description": "World's largest maritime museum in historic Greenwich",
         "address": "Romney Road, Greenwich, London SE10 9NF",
@@ -978,7 +978,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "28",
-        "name": "Paradox",
+        "name": "Paradox Museum",
         "description": "The Paradox Museum is an immersive experience featuring over 50 paradox-based exhibits that challenge perception and reality. Visitors encounter mind-bending optical illusions, impossible objects, and interactive installations that blur the line between what's real and what's not. Perfect for all ages, the museum offers a unique journey through brain-teasing puzzles, gravity-defying rooms, and Instagram-worthy photo opportunities that will make you question everything you see.",
         "short_description": "Mind-bending museum of optical illusions and paradoxes",
         "address": "215-217 Brompton Road, London SW3 2EJ",
@@ -1012,7 +1012,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "29",
-        "name": "London Film",
+        "name": "London Film Museum",
         "description": "The London Film Museum is dedicated to preserving and showcasing British film history and the art of filmmaking. The museum features iconic props, costumes, and memorabilia from beloved films and TV shows. Visitors can explore the magic of cinema through interactive exhibits, behind-the-scenes insights, and rare artifacts from classic and contemporary productions. The museum celebrates the UK's rich contribution to the global film industry with rotating exhibitions and permanent collections.",
         "short_description": "Museum celebrating British film history and cinema",
         "address": "45 Wellington Street, Covent Garden, London WC2E 7BN",
