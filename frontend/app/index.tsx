@@ -1536,6 +1536,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingVertical: 14,
     gap: 8,
+    borderWidth: 2,
+    borderColor: '#FFFFFF',
   },
   tubeMapButtonText: {
     fontSize: 15,
