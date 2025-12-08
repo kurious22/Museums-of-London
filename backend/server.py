@@ -154,7 +154,7 @@ LONDON_MUSEUMS = [
             {"name": "The Red Lion", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.4973, "longitude": -0.1747},
             {"name": "Busaba Eathai", "type": "Restaurant", "cuisine": "Thai", "distance": "6 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.4939, "longitude": -0.1743},
             {"name": "The Swan", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.4944, "longitude": -0.1745},
-            {"name": "The Swan", "type": "Pub", "cuisine": "British", "distance": "3 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.498, "longitude": -0.1774},
+            {"name": "Bill's Restaurant", "type": "Restaurant", "cuisine": "British", "distance": "8 min walk", "price_range": "££", "address": "Kensington High Street", "latitude": 51.4995, "longitude": -0.1920},
             {"name": "Zizzi", "type": "Restaurant", "cuisine": "Italian", "distance": "3 min walk", "price_range": "££", "address": "Near Natural History Museum", "latitude": 51.4995, "longitude": -0.1748}],
         "featured": True,
         "rating": 4.7
