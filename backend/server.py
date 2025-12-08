@@ -161,7 +161,7 @@ LONDON_MUSEUMS = [
     },
     {
         "id": "3",
-        "name": "Victoria and Albert",
+        "name": "Victoria and Albert Museum",
         "description": "The V&A is the world's largest museum of applied and decorative arts and design, housing a permanent collection of over 2.3 million objects. The collection spans 5,000 years of art from ancient times to the present day, including ceramics, furniture, fashion, glass, jewelry, metalwork, photographs, sculpture, textiles, and paintings.",
         "short_description": "World's leading museum of art, design, and performance",
         "address": "Cromwell Road, London SW7 2RL",
