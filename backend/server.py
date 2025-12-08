@@ -755,7 +755,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.5278,
         "longitude": -0.1099,
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Postal_Museum%2C_Phoenix_Place_-_geograph.org.uk_-_7206605.jpg",
-        "category": "History & Transport",
+        "category": "Transport",
         "free_entry": False,
         "opening_hours": "Tue-Sun 10:00-17:00",
         "website": "https://postalmuseum.org",
