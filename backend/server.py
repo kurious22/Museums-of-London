@@ -136,7 +136,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.4967,
         "longitude": -0.1764,
         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Natural_History_Museum_London_Jan_2006.jpg/800px-Natural_History_Museum_London_Jan_2006.jpg",
-        "category": "Science & Nature",
+        "category": "Science",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:50",
         "website": "https://www.nhm.ac.uk",
