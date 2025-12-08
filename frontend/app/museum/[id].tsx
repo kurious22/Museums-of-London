@@ -157,9 +157,18 @@ export default function MuseumDetailScreen() {
     });
   };
 
-  const openWebsite = () => {
+  const openWebsite = async () => {
     if (museum?.website) {
-      Linking.openURL(museum.website);
+      try {
+        const supported = await Linking.canOpenURL(museum.website);
+        if (supported) {
+          await Linking.openURL(museum.website);
+        } else {
+          Alert.alert('Error', 'Cannot open this website URL');
+        }
+      } catch (error) {
+        Alert.alert('Error', 'Failed to open website');
+      }
     }
   };
 
