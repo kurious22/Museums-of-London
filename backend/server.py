@@ -334,7 +334,7 @@ LONDON_MUSEUMS = [
         "category": "Military",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
-        "website": "https://iwm.org.uk",
+        "website": "https://www.iwm.org.uk",
         "phone": "+44 20 7416 5000",
         "transport": [
             {"type": "tube", "name": "Lambeth North", "line": "Bakerloo", "distance": "5 min walk"},
@@ -400,7 +400,7 @@ LONDON_MUSEUMS = [
         "category": "Art",
         "free_entry": True,
         "opening_hours": "Daily 10:30-18:00, Fri until 21:00",
-        "website": "https://npg.org.uk",
+        "website": "https://www.npg.org.uk",
         "phone": "+44 20 7306 0055",
         "transport": [
             {"type": "tube", "name": "Leicester Square", "line": "Northern, Piccadilly", "distance": "2 min walk"},
@@ -465,7 +465,7 @@ LONDON_MUSEUMS = [
         "category": "Art",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
-        "website": "https://designmuseum.org",
+        "website": "https://www.designmuseum.org",
         "phone": "+44 20 3862 5900",
         "transport": [
             {"type": "tube", "name": "High Street Kensington", "line": "Circle, District", "distance": "5 min walk"},
@@ -595,7 +595,7 @@ LONDON_MUSEUMS = [
         "category": "Culture",
         "free_entry": True,
         "opening_hours": "Daily 10:00-17:30",
-        "website": "https://horniman.ac.uk",
+        "website": "https://www.horniman.ac.uk",
         "phone": "+44 20 8699 1872",
         "transport": [
             {"type": "train", "name": "Forest Hill", "line": "London Overground", "distance": "5 min walk"},
@@ -627,7 +627,7 @@ LONDON_MUSEUMS = [
         "category": "Transport",
         "free_entry": False,
         "opening_hours": "Daily 10:00-18:00",
-        "website": "https://ltmuseum.co.uk",
+        "website": "https://www.ltmuseum.co.uk",
         "phone": "+44 20 7379 6344",
         "transport": [
             {"type": "tube", "name": "Covent Garden", "line": "Piccadilly", "distance": "2 min walk"},
@@ -660,7 +660,7 @@ LONDON_MUSEUMS = [
         "category": "Military",
         "free_entry": False,
         "opening_hours": "Daily 09:30-18:00",
-        "website": "https://iwm.org.uk/churchill-war-rooms",
+        "website": "https://www.iwm.org.uk/visits/churchill-war-rooms",
         "phone": "+44 20 7416 5000",
         "transport": [
             {"type": "tube", "name": "Westminster", "line": "Circle, District, Jubilee", "distance": "4 min walk"},
@@ -725,7 +725,7 @@ LONDON_MUSEUMS = [
         "category": "Science",
         "free_entry": True,
         "opening_hours": "Tue-Sun 10:00-18:00, Thu until 21:00",
-        "website": "https://wellcomecollection.org",
+        "website": "https://www.wellcomecollection.org",
         "phone": "+44 20 7611 2222",
         "transport": [
             {"type": "tube", "name": "Euston", "line": "Northern, Victoria", "distance": "3 min walk"},
@@ -758,7 +758,7 @@ LONDON_MUSEUMS = [
         "category": "Transport",
         "free_entry": False,
         "opening_hours": "Tue-Sun 10:00-17:00",
-        "website": "https://postalmuseum.org",
+        "website": "https://www.postalmuseum.org",
         "phone": "+44 20 7239 2570",
         "transport": [
             {"type": "tube", "name": "Farringdon", "line": "Circle, Hammersmith & City, Metropolitan, Elizabeth", "distance": "5 min walk"},
@@ -824,7 +824,7 @@ LONDON_MUSEUMS = [
         "category": "Art",
         "free_entry": False,
         "opening_hours": "Daily 10:00-18:00, last entry 17:15",
-        "website": "https://courtauld.ac.uk/gallery",
+        "website": "https://www.courtauld.ac.uk/gallery",
         "phone": "+44 20 7848 2526",
         "transport": [
             {"type": "tube", "name": "Temple", "line": "Circle, District", "distance": "3 min walk"},
@@ -922,7 +922,7 @@ LONDON_MUSEUMS = [
         "category": "History",
         "free_entry": False,
         "opening_hours": "Mon-Sat 10:00-18:00, Sun 11:00-17:00",
-        "website": "https://museumofbrands.com",
+        "website": "https://www.museumofbrands.com",
         "phone": "+44 20 7243 9611",
         "transport": [
             {"type": "tube", "name": "Ladbroke Grove", "line": "Circle, Hammersmith & City", "distance": "3 min walk"},
