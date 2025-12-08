@@ -309,7 +309,7 @@ export default function HomeScreen() {
             </View>
             <TouchableOpacity onPress={navigateToExplore} style={styles.seeAllButton}>
               <Text style={styles.seeAllText}>{i18n.t('seeAll')}</Text>
-              <Ionicons name="arrow-forward-sharp" size={18} color="#FFFFFF" style={styles.seeAllArrow} />
+              <Ionicons name="arrow-forward-sharp" size={24} color="#FFFFFF" style={styles.seeAllArrow} />
             </TouchableOpacity>
           </View>
 
