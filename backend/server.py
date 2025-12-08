@@ -200,7 +200,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.4978,
         "longitude": -0.1745,
         "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/lqwikzag_Front_of_Science_Museum_with_full__Science__logo_and_people_walking_past-1600x1066.jpg",
-        "category": "Science & Technology",
+        "category": "Science",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
         "website": "https://www.sciencemuseum.org.uk",
