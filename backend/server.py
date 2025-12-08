@@ -95,7 +95,7 @@ class Favorite(BaseModel):
 LONDON_MUSEUMS = [
     {
         "id": "1",
-        "name": "British",
+        "name": "British Museum",
         "description": "The British Museum is one of the world's most famous museums, housing a vast collection of world art and artifacts spanning over two million years of history. Highlights include the Rosetta Stone, the Elgin Marbles, and Egyptian mummies. The museum's stunning Great Court, designed by Norman Foster, is the largest covered public square in Europe.",
         "short_description": "World-famous museum with over 8 million artifacts from all continents",
         "address": "Great Russell Street, London WC1B 3DG",
