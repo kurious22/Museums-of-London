@@ -10,13 +10,19 @@ import {
   Dimensions,
   Platform,
   RefreshControl,
-  ImageBackground,
+  Linking,
+  Alert,
+  Modal,
+  TextInput,
+  FlatList,
 } from 'react-native';
+import ImageViewer from 'react-native-image-zoom-viewer';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
+import i18n from '../i18n/config';
 
 const { width } = Dimensions.get('window');
 const BACKEND_URL = process.env.EXPO_PUBLIC_BACKEND_URL || '';
@@ -38,6 +44,19 @@ export default function HomeScreen() {
   const [featuredMuseums, setFeaturedMuseums] = useState<Museum[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [showMapModal, setShowMapModal] = useState(false);
+  const [showTubeMapModal, setShowTubeMapModal] = useState(false);
+  const [allMuseums, setAllMuseums] = useState<Museum[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<Museum[]>([]);
+  const [searching, setSearching] = useState(false);
+  const [tipsExpanded, setTipsExpanded] = useState(false);
+  const [currencyAmount, setCurrencyAmount] = useState('100');
+  const [selectedCurrency, setSelectedCurrency] = useState('USD');
+  const [convertedAmount, setConvertedAmount] = useState('0');
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState({ code: 'en', name: 'English', flag: '🇬🇧' });
+  const [, forceUpdate] = useState({});
 
   const fetchFeaturedMuseums = async () => {
     try {
@@ -50,6 +69,21 @@ export default function HomeScreen() {
       setLoading(false);
       setRefreshing(false);
     }
+  };
+
+  const fetchAllMuseums = async () => {
+    try {
+      const response = await fetch(`${BACKEND_URL}/api/museums`);
+      const data = await response.json();
+      setAllMuseums(data);
+    } catch (error) {
+      console.error('Error fetching all museums:', error);
+    }
+  };
+
+  const openMuseumMap = () => {
+    fetchAllMuseums();
+    setShowMapModal(true);
   };
 
   useEffect(() => {
@@ -69,8 +103,69 @@ export default function HomeScreen() {
     router.push('/explore');
   };
 
+  const navigateToTours = () => {
+    router.push('/tours');
+  };
+
+  const openTubeMap = () => {
+    setShowTubeMapModal(true);
+  };
+
+  const handleSearch = async (query: string) => {
+    setSearchQuery(query);
+    if (query.trim().length === 0) {
+      setSearchResults([]);
+      return;
+    }
+    
+    setSearching(true);
+    try {
+      const response = await fetch(`${BACKEND_URL}/api/museums?search=${encodeURIComponent(query)}`);
+      const data = await response.json();
+      setSearchResults(data);
+    } catch (error) {
+      console.error('Error searching museums:', error);
+    } finally {
+      setSearching(false);
+    }
+  };
+
+  const clearSearch = () => {
+    setSearchQuery('');
+    setSearchResults([]);
+  };
+
+  const convertCurrency = (amount: string, fromCurrency: string) => {
+    const numAmount = parseFloat(amount) || 0;
+    // Exchange rates to GBP (approximate)
+    const rates: { [key: string]: number } = {
+      'USD': 0.79,
+      'EUR': 0.85,
+      'JPY': 0.0054,
+      'AUD': 0.51,
+      'CAD': 0.58,
+      'CHF': 0.90,
+      'CNY': 0.11,
+      'INR': 0.0095,
+      'KRW': 0.00059,
+      'MXN': 0.039,
+      'BRL': 0.13,
+      'SGD': 0.58,
+      'NZD': 0.47,
+      'HKD': 0.10,
+      'AED': 0.22,
+      'GBP': 1.00,
+    };
+    const converted = numAmount * (rates[fromCurrency] || 1);
+    setConvertedAmount(converted.toFixed(2));
+  };
+
+  useEffect(() => {
+    convertCurrency(currencyAmount, selectedCurrency);
+  }, [currencyAmount, selectedCurrency]);
+
   return (
-    <View style={[styles.container, { paddingTop: insets.top }]}>
+    <View style={styles.container}>
       <StatusBar style="light" />
       
       <ScrollView
@@ -80,58 +175,140 @@ export default function HomeScreen() {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor="#E63946" />
         }
       >
-        {/* Hero Section with London Skyline */}
-        <View style={styles.heroSection}>
-          <ImageBackground
-            source={{ uri: 'https://images.unsplash.com/photo-1503494975800-45129df82138?w=800' }}
-            style={styles.heroImage}
-            imageStyle={{ opacity: 0.7 }}
+        {/* Colorful Hero Section with London Theme */}
+        <LinearGradient
+          colors={['#1A1A2E', '#16213E', '#0F3460', '#E94560']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={[styles.heroSection, { paddingTop: insets.top + 20 }]}
+        >
+          {/* Language Selector Button - Top Right */}
+          <TouchableOpacity 
+            style={styles.languageButton}
+            onPress={() => setShowLanguageModal(true)}
+            activeOpacity={0.8}
           >
-            <View style={styles.heroOverlay}>
-              <View style={styles.heroContent}>
-                <Text style={styles.welcomeText}>Welcome to</Text>
-                <Text style={styles.appTitle}>Museums of</Text>
-                <Text style={styles.appTitleHighlight}>London</Text>
-                <Text style={styles.heroSubtitle}>
-                  Discover world-class art, history, and culture
-                </Text>
-              </View>
-              
-              <TouchableOpacity
-                style={styles.exploreButton}
-                onPress={navigateToExplore}
-              >
-                <Text style={styles.exploreButtonText}>Explore All Museums</Text>
-                <Ionicons name="arrow-forward" size={20} color="#fff" />
-              </TouchableOpacity>
-            </View>
-          </ImageBackground>
-        </View>
+            <Text style={styles.languageFlag}>{selectedLanguage.flag}</Text>
+            <Ionicons name="chevron-down" size={16} color="#fff" />
+          </TouchableOpacity>
 
-        {/* Quick Stats */}
-        <View style={styles.statsContainer}>
-          <View style={styles.statItem}>
-            <Text style={styles.statNumber}>20+</Text>
-            <Text style={styles.statLabel}>Museums</Text>
+          <View style={styles.heroContent}>
+            <Text style={styles.welcomeText}>{i18n.t('welcome')}</Text>
+            <Text style={styles.museumsOfText}>{i18n.t('museumsOf')}</Text>
+            <View style={styles.londonRow}>
+              <View style={styles.londonBadge}>
+                <Text style={styles.londonText}>{i18n.t('london')}</Text>
+              </View>
+              <Ionicons name="globe-outline" size={28} color="#fff" style={styles.londonGlobe} />
+            </View>
+            <Text style={styles.heroSubtitle}>
+              {i18n.t('subtitle')}
+            </Text>
           </View>
-          <View style={styles.statDivider} />
-          <View style={styles.statItem}>
-            <Text style={styles.statNumber}>FREE</Text>
-            <Text style={styles.statLabel}>Most Entry</Text>
+
+          {/* Central Search Bar - In Hero */}
+          <View style={styles.searchSectionInHero}>
+            <View style={styles.searchBarContainer}>
+              <View style={styles.searchBar}>
+                {searching ? (
+                  <ActivityIndicator size="small" color="#E63946" />
+                ) : (
+                  <Ionicons name="search" size={22} color="#A8A8A8" />
+                )}
+                <TextInput
+                  style={styles.searchInput}
+                  placeholder={i18n.t('searchPlaceholder')}
+                  placeholderTextColor="#666"
+                  value={searchQuery}
+                  onChangeText={handleSearch}
+                  autoCorrect={false}
+                  autoCapitalize="words"
+                />
+                {searchQuery.length > 0 && (
+                  <TouchableOpacity onPress={clearSearch}>
+                    <Ionicons name="close-circle" size={22} color="#A8A8A8" />
+                  </TouchableOpacity>
+                )}
+              </View>
+            </View>
+            
+            {/* Search Results */}
+            {searchQuery.length > 0 && (
+              <View style={styles.searchResultsContainer}>
+                {searching ? (
+                  <ActivityIndicator size="small" color="#E63946" style={{ marginVertical: 20 }} />
+                ) : searchResults.length > 0 ? (
+                  searchResults.map((museum) => (
+                    <TouchableOpacity
+                      key={museum.id}
+                      style={styles.searchResultItem}
+                      onPress={() => {
+                        clearSearch();
+                        navigateToMuseum(museum.id);
+                      }}
+                      activeOpacity={0.7}
+                    >
+                      <Image source={{ uri: museum.image_url }} style={styles.searchResultImage} />
+                      <View style={styles.searchResultInfo}>
+                        <Text style={styles.searchResultName} numberOfLines={1}>
+                          {museum.name}
+                        </Text>
+                        <Text style={styles.searchResultCategory}>{museum.category}</Text>
+                        <View style={styles.searchResultBadge}>
+                          {museum.free_entry && (
+                            <View style={styles.searchFreeBadge}>
+                              <Text style={styles.searchFreeBadgeText}>FREE</Text>
+                            </View>
+                          )}
+                          <View style={styles.searchRatingBadge}>
+                            <Ionicons name="star" size={10} color="#FFD700" />
+                            <Text style={styles.searchRatingText}>{museum.rating}</Text>
+                          </View>
+                        </View>
+                      </View>
+                      <Ionicons name="chevron-forward" size={20} color="#666" />
+                    </TouchableOpacity>
+                  ))
+                ) : (
+                  <View style={styles.noResultsContainer}>
+                    <Ionicons name="search-outline" size={40} color="#666" />
+                    <Text style={styles.noResultsText}>No museums found</Text>
+                  </View>
+                )}
+              </View>
+            )}
           </View>
-          <View style={styles.statDivider} />
-          <View style={styles.statItem}>
-            <Text style={styles.statNumber}>A-Z</Text>
-            <Text style={styles.statLabel}>Categories</Text>
+          
+          {/* Hero Buttons */}
+          <View style={styles.heroButtons}>
+            <TouchableOpacity
+              style={styles.tubeMapButton}
+              onPress={openTubeMap}
+              activeOpacity={0.8}
+            >
+              <Ionicons name="subway" size={18} color="#fff" />
+              <Text style={styles.tubeMapButtonText}>{i18n.t('londonUnderground')}</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity
+              style={styles.exploreButton}
+              onPress={navigateToExplore}
+            >
+              <Ionicons name="compass" size={18} color="#fff" />
+              <Text style={styles.exploreButtonText}>{i18n.t('exploreMuseums')}</Text>
+            </TouchableOpacity>
           </View>
-        </View>
+        </LinearGradient>
 
         {/* Featured Museums Section */}
         <View style={styles.sectionContainer}>
           <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>Featured Museums</Text>
+            <View style={styles.sectionTitleContainer}>
+              <Ionicons name="star" size={22} color="#F1A208" />
+              <Text style={styles.sectionTitle}>{i18n.t('featuredMuseums')}</Text>
+            </View>
             <TouchableOpacity onPress={navigateToExplore}>
-              <Text style={styles.seeAllText}>See All</Text>
+              <Text style={styles.seeAllText}>{i18n.t('seeAll')}</Text>
             </TouchableOpacity>
           </View>
 
@@ -145,7 +322,7 @@ export default function HomeScreen() {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={styles.featuredScroll}
             >
-              {featuredMuseums.map((museum) => (
+              {featuredMuseums.map((museum, index) => (
                 <TouchableOpacity
                   key={museum.id}
                   style={styles.featuredCard}
@@ -156,7 +333,10 @@ export default function HomeScreen() {
                     source={{ uri: museum.image_url }}
                     style={styles.featuredImage}
                   />
-                  <View style={styles.featuredOverlay}>
+                  <LinearGradient
+                    colors={['transparent', 'rgba(0,0,0,0.8)']}
+                    style={styles.featuredOverlay}
+                  >
                     <View style={styles.featuredBadge}>
                       <Text style={styles.badgeText}>
                         {museum.free_entry ? 'FREE' : 'PAID'}
@@ -174,56 +354,353 @@ export default function HomeScreen() {
                         <Text style={styles.ratingText}>{museum.rating}</Text>
                       </View>
                     </View>
-                  </View>
+                  </LinearGradient>
                 </TouchableOpacity>
               ))}
             </ScrollView>
           )}
         </View>
 
-        {/* Categories Section */}
+        {/* Museum Tips Section - Collapsible */}
+        <View style={styles.tipsContainer}>
+          <TouchableOpacity 
+            style={styles.tipsHeader}
+            onPress={() => setTipsExpanded(!tipsExpanded)}
+            activeOpacity={0.7}
+          >
+            <View style={styles.tipsHeaderLeft}>
+              <Ionicons name="bulb" size={22} color="#F1A208" />
+              <Text style={styles.tipsTitle}>Top 10 Tips for Visiting Museums</Text>
+            </View>
+            <Ionicons 
+              name={tipsExpanded ? "chevron-up" : "chevron-down"} 
+              size={24} 
+              color="#fff" 
+            />
+          </TouchableOpacity>
+
+          {tipsExpanded && (
+            <View style={styles.tipsContent}>
+              {[
+                { title: "Plan Ahead", desc: "Research the museums you want to visit and their exhibitions. Some may require advanced bookings, especially for special exhibits." },
+                { title: "Check Opening Hours", desc: "Many museums have varying opening times, so make sure to check before you go." },
+                { title: "Free Entry", desc: "Many of London's museums, like the British Museum and the Natural History Museum, offer free entry. Take advantage of this!" },
+                { title: "Visit on Weekdays", desc: "If possible, visit during weekdays to avoid large crowds, especially during peak tourist seasons." },
+                { title: "Use the Audio Guide", desc: "Many museums offer audio guides or apps; they can enrich your experience by providing in-depth information about exhibits." },
+                { title: "Take Your Time", desc: "Don't rush through the exhibits; spend time at the pieces that interest you the most." },
+                { title: "Join a Guided Tour", desc: "Consider joining a guided tour for insights from knowledgeable guides and to explore sections you might overlook." },
+                { title: "Stay Together", desc: "If visiting with a group, set meeting points or times to regroup since museums can be large and overwhelming." },
+                { title: "Explore the Gift Shops", desc: "Museum gift shops often sell unique items related to the exhibitions and can be a great place to find souvenirs." },
+                { title: "Check Temporary Exhibitions", desc: "Look for any temporary exhibitions that may be taking place during your visit, as they often feature special collections or themes." }
+              ].map((tip, index) => (
+                <View key={index} style={styles.tipItem}>
+                  <View style={styles.tipNumber}>
+                    <Text style={styles.tipNumberText}>{index + 1}</Text>
+                  </View>
+                  <View style={styles.tipTextContainer}>
+                    <Text style={styles.tipTitle}>{tip.title}</Text>
+                    <Text style={styles.tipDescription}>{tip.desc}</Text>
+                  </View>
+                </View>
+              ))}
+            </View>
+          )}
+        </View>
+
+        {/* Currency Conversion Section */}
+        <View style={styles.currencyContainer}>
+          <View style={styles.currencyHeader}>
+            <Ionicons name="cash" size={22} color="#2A9D8F" />
+            <Text style={styles.currencyTitle}>{i18n.t('currencyConverter')}</Text>
+          </View>
+          <Text style={styles.currencySubtitle}>{i18n.t('convertToGBP')}</Text>
+          
+          <View style={styles.currencyContent}>
+            <View style={styles.currencyInputRow}>
+              <View style={styles.currencyInputContainer}>
+                <Text style={styles.currencyLabel}>{i18n.t('amount')}</Text>
+                <TextInput
+                  style={styles.currencyInput}
+                  value={currencyAmount}
+                  onChangeText={setCurrencyAmount}
+                  keyboardType="numeric"
+                  placeholder="100"
+                  placeholderTextColor="#666"
+                />
+              </View>
+              
+              <View style={styles.currencyPickerContainer}>
+                <View style={styles.currencyLabelRow}>
+                  <Text style={styles.currencyLabel}>{i18n.t('from')} </Text>
+                  <Text style={styles.currencyScrollHint}>{i18n.t('scrollLeftRight')}</Text>
+                </View>
+                <View style={styles.currencyPickerWrapper}>
+                  <ScrollView 
+                    horizontal 
+                    showsHorizontalScrollIndicator={false} 
+                    style={styles.currencyScroll}
+                    contentContainerStyle={{ paddingRight: 8 }}
+                  >
+                    {['USD', 'EUR', 'JPY', 'CNY', 'AUD', 'CAD', 'CHF', 'INR', 'KRW', 'MXN', 'BRL', 'SGD', 'NZD', 'HKD', 'AED'].map((currency) => (
+                      <TouchableOpacity
+                        key={currency}
+                        style={[
+                          styles.currencyOption,
+                          selectedCurrency === currency && styles.currencyOptionActive
+                        ]}
+                        onPress={() => setSelectedCurrency(currency)}
+                      >
+                        <Text style={[
+                          styles.currencyOptionText,
+                          selectedCurrency === currency && styles.currencyOptionTextActive
+                        ]}>
+                          {currency}
+                        </Text>
+                      </TouchableOpacity>
+                    ))}
+                  </ScrollView>
+                </View>
+              </View>
+            </View>
+            
+            <View style={styles.currencyResultContainer}>
+              <Ionicons name="arrow-down" size={24} color="#2A9D8F" />
+              <View style={styles.currencyResult}>
+                <Text style={styles.currencyResultAmount}>£{convertedAmount}</Text>
+                <Text style={styles.currencyResultLabel}>GBP</Text>
+              </View>
+            </View>
+            
+            <Text style={styles.currencyDisclaimer}>
+              {i18n.t('approxRates')}
+            </Text>
+          </View>
+        </View>
+
+        {/* Colorful Categories Section */}
         <View style={styles.sectionContainer}>
-          <Text style={styles.sectionTitle}>Explore by Category</Text>
+          <View style={styles.sectionTitleContainer}>
+            <Ionicons name="grid" size={22} color="#457B9D" />
+            <Text style={styles.sectionTitle}>Explore by Category</Text>
+          </View>
           <View style={styles.categoriesGrid}>
             {[
-              { name: 'Art', icon: 'color-palette', color: '#E63946' },
-              { name: 'History', icon: 'time', color: '#457B9D' },
-              { name: 'Science', icon: 'flask', color: '#2A9D8F' },
-              { name: 'Culture', icon: 'globe', color: '#E9C46A' },
-            ].map((category) => (
+              { name: 'Art', icon: 'color-palette', colors: ['#FF006E', '#FB5607', '#FFBE0B'], emoji: '🎨' },
+              { name: 'History', icon: 'library', colors: ['#5F0F40', '#9A031E', '#FB8B24'], emoji: '🏛️' },
+              { name: 'Science', icon: 'flask', colors: ['#03045E', '#0077B6', '#00B4D8'], emoji: '🔬' },
+              { name: 'Culture', icon: 'earth', colors: ['#7209B7', '#F72585', '#4CC9F0'], emoji: '🌍' },
+              { name: 'Military', icon: 'shield-checkmark', colors: ['#2B2D42', '#8D99AE', '#EDF2F4'], emoji: '⚔️' },
+              { name: 'Transport', icon: 'train', colors: ['#E63946', '#A8DADC', '#457B9D'], emoji: '🚇' },
+            ].map((category, index) => (
               <TouchableOpacity
                 key={category.name}
-                style={[styles.categoryCard, { borderColor: category.color }]}
                 onPress={() => router.push(`/explore?category=${category.name}`)}
+                activeOpacity={0.8}
+                style={styles.categoryCardWrapper}
               >
-                <View style={[styles.categoryIcon, { backgroundColor: category.color + '20' }]}>
-                  <Ionicons name={category.icon as any} size={28} color={category.color} />
-                </View>
-                <Text style={styles.categoryName}>{category.name}</Text>
+                <LinearGradient
+                  colors={category.colors}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 1 }}
+                  style={styles.categoryCard}
+                >
+                  <View style={styles.categoryIconCircle}>
+                    <Ionicons name={category.icon as any} size={36} color="#fff" />
+                  </View>
+                  <View style={styles.categoryContent}>
+                    <Text style={styles.categoryName}>{category.name}</Text>
+                    <Ionicons name="arrow-forward-circle" size={24} color="rgba(255,255,255,0.9)" />
+                  </View>
+                </LinearGradient>
               </TouchableOpacity>
             ))}
           </View>
         </View>
 
-        {/* Quick Tips */}
-        <View style={styles.tipsContainer}>
-          <Text style={styles.tipsTitle}>Visitor Tips</Text>
-          <View style={styles.tipItem}>
-            <Ionicons name="ticket-outline" size={20} color="#E63946" />
-            <Text style={styles.tipText}>Most major museums offer free entry</Text>
-          </View>
-          <View style={styles.tipItem}>
-            <Ionicons name="time-outline" size={20} color="#E63946" />
-            <Text style={styles.tipText}>Visit early morning to avoid crowds</Text>
-          </View>
-          <View style={styles.tipItem}>
-            <Ionicons name="train-outline" size={20} color="#E63946" />
-            <Text style={styles.tipText}>All museums are accessible by tube</Text>
-          </View>
+        {/* Walking Tours Promo */}
+        <View style={styles.sectionContainer}>
+          <TouchableOpacity onPress={navigateToTours} activeOpacity={0.9}>
+            <LinearGradient
+              colors={['#9B59B6', '#3498DB', '#1ABC9C']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={styles.tourPromo}
+            >
+              <View style={styles.tourPromoContent}>
+                <Ionicons name="walk" size={40} color="#fff" />
+                <View style={styles.tourPromoText}>
+                  <Text style={styles.tourPromoTitle}>{i18n.t('walkingTours')}</Text>
+                  <Text style={styles.tourPromoSubtitle}>
+                    {i18n.t('walkingToursSubtitle')}
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.tourPromoArrow}>
+                <Ionicons name="arrow-forward-circle" size={32} color="#fff" />
+              </View>
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
+
+        {/* Footer - Powered By */}
+        <View style={styles.footerContainer}>
+          <Ionicons name="globe-outline" size={24} color="#CCCCCC" />
+          <Text style={styles.footerText}>Powered by Whelan Industries</Text>
         </View>
 
         <View style={{ height: 30 }} />
       </ScrollView>
+
+      {/* Tube Map Image Modal with Zoom */}
+      <Modal
+        visible={showTubeMapModal}
+        animationType="fade"
+        transparent={true}
+        onRequestClose={() => setShowTubeMapModal(false)}
+      >
+        <View style={styles.imageModalContainer}>
+          <View style={styles.imageHeader}>
+            <Text style={styles.imageTitle}>London Underground Map</Text>
+            <TouchableOpacity 
+              onPress={() => setShowTubeMapModal(false)}
+              style={styles.closeButton}
+            >
+              <Ionicons name="close-circle" size={40} color="#fff" />
+            </TouchableOpacity>
+          </View>
+          <ImageViewer
+            imageUrls={[{
+              url: 'https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/gzyemsxs_tube-map-2025.jpg',
+            }]}
+            enableSwipeDown={true}
+            onSwipeDown={() => setShowTubeMapModal(false)}
+            backgroundColor="#000"
+            renderIndicator={() => null}
+            saveToLocalByLongPress={false}
+            doubleClickInterval={250}
+            maxOverflow={300}
+            enablePreload={true}
+          />
+        </View>
+      </Modal>
+
+      {/* Language Selection Modal */}
+      <Modal
+        visible={showLanguageModal}
+        animationType="slide"
+        transparent={true}
+        onRequestClose={() => setShowLanguageModal(false)}
+      >
+        <View style={styles.languageModalOverlay}>
+          <View style={styles.languageModalContainer}>
+            <View style={styles.languageModalHeader}>
+              <Text style={styles.languageModalTitle}>{i18n.t('selectLanguage')}</Text>
+              <TouchableOpacity onPress={() => setShowLanguageModal(false)}>
+                <Ionicons name="close" size={28} color="#fff" />
+              </TouchableOpacity>
+            </View>
+            
+            <ScrollView style={styles.languageList}>
+              {[
+                { code: 'en', name: 'English', flag: '🇬🇧' },
+                { code: 'es', name: 'Español', flag: '🇪🇸' },
+                { code: 'fr', name: 'Français', flag: '🇫🇷' },
+                { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+                { code: 'zh', name: '中文', flag: '🇨🇳' },
+                { code: 'ja', name: '日本語', flag: '🇯🇵' },
+                { code: 'ko', name: '한국어', flag: '🇰🇷' },
+                { code: 'pt', name: 'Português', flag: '🇵🇹' },
+                { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+                { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+                { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+                { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
+                { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+                { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
+                { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+                { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
+                { code: 'no', name: 'Norsk', flag: '🇳🇴' },
+                { code: 'da', name: 'Dansk', flag: '🇩🇰' },
+                { code: 'fi', name: 'Suomi', flag: '🇫🇮' },
+                { code: 'el', name: 'Ελληνικά', flag: '🇬🇷' },
+              ].map((language) => (
+                <TouchableOpacity
+                  key={language.code}
+                  style={[
+                    styles.languageItem,
+                    selectedLanguage.code === language.code && styles.languageItemActive
+                  ]}
+                  onPress={() => {
+                    setSelectedLanguage(language);
+                    i18n.locale = language.code;
+                    setShowLanguageModal(false);
+                    forceUpdate({});
+                    Alert.alert(
+                      i18n.t('languageChanged'),
+                      `${i18n.t('languageSetTo')} ${language.name}`,
+                      [{ text: 'OK' }]
+                    );
+                  }}
+                  activeOpacity={0.7}
+                >
+                  <Text style={styles.languageItemFlag}>{language.flag}</Text>
+                  <Text style={styles.languageItemName}>{language.name}</Text>
+                  {selectedLanguage.code === language.code && (
+                    <Ionicons name="checkmark-circle" size={24} color="#2A9D8F" />
+                  )}
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Museum Map Modal */}
+      <Modal
+        visible={showMapModal}
+        animationType="slide"
+        transparent={false}
+        onRequestClose={() => setShowMapModal(false)}
+      >
+        <View style={styles.mapModalContainer}>
+          <View style={styles.mapHeader}>
+            <Text style={styles.mapTitle}>London Museums Map</Text>
+            <TouchableOpacity onPress={() => setShowMapModal(false)}>
+              <Ionicons name="close-circle" size={32} color="#E63946" />
+            </TouchableOpacity>
+          </View>
+
+          <ScrollView style={styles.mapScrollView}>
+            {/* Cartoon Map Background */}
+            <View style={styles.cartoonMap}>
+              <Text style={styles.mapWatermark}>London</Text>
+              
+              {/* River Thames illustration */}
+              <View style={styles.thamesRiver} />
+
+              {/* Museum Pins */}
+              {allMuseums.map((museum, index) => (
+                <TouchableOpacity
+                  key={museum.id}
+                  style={[styles.museumPin, { 
+                    top: `${15 + (index % 6) * 14}%`, 
+                    left: `${10 + (index % 4) * 22}%` 
+                  }]}
+                  onPress={() => {
+                    setShowMapModal(false);
+                    router.push(`/museum/${museum.id}`);
+                  }}
+                >
+                  <View style={styles.pinHead}>
+                    <Ionicons name="business" size={16} color="#fff" />
+                  </View>
+                  <View style={styles.pinStick} />
+                  <Text style={styles.pinLabel}>{museum.name}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </ScrollView>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -237,91 +714,124 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   heroSection: {
-    height: 380,
-    marginBottom: 20,
-  },
-  heroImage: {
-    flex: 1,
-    width: '100%',
-  },
-  heroOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(15, 15, 35, 0.75)',
-    justifyContent: 'flex-end',
-    padding: 20,
+    paddingHorizontal: 20,
     paddingBottom: 30,
+    minHeight: 420,
   },
-  heroContent: {
-    marginBottom: 24,
+  // London Skyline Image
+  skylineImage: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    width: 100,
+    height: 100,
+    opacity: 0.7,
+    borderRadius: 8,
+  },
+  londonRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    marginTop: 8,
+  },
+  londonBadge: {
+    backgroundColor: '#E63946',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 8,
+  },
+  londonText: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#fff',
+    letterSpacing: 2,
+  },
+  londonGlobe: {
+    marginLeft: 12,
+  },
+  towerBridgeIcon: {
+    fontSize: 36,
+    marginLeft: 10,
   },
   welcomeText: {
-    fontSize: 16,
-    color: '#A8A8A8',
-    letterSpacing: 2,
-    textTransform: 'uppercase',
+    fontSize: 14,
+    color: 'rgba(255,255,255,0.7)',
+    letterSpacing: 4,
+    fontWeight: '600',
   },
-  appTitle: {
-    fontSize: 42,
-    fontWeight: '300',
+  museumsOfText: {
+    fontSize: 36,
+    fontWeight: 'bold',
     color: '#FFFFFF',
     marginTop: 8,
   },
-  appTitleHighlight: {
-    fontSize: 48,
-    fontWeight: 'bold',
-    color: '#E63946',
-  },
   heroSubtitle: {
     fontSize: 16,
-    color: '#CCCCCC',
-    marginTop: 12,
+    color: 'rgba(255,255,255,0.8)',
+    marginTop: 16,
     lineHeight: 24,
+  },
+  heroButtons: {
+    flexDirection: 'column',
+    gap: 12,
+    marginHorizontal: 20,
+    marginTop: 8,
   },
   exploreButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#E63946',
-    paddingVertical: 16,
-    paddingHorizontal: 28,
-    borderRadius: 30,
-    gap: 10,
+    paddingVertical: 14,
+    borderRadius: 20,
+    gap: 8,
   },
   exploreButtonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 15,
+    fontWeight: '600',
+  },
+  tourButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    paddingVertical: 10,
+    borderRadius: 20,
+    gap: 6,
+  },
+  tourButtonText: {
+    color: '#E63946',
+    fontSize: 13,
     fontWeight: '600',
   },
   statsContainer: {
     flexDirection: 'row',
-    backgroundColor: '#1A1A2E',
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
+    marginTop: -15,
     marginBottom: 24,
-    borderRadius: 16,
-    padding: 20,
-    alignItems: 'center',
-    justifyContent: 'space-around',
+    gap: 10,
   },
-  statItem: {
+  statCard: {
+    flex: 1,
     alignItems: 'center',
+    padding: 16,
+    borderRadius: 16,
   },
   statNumber: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
-    color: '#E63946',
+    color: '#fff',
+    marginTop: 6,
   },
   statLabel: {
-    fontSize: 12,
-    color: '#A8A8A8',
-    marginTop: 4,
-  },
-  statDivider: {
-    width: 1,
-    height: 40,
-    backgroundColor: '#333',
+    fontSize: 11,
+    color: 'rgba(255,255,255,0.8)',
+    marginTop: 2,
   },
   sectionContainer: {
-    marginBottom: 28,
+    marginBottom: 24,
     paddingHorizontal: 20,
   },
   sectionHeader: {
@@ -330,13 +840,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 16,
   },
+  sectionTitleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
   sectionTitle: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#FFFFFF',
+    marginTop: 4,
   },
   seeAllText: {
-    fontSize: 14,
+    fontSize: 20,
     color: '#E63946',
     fontWeight: '600',
   },
@@ -363,7 +879,6 @@ const styles = StyleSheet.create({
   },
   featuredOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.4)',
     padding: 16,
     justifyContent: 'space-between',
   },
@@ -406,50 +921,616 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 12,
-    marginTop: 16,
+  },
+  categoryCardWrapper: {
+    width: (width - 52) / 2,
+    marginBottom: 0,
   },
   categoryCard: {
-    width: (width - 52) / 2,
-    backgroundColor: '#1A1A2E',
-    borderRadius: 16,
-    padding: 20,
+    borderRadius: 20,
+    padding: 18,
+    minHeight: 140,
+    justifyContent: 'space-between',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  categoryIconCircle: {
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    backgroundColor: 'rgba(255, 255, 255, 0.25)',
+    justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 4,
+    borderWidth: 2,
+    borderColor: 'rgba(255, 255, 255, 0.4)',
+  },
+  categoryEmoji: {
+    fontSize: 32,
+  },
+  categoryContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 12,
   },
   categoryIcon: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: 'rgba(255,255,255,0.2)',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 12,
   },
   categoryName: {
-    fontSize: 14,
-    fontWeight: '600',
+    fontSize: 16,
+    fontWeight: '700',
     color: '#fff',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 3,
+    letterSpacing: 0.5,
+  },
+  tourPromo: {
+    borderRadius: 20,
+    padding: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  tourPromoContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    gap: 16,
+  },
+  tourPromoText: {
+    flex: 1,
+  },
+  tourPromoTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  tourPromoSubtitle: {
+    fontSize: 13,
+    color: 'rgba(255,255,255,0.9)',
+    marginTop: 4,
+    lineHeight: 18,
+  },
+  tourPromoArrow: {
+    marginLeft: 8,
   },
   tipsContainer: {
     marginHorizontal: 20,
     backgroundColor: '#1A1A2E',
-    borderRadius: 16,
+    borderRadius: 20,
     padding: 20,
   },
-  tipsTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 16,
+  tipsList: {
+    gap: 12,
   },
   tipItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 12,
-    marginBottom: 12,
+    gap: 14,
+  },
+  tipIconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   tipText: {
     fontSize: 14,
     color: '#CCCCCC',
     flex: 1,
+  },
+  // Search Section Styles (In Hero)
+  searchSectionInHero: {
+    marginHorizontal: 20,
+    marginTop: 20,
+    marginBottom: 12,
+  },
+  searchSection: {
+    marginHorizontal: 20,
+    marginVertical: 20,
+    backgroundColor: '#1A1A2E',
+    borderRadius: 20,
+    padding: 20,
+  },
+  searchTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: 16,
+  },
+  searchBarContainer: {
+    marginBottom: 8,
+  },
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#0F0F23',
+    borderRadius: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    gap: 12,
+    borderWidth: 2,
+    borderColor: '#E63946',
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 16,
+    color: '#fff',
+  },
+  searchResultsContainer: {
+    marginTop: 12,
+    maxHeight: 400,
+  },
+  searchResultItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#0F0F23',
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 8,
+    gap: 12,
+  },
+  searchResultImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 8,
+  },
+  searchResultInfo: {
+    flex: 1,
+  },
+  searchResultName: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#fff',
+    marginBottom: 2,
+  },
+  searchResultCategory: {
+    fontSize: 12,
+    color: '#E63946',
+    marginBottom: 4,
+  },
+  searchResultBadge: {
+    flexDirection: 'row',
+    gap: 6,
+    alignItems: 'center',
+  },
+  searchFreeBadge: {
+    backgroundColor: '#2A9D8F',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 8,
+  },
+  searchFreeBadgeText: {
+    color: '#fff',
+    fontSize: 9,
+    fontWeight: 'bold',
+  },
+  searchRatingBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#333',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 8,
+    gap: 3,
+  },
+  searchRatingText: {
+    color: '#FFD700',
+    fontSize: 10,
+    fontWeight: '600',
+  },
+  noResultsContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 30,
+  },
+  noResultsText: {
+    fontSize: 14,
+    color: '#666',
+    marginTop: 8,
+  },
+  // Tips Section Styles
+  tipsContainer: {
+    marginHorizontal: 20,
+    marginVertical: 20,
+    backgroundColor: '#1A1A2E',
+    borderRadius: 20,
+    overflow: 'hidden',
+  },
+  tipsHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 20,
+  },
+  tipsHeaderLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    flex: 1,
+  },
+  tipsTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
+    flex: 1,
+  },
+  tipsContent: {
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+  },
+  tipItem: {
+    flexDirection: 'row',
+    marginBottom: 16,
+    gap: 12,
+  },
+  tipNumber: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: '#E63946',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tipNumberText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  tipTextContainer: {
+    flex: 1,
+  },
+  tipTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#F1A208',
+    marginBottom: 4,
+  },
+  tipDescription: {
+    fontSize: 14,
+    color: '#CCCCCC',
+    lineHeight: 20,
+  },
+  // Currency Conversion Styles
+  currencyContainer: {
+    marginHorizontal: 20,
+    marginVertical: 20,
+    backgroundColor: '#1A1A2E',
+    borderRadius: 20,
+    padding: 20,
+  },
+  currencyHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    marginBottom: 4,
+  },
+  currencyTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  currencySubtitle: {
+    fontSize: 14,
+    color: '#2A9D8F',
+    marginBottom: 20,
+  },
+  currencyContent: {
+    gap: 16,
+  },
+  currencyInputRow: {
+    gap: 16,
+  },
+  currencyInputContainer: {
+    marginBottom: 12,
+  },
+  currencyLabelRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  currencyLabel: {
+    fontSize: 14,
+    color: '#CCCCCC',
+  },
+  currencyScrollHint: {
+    fontSize: 12,
+    color: '#E63946',
+    fontStyle: 'italic',
+  },
+  currencyInput: {
+    backgroundColor: '#0F0F23',
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    fontSize: 18,
+    color: '#fff',
+    borderWidth: 2,
+    borderColor: '#2A9D8F',
+  },
+  currencyPickerContainer: {
+    marginBottom: 12,
+  },
+  currencyPickerWrapper: {
+    backgroundColor: '#0F0F23',
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: '#2A9D8F',
+    padding: 8,
+    height: 50,
+  },
+  currencyScroll: {
+    flex: 1,
+  },
+  currencyOption: {
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginRight: 8,
+    backgroundColor: '#1A1A2E',
+  },
+  currencyOptionActive: {
+    backgroundColor: '#2A9D8F',
+  },
+  currencyOptionText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#CCCCCC',
+  },
+  currencyOptionTextActive: {
+    color: '#fff',
+  },
+  currencyResultContainer: {
+    alignItems: 'center',
+    gap: 12,
+    paddingVertical: 16,
+  },
+  currencyResult: {
+    alignItems: 'center',
+    backgroundColor: '#0F0F23',
+    borderRadius: 16,
+    padding: 20,
+    width: '100%',
+  },
+  currencyResultAmount: {
+    fontSize: 36,
+    fontWeight: 'bold',
+    color: '#2A9D8F',
+    marginBottom: 4,
+  },
+  currencyResultLabel: {
+    fontSize: 16,
+    color: '#CCCCCC',
+    fontWeight: '600',
+  },
+  currencyDisclaimer: {
+    fontSize: 12,
+    color: '#999',
+    fontStyle: 'italic',
+    textAlign: 'center',
+  },
+  // Image Modal Styles
+  imageModalContainer: {
+    flex: 1,
+    backgroundColor: '#000',
+  },
+  imageHeader: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    paddingTop: 50,
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    zIndex: 10,
+  },
+  imageTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  closeButton: {
+    padding: 5,
+  },
+  // Footer Styles
+  footerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    marginTop: 20,
+    gap: 10,
+  },
+  footerText: {
+    fontSize: 14,
+    color: '#CCCCCC',
+    fontWeight: '500',
+  },
+  // Language Selector Styles
+  languageButton: {
+    position: 'absolute',
+    top: 10,
+    right: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 20,
+    gap: 6,
+    zIndex: 10,
+  },
+  languageFlag: {
+    fontSize: 20,
+  },
+  languageModalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'flex-end',
+  },
+  languageModalContainer: {
+    backgroundColor: '#1A1A2E',
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    maxHeight: '80%',
+  },
+  languageModalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#333',
+  },
+  languageModalTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  languageList: {
+    padding: 16,
+  },
+  languageItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    marginBottom: 8,
+    backgroundColor: '#0F0F23',
+    borderRadius: 12,
+    gap: 16,
+  },
+  languageItemActive: {
+    backgroundColor: '#2A4A3F',
+    borderWidth: 2,
+    borderColor: '#2A9D8F',
+  },
+  languageItemFlag: {
+    fontSize: 28,
+  },
+  languageItemName: {
+    fontSize: 18,
+    color: '#fff',
+    flex: 1,
+    fontWeight: '500',
+  },
+  // Museum Map Modal Styles
+  mapModalContainer: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
+  mapHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    paddingTop: 50,
+    backgroundColor: '#fff',
+    borderBottomWidth: 2,
+    borderBottomColor: '#E63946',
+  },
+  mapTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#1D3557',
+  },
+  mapScrollView: {
+    flex: 1,
+  },
+  cartoonMap: {
+    minHeight: 1200,
+    backgroundColor: '#E8F4F8',
+    position: 'relative',
+    padding: 20,
+  },
+  mapWatermark: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: [{ translateX: -50 }, { translateY: -50 }],
+    fontSize: 80,
+    fontWeight: 'bold',
+    color: 'rgba(157, 201, 219, 0.3)',
+    letterSpacing: 10,
+  },
+  thamesRiver: {
+    position: 'absolute',
+    top: '60%',
+    left: 0,
+    right: 0,
+    height: 60,
+    backgroundColor: '#5FA8D3',
+    borderRadius: 30,
+    opacity: 0.5,
+  },
+  museumPin: {
+    position: 'absolute',
+    alignItems: 'center',
+    width: 80,
+  },
+  pinHead: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#E63946',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 3,
+    borderColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  pinStick: {
+    width: 3,
+    height: 15,
+    backgroundColor: '#8B2E2E',
+  },
+  pinLabel: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: '#1D3557',
+    textAlign: 'center',
+    marginTop: 4,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 8,
+  },
+  tubeMapButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0, 25, 168, 0.9)',
+    borderRadius: 20,
+    paddingVertical: 14,
+    gap: 8,
+  },
+  tubeMapButtonText: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#fff',
   },
 });
