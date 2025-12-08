@@ -951,7 +951,7 @@ LONDON_MUSEUMS = [
         "address": "Rockefeller Building, 21 University Street, London WC1E 6DE",
         "latitude": 51.5246,
         "longitude": -0.1340,
-        "image_url": "https://images.unsplash.com/photo-1623960735384-d5f974262164?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/bezb6bj8_GRANT_MUSEUM_2_lbrivn.jpg",
         "category": "Natural History",
         "free_entry": True,
         "opening_hours": "Tue-Fri 13:00-17:00, Sat 11:00-17:00",
