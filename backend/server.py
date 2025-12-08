@@ -918,7 +918,7 @@ LONDON_MUSEUMS = [
         "address": "111-117 Lancaster Road, London W11 1QT",
         "latitude": 51.5171,
         "longitude": -0.2027,
-        "image_url": "https://images.unsplash.com/photo-1681650669070-c04638e6f16e?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/q5wmkfc9_8b1df1_939e66f1e55843b3826685141d784408~mv2.jpg",
         "category": "Social History",
         "free_entry": False,
         "opening_hours": "Mon-Sat 10:00-18:00, Sun 11:00-17:00",
