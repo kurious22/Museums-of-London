@@ -558,7 +558,7 @@ LONDON_MUSEUMS = [
         "address": "Burlington House, Piccadilly, London W1J 0BD",
         "latitude": 51.5093,
         "longitude": -0.1395,
-        "image_url": "https://images.unsplash.com/photo-1758065345762-14a816690407?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/xkyjl1hh_yult10i6tluuvubukgku.jpg",
         "category": "Art",
         "free_entry": False,
         "opening_hours": "Sat-Thu 10:00-18:00, Fri until 21:00",
