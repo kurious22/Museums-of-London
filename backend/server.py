@@ -952,7 +952,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.5246,
         "longitude": -0.1340,
         "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/bezb6bj8_GRANT_MUSEUM_2_lbrivn.jpg",
-        "category": "Natural History",
+        "category": "Science",
         "free_entry": True,
         "opening_hours": "Tue-Fri 13:00-17:00, Sat 11:00-17:00",
         "website": "https://www.ucl.ac.uk/culture/grant-museum-zoology",
