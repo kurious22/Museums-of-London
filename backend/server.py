@@ -722,7 +722,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.5258,
         "longitude": -0.1338,
         "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/ndh1cv98_wellcome-collection_exterior-wellcome-collection-photo-kathleen-arundell-image-courtesy-of-wellcome-collection_2e5e75571d5bb7ea58847a1db647752b.jpg",
-        "category": "Science & Medicine",
+        "category": "Science",
         "free_entry": True,
         "opening_hours": "Tue-Sun 10:00-18:00, Thu until 21:00",
         "website": "https://wellcomecollection.org",
