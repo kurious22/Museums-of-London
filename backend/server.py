@@ -526,7 +526,7 @@ LONDON_MUSEUMS = [
         "address": "Millbank, London SW1P 4RG",
         "latitude": 51.4910,
         "longitude": -0.1277,
-        "image_url": "https://images.unsplash.com/photo-1502052434201-a444d17aa5d7?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/8ghdlujr_Tate_Britain_%285822081512%29_%282%29.jpg",
         "category": "Art",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
