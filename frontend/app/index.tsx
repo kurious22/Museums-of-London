@@ -786,6 +786,8 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     borderRadius: 20,
     gap: 8,
+    borderWidth: 2,
+    borderColor: '#FFFFFF',
   },
   exploreButtonText: {
     color: '#fff',
