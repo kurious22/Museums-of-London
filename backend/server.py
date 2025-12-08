@@ -430,7 +430,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.5170,
         "longitude": -0.1177,
         "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/j8l4bv5m_Sir_John_Soane_Museum_%2813952611347%29.jpg",
-        "category": "Art & Architecture",
+        "category": "Art",
         "free_entry": True,
         "opening_hours": "Wed-Sun 10:00-17:00",
         "website": "https://www.soane.org",
