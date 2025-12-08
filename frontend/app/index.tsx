@@ -852,10 +852,18 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     marginTop: 4,
   },
+  seeAllButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
   seeAllText: {
     fontSize: 20,
     color: '#E63946',
     fontWeight: '600',
+  },
+  seeAllArrow: {
+    marginLeft: 2,
   },
   loadingContainer: {
     height: 220,
