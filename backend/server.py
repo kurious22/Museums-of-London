@@ -1032,7 +1032,7 @@ LONDON_MUSEUMS = [
         ],
         "nearby_eateries": [
             {"name": "Flat Iron", "type": "Restaurant", "cuisine": "Steak", "distance": "2 min walk", "price_range": "££", "address": "17 Henrietta St", "latitude": 51.5115, "longitude": -0.1233},
-            {"name": "Shake Shack", "type": "Restaurant", "cuisine": "American", "distance": "3 min walk", "price_range": "££", "address": "24 Market Building", "latitude": 51.5120, "longitude": -0.1230},
+            {"name": "Hoppers", "type": "Restaurant", "cuisine": "Sri Lankan", "distance": "7 min walk", "price_range": "££", "address": "49 Frith St", "latitude": 51.5135, "longitude": -0.1320},
             {"name": "Dishoom Covent Garden", "type": "Restaurant", "cuisine": "Indian", "distance": "4 min walk", "price_range": "££", "address": "12 Upper St Martin's Lane", "latitude": 51.5127, "longitude": -0.1268},
             {"name": "The Ivy Market Grill", "type": "Restaurant", "cuisine": "British", "distance": "3 min walk", "price_range": "£££", "address": "1 Henrietta St", "latitude": 51.5110, "longitude": -0.1240},
             {"name": "Balthazar", "type": "Restaurant", "cuisine": "French", "distance": "2 min walk", "price_range": "£££", "address": "4-6 Russell St", "latitude": 51.5118, "longitude": -0.1225},
