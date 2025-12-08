@@ -689,7 +689,7 @@ LONDON_MUSEUMS = [
         "address": "136 Kingsland Road, London E2 8EA",
         "latitude": 51.5318,
         "longitude": -0.0765,
-        "image_url": "https://images.unsplash.com/photo-1643888986492-1640a909c144?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/b20isvaj_MotH_2021_Redevelopment-by-WrightWright_Credit-HuftonCrow_003-scaled%20%281%29.jpg",
         "category": "History & Culture",
         "free_entry": True,
         "opening_hours": "Tue-Sun 10:00-17:00",
