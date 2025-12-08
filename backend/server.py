@@ -298,7 +298,7 @@ LONDON_MUSEUMS = [
         "latitude": 51.5081,
         "longitude": -0.0759,
         "image_url": "https://images.unsplash.com/photo-1633894914370-6935b23ccbce?w=800&q=80",
-        "category": "History & Heritage",
+        "category": "History",
         "free_entry": False,
         "opening_hours": "Tue-Sat 09:00-17:00, Sun-Mon 10:00-17:00",
         "website": "https://www.hrp.org.uk/tower-of-london",
