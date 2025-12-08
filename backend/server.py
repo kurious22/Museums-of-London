@@ -443,7 +443,7 @@ LONDON_MUSEUMS = [
             {"name": "The Seven Stars", "type": "Pub", "cuisine": "British", "distance": "2 min walk", "price_range": "££", "address": "53-54 Carey St", "latitude": 51.5155, "longitude": -0.1150},
             {"name": "Terroirs", "type": "Wine Bar", "cuisine": "French", "distance": "4 min walk", "price_range": "££", "address": "5 William IV St", "latitude": 51.5112, "longitude": -0.1265},
             {"name": "Flat Iron", "type": "Restaurant", "cuisine": "Steak", "distance": "5 min walk", "price_range": "££", "address": "17-18 Henrietta St", "latitude": 51.5115, "longitude": -0.1233},
-            {"name": "Honest Burgers Sir", "type": "Restaurant", "cuisine": "American", "distance": "5 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.515, "longitude": -0.1184},
+            {"name": "Honest Burgers", "type": "Restaurant", "cuisine": "American", "distance": "5 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.515, "longitude": -0.1184},
             {"name": "Prezzo Sir", "type": "Restaurant", "cuisine": "Italian", "distance": "4 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.5195, "longitude": -0.1202},
             {"name": "The George Sir", "type": "Pub", "cuisine": "British", "distance": "5 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.5164, "longitude": -0.1193},
             {"name": "Joe & The Juice Sir", "type": "Cafe", "cuisine": "Healthy", "distance": "6 min walk", "price_range": "££", "address": "Near Sir John Soane's Museum", "latitude": 51.5153, "longitude": -0.1168},
