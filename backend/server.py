@@ -199,7 +199,7 @@ LONDON_MUSEUMS = [
         "address": "Exhibition Road, South Kensington, London SW7 2DD",
         "latitude": 51.4978,
         "longitude": -0.1745,
-        "image_url": "https://images.unsplash.com/photo-1613322951372-4719485d1b35?w=800&q=80",
+        "image_url": "https://customer-assets.emergentagent.com/job_culture-compass-6/artifacts/lqwikzag_Front_of_Science_Museum_with_full__Science__logo_and_people_walking_past-1600x1066.jpg",
         "category": "Science & Technology",
         "free_entry": True,
         "opening_hours": "Daily 10:00-18:00",
