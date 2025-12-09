@@ -16,7 +16,7 @@ ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 # Admin PIN for adding museums (hashed)
-ADMIN_PIN = "1234"  # Default PIN - in production, use environment variable
+ADMIN_PIN = os.environ.get('ADMIN_PIN', '1234')
 
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
